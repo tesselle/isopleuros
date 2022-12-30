@@ -19,7 +19,7 @@ setMethod(
                         panel.first = NULL, panel.last = NULL, ...) {
 
     ## Save and restore graphical parameters
-    old_par <- graphics::par(pty = "s", no.readonly = TRUE)
+    old_par <- graphics::par(mar = c(1, 1, 1, 1), pty = "s", no.readonly = TRUE)
     on.exit(graphics::par(old_par))
 
     ## Zoom
