@@ -1,5 +1,5 @@
 Package: isopleuros
-Title: What the Package Does (One Line, Title Case)
+Title: Ternary Plot
 Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Nicolas",
@@ -10,7 +10,11 @@ Authors@R:
                          affiliation = "Université Bordeaux Montaigne")))
 Maintainer: Nicolas Frerebeau
     <nicolas.frerebeau@u-bordeaux-montaigne.fr>
-Description: What the package does (one paragraph).
+Description: Ternary plots made simple. This package allows to create ternary 
+    plot using 'graphics'. It provides functions to display the data in the 
+    ternary space, to add or tune graphical elements and to display statistical 
+    summaries. It also includes common ternary diagrams useful for the 
+    archaeologist (e.g. soil texture charts, ceramic phase diagram).
 License: GPL (>= 3)
 URL: https://packages.tesselle.org/isopleuros/,
     https://github.com/tesselle/isopleuros
