@@ -68,7 +68,10 @@ ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
 \seealso{
 Other plot methods: 
 \code{\link{ternary_axis}()},
-\code{\link{ternary_plot}()}
+\code{\link{ternary_lines}()},
+\code{\link{ternary_plot}()},
+\code{\link{ternary_points}()},
+\code{\link{ternary_polygon}()}
 }
 \author{
 N. Frerebeau

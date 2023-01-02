@@ -47,10 +47,9 @@ ternary_plot(x, y, z, ...)
 )
 }
 \arguments{
-\item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z cartesian coordinates
-of a set of points.
-If \code{y} and \code{z} are missing, an attempt is made to interpret \code{x} in a
-suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
+\item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z ternary coordinates
+of a set of points. If \code{y} and \code{z} are missing, an attempt is made to
+interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
 \item{...}{Other \link[graphics:par]{graphical parameters} (see \code{\link[graphics:par]{graphics::par()}}).}
 
@@ -119,7 +118,10 @@ ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
 \seealso{
 Other plot methods: 
 \code{\link{ternary_axis}()},
-\code{\link{ternary_grid}()}
+\code{\link{ternary_grid}()},
+\code{\link{ternary_lines}()},
+\code{\link{ternary_points}()},
+\code{\link{ternary_polygon}()}
 }
 \author{
 N. Frerebeau

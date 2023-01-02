@@ -48,10 +48,9 @@ setGeneric(
 #' Ternary Plot
 #'
 #' Produces a ternary plot.
-#' @param x,y,z A [`numeric`] vector giving the x, y and z cartesian coordinates
-#'  of a set of points.
-#'  If `y` and `z` are missing, an attempt is made to interpret `x` in a
-#'  suitable way (see [grDevices::xyz.coords()]).
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
 #' @param xlim A length-two [`numeric`] vector giving the `x` limits in the
 #'  range \eqn{[0,1]}.
 #' @param ylim A length-two [`numeric`] vector giving the `y` limits in the
@@ -136,3 +135,68 @@ NULL
 #' @family plot methods
 #' @name ternary_axis
 NULL
+
+# Geometry =====================================================================
+#' Add Connected Line Segments to a Ternary Plot
+#'
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param type A [`character`] string indicating the type of plotting; actually
+#'  any of the types as in [graphics::plot.default()].
+#' @param ... Further graphical parameters (see [graphics::par()]) may also be
+#'  supplied as arguments, particularly, line type, `lty`, line width, `lwd`,
+#'  color, `col` and for `type = "b"`, `pch`. Also the line characteristics
+#'  `lend`, `ljoin` and `lmitre`.
+#' @return
+#'  `ternary_lines()` is called it for its side-effects.
+#' @seealso [graphics::lines()]
+#' @example inst/examples/ex-plot.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+setGeneric(
+  name = "ternary_lines",
+  def = function(x, y, z, ...) standardGeneric("ternary_lines")
+)
+
+#' Add Points to a Ternary Plot
+#'
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param type A [`character`] string indicating the type of plotting; actually
+#'  any of the types as in [graphics::plot.default()].
+#' @param ... Further graphical parameters (see [graphics::par()]) may also be
+#'  supplied as arguments, particularly, plotting character, `pch`, character
+#'  expansion, `cex` and color, `col`.
+#' @return
+#'  `ternary_points()` is called it for its side-effects.
+#' @seealso [graphics::points()]
+#' @example inst/examples/ex-plot.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+setGeneric(
+  name = "ternary_points",
+  def = function(x, y, z, ...) standardGeneric("ternary_points")
+)
+
+#' Polygon Drawing
+#'
+#' Draws the polygons whose vertices are given in `x`, `y` and `z`.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param ... Further arguments to be passed to [graphics::polygon()].
+#' @return
+#'  `ternary_polygon()` is called it for its side-effects.
+#' @seealso [graphics::polygon()]
+#' @example inst/examples/ex-plot.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+setGeneric(
+  name = "ternary_polygon",
+  def = function(x, y, z, ...) standardGeneric("ternary_polygon")
+)

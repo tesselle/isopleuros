@@ -203,3 +203,79 @@ ternary_grid <- function(primary = NULL, secondary = NULL,
     )
   }
 }
+
+# Geometry =====================================================================
+## Lines -----------------------------------------------------------------------
+#' @export
+#' @rdname ternary_lines
+#' @aliases ternary_lines,numeric,numeric,numeric-method
+setMethod(
+  f = "ternary_lines",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z, type = "l", ...) {
+    coords <- coordinates_ternary(x, y, z)
+    graphics::lines(x = coords, type = type, ...)
+  }
+)
+
+#' @export
+#' @rdname ternary_lines
+#' @aliases ternary_lines,ANY,missing,missing-method
+setMethod(
+  f = "ternary_lines",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x, type = "l", ...) {
+    xyz <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, type = type, ...)
+  }
+)
+
+## Points ----------------------------------------------------------------------
+#' @export
+#' @rdname ternary_points
+#' @aliases ternary_points,numeric,numeric,numeric-method
+setMethod(
+  f = "ternary_points",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z, type = "l", ...) {
+    coords <- coordinates_ternary(x, y, z)
+    graphics::points(x = coords, type = type, ...)
+  }
+)
+
+#' @export
+#' @rdname ternary_points
+#' @aliases ternary_points,ANY,missing,missing-method
+setMethod(
+  f = "ternary_points",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x, type = "l", ...) {
+    xyz <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, type = type, ...)
+  }
+)
+
+## Polygon ---------------------------------------------------------------------
+#' @export
+#' @rdname ternary_polygon
+#' @aliases ternary_polygon,numeric,numeric,numeric-method
+setMethod(
+  f = "ternary_polygon",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z, ...) {
+    coords <- coordinates_ternary(x, y, z)
+    graphics::polygon(x = coords, ...)
+  }
+)
+
+#' @export
+#' @rdname ternary_polygon
+#' @aliases ternary_polygon,ANY,missing,missing-method
+setMethod(
+  f = "ternary_polygon",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x, ...) {
+    xyz <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, ...)
+  }
+)
