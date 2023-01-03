@@ -10,3 +10,6 @@ reference:
 - title: Ternary plot
   contents:
   - has_concept("plot methods")
+- title: Statistical summaries
+  contents:
+  - has_concept("statistics")

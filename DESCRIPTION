@@ -34,5 +34,6 @@ Collate:
     'coordinates.R'
     'isopleuros-package.R'
     'plot.R'
+    'statistics.R'
     'utilities.R'
 Config/testthat/edition: 3

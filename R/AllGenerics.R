@@ -222,3 +222,57 @@ setGeneric(
   name = "ternary_text",
   def = function(x, y, z, ...) standardGeneric("ternary_text")
 )
+
+# Statistics ===================================================================
+#' Add an Ellipse to a Ternary Plot
+#'
+#' Computes and draws a confidence/tolerance ellipse.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param radius A [`numeric`] vector specifying the scaling of the
+#'  half-diameters.
+#' @param level A [`numeric`] vector specifying the confidence/tolerance level.
+#' @param ... Further arguments to be passed to [graphics::polygon()].
+#' @return
+#'  `ternary_ellipse()` is called it for its side-effects.
+#' @seealso [graphics::polygon()]
+#' @example inst/examples/ex-statistics.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family statistics
+setGeneric(
+  name = "ternary_ellipse",
+  def = function(x, y, z, ...) standardGeneric("ternary_ellipse")
+)
+
+#' @rdname ternary_ellipse
+setGeneric(
+  name = "ternary_confidence",
+  def = function(x, y, z, ...) standardGeneric("ternary_confidence")
+)
+
+#' @rdname ternary_ellipse
+setGeneric(
+  name = "ternary_tolerance",
+  def = function(x, y, z, ...) standardGeneric("ternary_tolerance")
+)
+
+#' Convex Hull of a Set of Points
+#'
+#' Computes and draws the convex hull of the set of points specified.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param ... Further arguments to be passed to [graphics::polygon()].
+#' @return
+#'  `ternary_hull()` is called it for its side-effects.
+#' @seealso [grDevices::chull()], [graphics::polygon()]
+#' @example inst/examples/ex-statistics.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family statistics
+setGeneric(
+  name = "ternary_hull",
+  def = function(x, y, z, ...) standardGeneric("ternary_hull")
+)
