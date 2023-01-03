@@ -53,6 +53,10 @@ ternary_lines(coda, col = "red", lwd = 2)
 ## Add a polygon
 ternary_plot(NULL, panel.first = ternary_grid(5, 10))
 ternary_polygon(coda, density = 5, border = "red")
+
+## Add text
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_text(coda, col = "red")
 }
 \seealso{
 \code{\link[graphics:points]{graphics::points()}}
@@ -62,7 +66,8 @@ Other plot methods:
 \code{\link{ternary_grid}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_plot}()},
-\code{\link{ternary_polygon}()}
+\code{\link{ternary_polygon}()},
+\code{\link{ternary_text}()}
 }
 \author{
 N. Frerebeau

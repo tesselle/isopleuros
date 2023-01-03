@@ -19,3 +19,7 @@ ternary_lines(coda, col = "red", lwd = 2)
 ## Add a polygon
 ternary_plot(NULL, panel.first = ternary_grid(5, 10))
 ternary_polygon(coda, density = 5, border = "red")
+
+## Add text
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_text(coda, col = "red")

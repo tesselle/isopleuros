@@ -60,9 +60,9 @@ ternary_plot(NULL)
 
 ## Compositional data
 coda <- data.frame(
-  X = c(1, 0, 0, 1/3),
-  Y = c(0, 1, 0, 1/3),
-  Z = c(0, 0, 1, 1/3)
+  X = c(20, 60, 20, 20),
+  Y = c(20, 20, 60, 40),
+  Z = c(60, 20, 20, 40)
 )
 
 ## Ternary plot
@@ -88,7 +88,8 @@ Other plot methods:
 \code{\link{ternary_lines}()},
 \code{\link{ternary_plot}()},
 \code{\link{ternary_points}()},
-\code{\link{ternary_polygon}()}
+\code{\link{ternary_polygon}()},
+\code{\link{ternary_text}()}
 }
 \author{
 N. Frerebeau

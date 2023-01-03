@@ -46,3 +46,19 @@ test_that("Polygon", {
   }
   vdiffr::expect_doppelganger("geom_polygon", geom_polygon)
 })
+test_that("Text", {
+  skip_if_not_installed("vdiffr")
+
+  coda <- data.frame(
+    X = c(20, 60, 20, 20),
+    Y = c(20, 20, 60, 40),
+    Z = c(60, 20, 20, 40)
+  )
+
+  ## Add text
+  geom_text <- function() {
+    ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+    ternary_text(coda, col = "red")
+  }
+  vdiffr::expect_doppelganger("geom_text", geom_text)
+})

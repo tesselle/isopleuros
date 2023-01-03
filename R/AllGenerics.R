@@ -200,3 +200,25 @@ setGeneric(
   name = "ternary_polygon",
   def = function(x, y, z, ...) standardGeneric("ternary_polygon")
 )
+
+#' Add Text to a Ternary Plot
+#'
+#' Draws the strings given in the vector `labels` at the coordinates given by
+#' `x`, `y` and `z`.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param labels A [`character`] vector or [`expression`] specifying the text
+#'  to be written.
+#' @param ... Further arguments to be passed to [graphics::text()].
+#' @return
+#'  `ternary_text()` is called it for its side-effects.
+#' @seealso [graphics::text()]
+#' @example inst/examples/ex-geometry.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+setGeneric(
+  name = "ternary_text",
+  def = function(x, y, z, ...) standardGeneric("ternary_text")
+)
