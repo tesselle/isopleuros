@@ -59,7 +59,7 @@ possible. This means that you should not be confused if you are familiar
 with the standard R graphics environment.
 
 ``` r
-## Data from Husi 2022
+## Data from Barrera and Velde 1989
 data("verre", package = "folio")
 
 ## Select data
@@ -67,9 +67,17 @@ coda <- verre[, c("Na2O", "CaO", "K2O")]
 
 ## Ternary plot
 ternary_plot(coda, panel.first = ternary_grid())
+
+## Split data
+groups <- split(coda, f = coda$Na2O > 5)
+
+## Add tolerance ellipses
+for (group in groups) {
+  ternary_tolerance(group, level = 0.95, border = "blue", lty = 2)
+}
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="man/figures/README-ternary-1.png" style="display: block; margin: auto;" />
 
 ## Contributing
 
