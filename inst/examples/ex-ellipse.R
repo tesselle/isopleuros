@@ -1,4 +1,4 @@
-## Compositiona data
+## Compositional data
 coda <- data.frame(
   X = c(96, 49, 57, 92, 62, 85, 75, 76, 30, 36,
         55, 93, 78, 10, 50, 69, 50, 91, 13, 24),
@@ -12,7 +12,3 @@ coda <- data.frame(
 ternary_plot(coda, panel.first = ternary_grid(5, 10))
 ternary_tolerance(coda, level = 0.95, border = "blue", lty = 2)
 ternary_confidence(coda, level = 0.95, border = "red", lty = 3)
-
-## Convex hull
-ternary_plot(coda, panel.first = ternary_grid(5, 10))
-ternary_hull(coda, border = "red")

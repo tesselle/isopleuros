@@ -237,7 +237,7 @@ setGeneric(
 #' @return
 #'  `ternary_ellipse()` is called it for its side-effects.
 #' @seealso [graphics::polygon()]
-#' @example inst/examples/ex-statistics.R
+#' @example inst/examples/ex-ellipse.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family statistics
@@ -268,7 +268,7 @@ setGeneric(
 #' @return
 #'  `ternary_hull()` is called it for its side-effects.
 #' @seealso [grDevices::chull()], [graphics::polygon()]
-#' @example inst/examples/ex-statistics.R
+#' @example inst/examples/ex-hull.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family statistics
