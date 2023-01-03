@@ -9,9 +9,9 @@
 \usage{
 ternary_points(x, y, z, ...)
 
-\S4method{ternary_points}{numeric,numeric,numeric}(x, y, z, type = "l", ...)
+\S4method{ternary_points}{numeric,numeric,numeric}(x, y, z, type = "p", ...)
 
-\S4method{ternary_points}{ANY,missing,missing}(x, type = "l", ...)
+\S4method{ternary_points}{ANY,missing,missing}(x, type = "p", ...)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z ternary coordinates
@@ -34,29 +34,25 @@ Add Points to a Ternary Plot
 \examples{
 ## Compositional data
 coda <- data.frame(
-  X = c(1, 0, 0, 1/3),
-  Y = c(0, 1, 0, 1/3),
-  Z = c(0, 0, 1, 1/3)
+  X = c(20, 60, 20, 20),
+  Y = c(20, 20, 60, 40),
+  Z = c(60, 20, 20, 40)
 )
 
 ## Ternary plot
-ternary_plot(coda)
-ternary_plot(coda, pch = 16, col = "red", cex = 1:4)
-
-## Add a grid
-ternary_grid(5, 0)
 ternary_plot(coda, panel.first = ternary_grid(5, 10))
 
-## Add axis
-ternary_plot(coda, axes = FALSE)
-ternary_axis(side = 1, col = "red")
-ternary_axis(side = 2, col = "blue")
-ternary_axis(side = 3, col = "green")
+## Add points
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_points(coda, col = "red", pch = 16)
 
-## Zoom
-ternary_plot(coda, xlim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, ylim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
+## Add lines
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_lines(coda, col = "red", lwd = 2)
+
+## Add a polygon
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_polygon(coda, density = 5, border = "red")
 }
 \seealso{
 \code{\link[graphics:points]{graphics::points()}}

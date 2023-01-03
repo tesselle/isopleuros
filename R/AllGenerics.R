@@ -151,7 +151,7 @@ NULL
 #' @return
 #'  `ternary_lines()` is called it for its side-effects.
 #' @seealso [graphics::lines()]
-#' @example inst/examples/ex-plot.R
+#' @example inst/examples/ex-geometry.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
@@ -173,7 +173,7 @@ setGeneric(
 #' @return
 #'  `ternary_points()` is called it for its side-effects.
 #' @seealso [graphics::points()]
-#' @example inst/examples/ex-plot.R
+#' @example inst/examples/ex-geometry.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
@@ -192,7 +192,7 @@ setGeneric(
 #' @return
 #'  `ternary_polygon()` is called it for its side-effects.
 #' @seealso [graphics::polygon()]
-#' @example inst/examples/ex-plot.R
+#' @example inst/examples/ex-geometry.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods

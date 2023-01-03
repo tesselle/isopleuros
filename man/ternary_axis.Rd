@@ -55,6 +55,9 @@ arguments to this function, particularly, \code{cex.axis}, \code{col.axis} and
 Adds an axis to the current plot.
 }
 \examples{
+## Blank plot
+ternary_plot(NULL)
+
 ## Compositional data
 coda <- data.frame(
   X = c(1, 0, 0, 1/3),
@@ -63,11 +66,9 @@ coda <- data.frame(
 )
 
 ## Ternary plot
-ternary_plot(coda)
-ternary_plot(coda, pch = 16, col = "red", cex = 1:4)
+ternary_plot(coda, pch = 16, col = "red")
 
 ## Add a grid
-ternary_grid(5, 0)
 ternary_plot(coda, panel.first = ternary_grid(5, 10))
 
 ## Add axis

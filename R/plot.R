@@ -19,7 +19,8 @@ setMethod(
                         panel.first = NULL, panel.last = NULL, ...) {
 
     ## Save and restore graphical parameters
-    old_par <- graphics::par(mar = c(1, 1, 1, 1), pty = "s", no.readonly = TRUE)
+    old_par <- graphics::par(mar = c(2, 1, 2, 1), mgp = c(0, 1, 0),
+                             pty = "s", no.readonly = TRUE)
     on.exit(graphics::par(old_par))
 
     ## Zoom
@@ -39,6 +40,7 @@ setMethod(
     fg <- list(...)$fg %||% graphics::par("fg")
     col.lab <- list(...)$col.lab %||% graphics::par("col.lab")
     cex.lab <- list(...)$cex.lab %||% graphics::par("cex.lab")
+    font.lab <- list(...)$font.lab %||% graphics::par("font.lab")
 
     ## Draw triangle
     graphics::plot(NULL, xlim = lim$x, ylim = lim$y, main = main, sub = sub,
@@ -46,10 +48,9 @@ setMethod(
 
     panel.first
 
-    if (frame.plot) {
-      graphics::polygon(x = c(0, 0.5, 1), y = c(0, .top, 0),
-                        border = fg, lty = "solid", lwd = 1)
-    }
+    ternary_points(x = x, y = y, z = z, ...)
+
+    panel.last
 
     if (axes) {
       ternary_axis(side = 1, col = fg)
@@ -57,23 +58,23 @@ setMethod(
       ternary_axis(side = 3, col = fg)
     }
 
+    if (frame.plot) {
+      graphics::polygon(x = c(0, 0.5, 1), y = c(0, .top, 0),
+                        border = fg, lty = "solid", lwd = 1)
+    }
+
     if (!is.null(xlab)) {
       graphics::text(x = 0, y = 0, label = xlab, pos = 1,
-                     col = col.lab, cex = cex.lab)
+                     col = col.lab, cex = cex.lab, font = font.lab)
     }
     if (!is.null(ylab)) {
       graphics::text(x = 1, y = 0, label = ylab, pos = 1,
-                     col = col.lab, cex = cex.lab)
+                     col = col.lab, cex = cex.lab, font = font.lab)
     }
     if (!is.null(zlab)) {
       graphics::text(x = 0.5, y = .top, label = zlab, pos = 3,
-                     col = col.lab, cex = cex.lab)
+                     col = col.lab, cex = cex.lab, font = font.lab)
     }
-
-    coords <- coordinates_ternary(x, y, z)
-    graphics::points(x = coords, ...)
-
-    panel.last
 
     invisible()
   }
@@ -92,12 +93,21 @@ setMethod(
                         panel.first = NULL, panel.last = NULL, ...) {
 
     xyz <- grDevices::xyz.coords(x, xlab = xlab, ylab = ylab, zlab = zlab)
-    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
-                         xlim = xlim, ylim = ylim, zlim = zlim,
-                         xlab = xyz$xlab, ylab = xyz$ylab, zlab = xyz$zlab,
-                         main = main, sub = sub, axes = axes,
-                         frame.plot = frame.plot, panel.first = panel.first,
-                         panel.last = panel.last, ...)
+    methods::callGeneric(
+      x = xyz$x, y = xyz$y, z = xyz$z,
+      xlim = xlim,
+      ylim = ylim,
+      zlim = zlim,
+      xlab = xlab %||% xyz$xlab %||% "x",
+      ylab = ylab %||% xyz$ylab %||% "y",
+      zlab = zlab %||% xyz$zlab %||% "z",
+      main = main, sub = sub,
+      axes = axes,
+      frame.plot = frame.plot,
+      panel.first = panel.first,
+      panel.last = panel.last,
+      ...
+    )
   }
 )
 
@@ -237,7 +247,7 @@ setMethod(
 setMethod(
   f = "ternary_points",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
-  definition = function(x, y, z, type = "l", ...) {
+  definition = function(x, y, z, type = "p", ...) {
     coords <- coordinates_ternary(x, y, z)
     graphics::points(x = coords, type = type, ...)
   }
@@ -249,7 +259,7 @@ setMethod(
 setMethod(
   f = "ternary_points",
   signature = c(x = "ANY", y = "missing", z = "missing"),
-  definition = function(x, type = "l", ...) {
+  definition = function(x, type = "p", ...) {
     xyz <- grDevices::xyz.coords(x)
     methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, type = type, ...)
   }

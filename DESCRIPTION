@@ -26,12 +26,13 @@ Imports:
     graphics,
     grDevices,
     methods
+Suggests: 
+    testthat (>= 3.0.0),
+    vdiffr (>= 1.0.0)
 Collate: 
     'AllGenerics.R'
     'coordinates.R'
     'isopleuros-package.R'
     'plot.R'
     'utilities.R'
-Suggests: 
-    testthat (>= 3.0.0)
 Config/testthat/edition: 3

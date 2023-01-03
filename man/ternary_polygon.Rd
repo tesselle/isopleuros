@@ -29,29 +29,25 @@ Draws the polygons whose vertices are given in \code{x}, \code{y} and \code{z}.
 \examples{
 ## Compositional data
 coda <- data.frame(
-  X = c(1, 0, 0, 1/3),
-  Y = c(0, 1, 0, 1/3),
-  Z = c(0, 0, 1, 1/3)
+  X = c(20, 60, 20, 20),
+  Y = c(20, 20, 60, 40),
+  Z = c(60, 20, 20, 40)
 )
 
 ## Ternary plot
-ternary_plot(coda)
-ternary_plot(coda, pch = 16, col = "red", cex = 1:4)
-
-## Add a grid
-ternary_grid(5, 0)
 ternary_plot(coda, panel.first = ternary_grid(5, 10))
 
-## Add axis
-ternary_plot(coda, axes = FALSE)
-ternary_axis(side = 1, col = "red")
-ternary_axis(side = 2, col = "blue")
-ternary_axis(side = 3, col = "green")
+## Add points
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_points(coda, col = "red", pch = 16)
 
-## Zoom
-ternary_plot(coda, xlim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, ylim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
+## Add lines
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_lines(coda, col = "red", lwd = 2)
+
+## Add a polygon
+ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+ternary_polygon(coda, density = 5, border = "red")
 }
 \seealso{
 \code{\link[graphics:polygon]{graphics::polygon()}}
