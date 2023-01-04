@@ -31,8 +31,8 @@ labels, and places them this many lines outwards from the plot edge.}
 margins of the plot?}
 
 \item{...}{Other \link[graphics:par]{graphical parameters} may also be passed as
-arguments to this function, particularly, \code{font.main}, \code{cex.main} and
-\code{col.main}, \code{font.sub}, \code{cex.sub} and \code{col.sub} for title annotation;
+arguments to this function, particularly, \code{font.main}, \code{cex.main},
+\code{col.main} and \code{font.sub}, \code{cex.sub}, \code{col.sub} for title annotation;
 \code{font.lab}, \code{cex.lab} and \code{col.lab} for axis label.}
 }
 \value{

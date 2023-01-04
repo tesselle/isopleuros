@@ -71,7 +71,8 @@ setGeneric(
 #'  background grids.
 #' @param panel.last An `expression` to be evaluated after plotting has taken
 #'  place but before the axes, title and box are added.
-#' @param ... Other [graphical parameters][graphics::par] (see [graphics::par()]).
+#' @param ... Other [graphical parameters][graphics::par] may also be passed as
+#'  arguments to this function.
 #' @return
 #'  `ternary_plot()` is called it for its side-effects: it results in a graphic
 #'  being displayed.
@@ -85,6 +86,7 @@ setGeneric(
   def = function(x, y, z, ...) standardGeneric("ternary_plot")
 )
 
+## Grid ------------------------------------------------------------------------
 #' Add Grid to a Ternary Plot
 #'
 #' Adds a triangular grid to an existing plot.
@@ -107,6 +109,7 @@ setGeneric(
 #' @name ternary_grid
 NULL
 
+## Axis ------------------------------------------------------------------------
 #' Add an Axis to a Ternary Plot
 #'
 #' Adds an axis to the current plot.
@@ -138,6 +141,7 @@ NULL
 #' @name ternary_axis
 NULL
 
+## Annotation ------------------------------------------------------------------
 #' Ternary Plot Annotation
 #'
 #' @param main A [`character`] string specifying the main title (on top).
@@ -149,8 +153,8 @@ NULL
 #' @param outer A [`logical`] scalar: should the titles be placed in the outer
 #'  margins of the plot?
 #' @param ... Other [graphical parameters][graphics::par] may also be passed as
-#'  arguments to this function, particularly, `font.main`, `cex.main` and
-#'  `col.main`, `font.sub`, `cex.sub` and `col.sub` for title annotation;
+#'  arguments to this function, particularly, `font.main`, `cex.main`,
+#'  `col.main` and `font.sub`, `cex.sub`, `col.sub` for title annotation;
 #'  `font.lab`, `cex.lab` and `col.lab` for axis label.
 #' @return
 #'  `ternary_title()` is called it for its side-effects.
@@ -177,6 +181,7 @@ NULL
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
+#' @aliases ternary_arrows-method
 setGeneric(
   name = "ternary_arrows",
   def = function(x0, y0, z0, ...) standardGeneric("ternary_arrows")
@@ -200,6 +205,7 @@ setGeneric(
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
+#' @aliases ternary_lines-method
 setGeneric(
   name = "ternary_lines",
   def = function(x, y, z, ...) standardGeneric("ternary_lines")
@@ -222,6 +228,7 @@ setGeneric(
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
+#' @aliases ternary_points-method
 setGeneric(
   name = "ternary_points",
   def = function(x, y, z, ...) standardGeneric("ternary_points")
@@ -241,6 +248,7 @@ setGeneric(
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
+#' @aliases ternary_polygon-method
 setGeneric(
   name = "ternary_polygon",
   def = function(x, y, z, ...) standardGeneric("ternary_polygon")
@@ -263,6 +271,7 @@ setGeneric(
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
+#' @aliases ternary_text-method
 setGeneric(
   name = "ternary_text",
   def = function(x, y, z, ...) standardGeneric("ternary_text")
@@ -286,6 +295,7 @@ setGeneric(
 #' @author N. Frerebeau
 #' @docType methods
 #' @family statistics
+#' @aliases ternary_ellipse-method
 setGeneric(
   name = "ternary_ellipse",
   def = function(x, y, z, ...) standardGeneric("ternary_ellipse")
@@ -317,6 +327,7 @@ setGeneric(
 #' @author N. Frerebeau
 #' @docType methods
 #' @family statistics
+#' @aliases ternary_hull-method
 setGeneric(
   name = "ternary_hull",
   def = function(x, y, z, ...) standardGeneric("ternary_hull")

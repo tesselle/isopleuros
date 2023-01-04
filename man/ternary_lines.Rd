@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_lines}
 \alias{ternary_lines}
+\alias{ternary_lines-method}
 \alias{ternary_lines,numeric,numeric,numeric-method}
 \alias{ternary_lines,ANY,missing,missing-method}
 \title{Add Connected Line Segments to a Ternary Plot}

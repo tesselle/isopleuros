@@ -53,7 +53,8 @@ ternary_plot(x, y, z, ...)
 of a set of points. If \code{y} and \code{z} are missing, an attempt is made to
 interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
-\item{...}{Other \link[graphics:par]{graphical parameters} (see \code{\link[graphics:par]{graphics::par()}}).}
+\item{...}{Other \link[graphics:par]{graphical parameters} may also be passed as
+arguments to this function.}
 
 \item{xlim}{A length-two \code{\link{numeric}} vector giving the \code{x} limits in the
 range \eqn{[0,1]}.}

@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_arrows}
 \alias{ternary_arrows}
+\alias{ternary_arrows-method}
 \alias{ternary_arrows,numeric,numeric,numeric-method}
 \title{Add Arrows to a Ternary Plot}
 \usage{

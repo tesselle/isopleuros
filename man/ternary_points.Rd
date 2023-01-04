@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_points}
 \alias{ternary_points}
+\alias{ternary_points-method}
 \alias{ternary_points,numeric,numeric,numeric-method}
 \alias{ternary_points,ANY,missing,missing-method}
 \title{Add Points to a Ternary Plot}

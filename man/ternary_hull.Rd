@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_hull}
 \alias{ternary_hull}
+\alias{ternary_hull-method}
 \alias{ternary_hull,numeric,numeric,numeric-method}
 \alias{ternary_hull,ANY,missing,missing-method}
 \title{Convex Hull of a Set of Points}

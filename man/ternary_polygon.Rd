@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_polygon}
 \alias{ternary_polygon}
+\alias{ternary_polygon-method}
 \alias{ternary_polygon,numeric,numeric,numeric-method}
 \alias{ternary_polygon,ANY,missing,missing-method}
 \title{Polygon Drawing}

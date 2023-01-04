@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_ellipse}
 \alias{ternary_ellipse}
+\alias{ternary_ellipse-method}
 \alias{ternary_confidence}
 \alias{ternary_tolerance}
 \alias{ternary_ellipse,numeric,numeric,numeric-method}

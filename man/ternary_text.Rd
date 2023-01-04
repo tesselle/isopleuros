@@ -3,6 +3,7 @@
 \docType{methods}
 \name{ternary_text}
 \alias{ternary_text}
+\alias{ternary_text-method}
 \alias{ternary_text,numeric,numeric,numeric-method}
 \alias{ternary_text,ANY,missing,missing-method}
 \title{Add Text to a Ternary Plot}
