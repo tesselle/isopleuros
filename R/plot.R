@@ -32,7 +32,7 @@ setMethod(
 
     ## Set plotting coordinates
     if (is.null(xlim) && is.null(ylim) && is.null(zlim)) {
-      lim <- list(x = c(0, 1), y = c(0, 1))
+      lim <- list(x = c(0, 1), y = c(-graphics::par("cxy")[2L], 1))
     } else {
       xrange <- yrange <- zrange <- NULL
       if (!is.null(xlim)) xrange <- boundary(1, xlim)
