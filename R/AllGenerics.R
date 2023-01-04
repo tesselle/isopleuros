@@ -131,7 +131,7 @@ NULL
 #'  `font.axis` for axis annotation.
 #' @return
 #'  `ternary_axis()` is called it for its side-effects.
-#' @example inst/examples/ex-plot.R
+#' @example inst/examples/ex-axis.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family plot methods
