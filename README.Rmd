@@ -76,6 +76,14 @@ for (group in groups) {
 }
 ```
 
+```{r pairs, fig.width=7, fig.height=7, fig.align='center'}
+## Select data
+coda <- verre[, c("Na2O", "CaO", "K2O", "MgO", "P2O5", "SiO2", "Al2O3")]
+
+## Ternary plots with marginal compositions
+ternary_pairs(coda, col = as.factor(coda$Na2O > 5))
+```
+
 ## Contributing
 
 Please note that the **isopleuros** project is released with a [Contributor Code of Conduct](https://www.tesselle.org/conduct.html). By contributing to this project, you agree to abide by its terms.

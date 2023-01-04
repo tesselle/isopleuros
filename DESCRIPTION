@@ -25,7 +25,8 @@ RoxygenNote: 7.2.1
 Imports: 
     graphics,
     grDevices,
-    methods
+    methods,
+    utils
 Suggests: 
     testthat (>= 3.0.0),
     vdiffr (>= 1.0.0)
@@ -33,6 +34,7 @@ Collate:
     'AllGenerics.R'
     'coordinates.R'
     'isopleuros-package.R'
+    'pairs.R'
     'plot.R'
     'statistics.R'
     'utilities.R'

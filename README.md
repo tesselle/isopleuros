@@ -79,6 +79,16 @@ for (group in groups) {
 
 <img src="man/figures/README-ternary-1.png" style="display: block; margin: auto;" />
 
+``` r
+## Select data
+coda <- verre[, c("Na2O", "CaO", "K2O", "MgO", "P2O5", "SiO2", "Al2O3")]
+
+## Ternary plots with marginal compositions
+ternary_pairs(coda, col = as.factor(coda$Na2O > 5))
+```
+
+<img src="man/figures/README-pairs-1.png" style="display: block; margin: auto;" />
+
 ## Contributing
 
 Please note that the **isopleuros** project is released with a

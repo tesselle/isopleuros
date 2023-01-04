@@ -168,6 +168,30 @@ NULL
 #' @name ternary_title
 NULL
 
+## Pairs -----------------------------------------------------------------------
+#' Ternary Plot Matrices
+#'
+#' Produces a matrix of ternary plots.
+#' @param x A [`matrix`] or a [`data.frame`]. Columns are converted to `numeric`
+#'  in the same way that [data.matrix()] does.
+#' @param margin A [`character`] string or an [`integer`] giving the index of
+#'  the column to be used as the thrid part of the ternary plots. If `NULL`
+#'  (the default), marginal compositions will be used (i.e. the geometric mean
+#'  of the non-selected parts).
+#' @param ... Further arguments to be passed to [graphics::arrows()].
+#' @return
+#'  `ternary_pairs()` is called it for its side-effects.
+#' @seealso [graphics::arrows()]
+#' @example inst/examples/ex-pairs.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+#' @aliases ternary_pairs-method
+setGeneric(
+  name = "ternary_pairs",
+  def = function(x, ...) standardGeneric("ternary_pairs")
+)
+
 # Geometry =====================================================================
 #' Add Arrows to a Ternary Plot
 #'

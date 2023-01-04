@@ -20,7 +20,7 @@ setMethod(
 
     ## Save and restore graphical parameters
     old_par <- graphics::par(pty = "s", no.readonly = TRUE)
-    on.exit(graphics::par(old_par), add = FALSE)
+    on.exit(graphics::par(old_par), add = TRUE)
 
     ## Graphical parameters
     fg <- list(...)$fg %||% graphics::par("fg")
