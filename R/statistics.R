@@ -119,3 +119,31 @@ setMethod(
     methods::callGeneric(x = x$x, y = x$y, z = x$z, ...)
   }
 )
+
+# Mean =========================================================================
+#' @export
+#' @rdname ternary_mean
+#' @aliases ternary_mean,numeric,numeric,numeric-method
+setMethod(
+  f = "ternary_mean",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z, ...) {
+    x <- gmean(x)
+    y <- gmean(y)
+    z <- gmean(z)
+
+    ternary_points(x = x, y = y, z = z, ...)
+  }
+)
+
+#' @export
+#' @rdname ternary_mean
+#' @aliases ternary_mean,ANY,missing,missing-method
+setMethod(
+  f = "ternary_mean",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x, ...) {
+    x <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = x$x, y = x$y, z = x$z, ...)
+  }
+)

@@ -70,7 +70,8 @@ ternary_confidence(coda, level = 0.95, border = "red", lty = 3)
 \code{\link[graphics:polygon]{graphics::polygon()}}
 
 Other statistics: 
-\code{\link{ternary_hull}()}
+\code{\link{ternary_hull}()},
+\code{\link{ternary_mean}()}
 }
 \author{
 N. Frerebeau

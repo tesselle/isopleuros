@@ -359,3 +359,22 @@ setGeneric(
   name = "ternary_hull",
   def = function(x, y, z, ...) standardGeneric("ternary_hull")
 )
+
+#' Compositional Mean
+#'
+#' Computes and draws the closed geometric mean of the set of points specified.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param ... Further arguments to be passed to [graphics::points()].
+#' @return
+#'  `ternary_mean()` is called it for its side-effects.
+#' @example inst/examples/ex-mean.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family statistics
+#' @aliases ternary_mean-method
+setGeneric(
+  name = "ternary_mean",
+  def = function(x, y, z, ...) standardGeneric("ternary_mean")
+)
