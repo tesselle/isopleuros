@@ -20,17 +20,17 @@
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
 </g>
 <defs>
-  <clipPath id='cpMTAwLjgwfDYxOS4yMHwyOC44MHw1NDcuMjA='>
-    <rect x='100.80' y='28.80' width='518.40' height='518.40' />
+  <clipPath id='cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY='>
+    <rect x='152.64' y='59.04' width='443.52' height='443.52' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTAwLjgwfDYxOS4yMHwyOC44MHw1NDcuMjA=)'>
-<circle cx='141.82' cy='506.18' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='578.18' cy='506.18' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='360.00' cy='128.28' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='360.00' cy='380.21' r='2.70' style='stroke-width: 0.75;' />
-<text x='141.82' y='520.26' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>X</text>
-<text x='578.18' y='520.26' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>Y</text>
-<text x='360.00' y='121.08' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='7.33px' lengthAdjust='spacingAndGlyphs'>Z</text>
+<g clip-path='url(#cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY=)'>
+<circle cx='169.07' cy='486.13' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='579.73' cy='486.13' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='374.40' cy='130.49' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='374.40' cy='367.58' r='2.70' style='stroke-width: 0.75;' />
+<text x='169.07' y='500.22' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>X</text>
+<text x='579.73' y='500.22' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>Y</text>
+<text x='374.40' y='123.29' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='7.33px' lengthAdjust='spacingAndGlyphs'>Z</text>
 </g>
 </svg>

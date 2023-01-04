@@ -2,6 +2,7 @@
 
 export(ternary_axis)
 export(ternary_grid)
+export(ternary_title)
 exportMethods(coordinates_cartesian)
 exportMethods(coordinates_ternary)
 exportMethods(ternary_arrows)

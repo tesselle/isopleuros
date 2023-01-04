@@ -14,18 +14,25 @@ setMethod(
   definition = function(x, y, z,
                         xlim = NULL, ylim = NULL, zlim = NULL,
                         xlab = NULL, ylab = NULL, zlab = NULL,
-                        main = NULL, sub = NULL,
+                        main = NULL, sub = NULL, ann = graphics::par("ann"),
                         axes = TRUE, frame.plot = axes,
                         panel.first = NULL, panel.last = NULL, ...) {
 
     ## Save and restore graphical parameters
-    old_par <- graphics::par(mar = c(2, 1, 2, 1), mgp = c(0, 1, 0),
-                             pty = "s", no.readonly = TRUE)
-    on.exit(graphics::par(old_par))
+    old_par <- graphics::par(pty = "s", no.readonly = TRUE)
+    on.exit(graphics::par(old_par), add = FALSE)
 
-    ## Zoom
+    ## Graphical parameters
+    fg <- list(...)$fg %||% graphics::par("fg")
+
+    ## Open new window
+    grDevices::dev.hold()
+    on.exit(grDevices::dev.flush(), add = TRUE)
+    graphics::plot.new()
+
+    ## Set plotting coordinates
     if (is.null(xlim) && is.null(ylim) && is.null(zlim)) {
-      lim <- list(x = c(-0.05, 1.05), y = c(-0.05, 1.05))
+      lim <- list(x = c(0, 1), y = c(0, 1))
     } else {
       xrange <- yrange <- zrange <- NULL
       if (!is.null(xlim)) xrange <- boundary(1, xlim)
@@ -35,45 +42,34 @@ setMethod(
       lim$x <- range(lim$x)
       lim$y <- range(lim$y)
     }
+    graphics::plot.window(xlim = lim$x, ylim = lim$y, asp = 1)
 
-    ## Graphical parameters
-    fg <- list(...)$fg %||% graphics::par("fg")
-    col.lab <- list(...)$col.lab %||% graphics::par("col.lab")
-    cex.lab <- list(...)$cex.lab %||% graphics::par("cex.lab")
-    font.lab <- list(...)$font.lab %||% graphics::par("font.lab")
-
-    ## Draw triangle
-    graphics::plot(NULL, xlim = lim$x, ylim = lim$y, main = main, sub = sub,
-                   xlab = "", ylab = "", axes = FALSE, asp = 1)
-
+    ## Evaluate pre-plot expressions
     panel.first
 
+    ## Plot
     ternary_points(x = x, y = y, z = z, ...)
 
+    ## Evaluate post-plot and pre-axis expressions
     panel.last
 
+    ## Construct Axis
     if (axes) {
       ternary_axis(side = 1, col = fg)
       ternary_axis(side = 2, col = fg)
       ternary_axis(side = 3, col = fg)
     }
 
+    ## Plot frame
     if (frame.plot) {
       graphics::polygon(x = c(0, 0.5, 1), y = c(0, .top, 0),
                         border = fg, lty = "solid", lwd = 1)
     }
 
-    if (!is.null(xlab)) {
-      graphics::text(x = 0, y = 0, label = xlab, pos = 1,
-                     col = col.lab, cex = cex.lab, font = font.lab)
-    }
-    if (!is.null(ylab)) {
-      graphics::text(x = 1, y = 0, label = ylab, pos = 1,
-                     col = col.lab, cex = cex.lab, font = font.lab)
-    }
-    if (!is.null(zlab)) {
-      graphics::text(x = 0.5, y = .top, label = zlab, pos = 3,
-                     col = col.lab, cex = cex.lab, font = font.lab)
+    ## Add annotation
+    if (ann) {
+      ternary_title(main = main, sub = sub, xlab = xlab, ylab = ylab,
+                    zlab = zlab, ...)
     }
 
     invisible()
@@ -88,7 +84,7 @@ setMethod(
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, xlim = NULL, ylim = NULL, zlim = NULL,
                         xlab = NULL, ylab = NULL, zlab = NULL,
-                        main = NULL, sub = NULL,
+                        main = NULL, sub = NULL, ann = graphics::par("ann"),
                         axes = TRUE, frame.plot = axes,
                         panel.first = NULL, panel.last = NULL, ...) {
 
@@ -101,7 +97,7 @@ setMethod(
       xlab = xlab %||% xyz$xlab %||% "x",
       ylab = ylab %||% xyz$ylab %||% "y",
       zlab = zlab %||% xyz$zlab %||% "z",
-      main = main, sub = sub,
+      main = main, sub = sub, ann = ann,
       axes = axes,
       frame.plot = frame.plot,
       panel.first = panel.first,
@@ -212,6 +208,41 @@ ternary_grid <- function(primary = NULL, secondary = NULL,
       lty = lty, lwd = lwd, col = col
     )
   }
+}
+
+# Title ========================================================================
+#' @export
+#' @rdname ternary_title
+ternary_title <- function(main = NULL, sub = NULL, xlab = NULL, ylab = NULL,
+                          zlab = NULL, line = NA, outer = FALSE, ...) {
+  ## Graphical parameters
+  cex.lab <- list(...)$cex.lab %||% graphics::par("cex.lab")
+  col.lab <- list(...)$col.lab %||% graphics::par("col.lab")
+  font.lab <- list(...)$font.lab %||% graphics::par("font.lab")
+
+  ## Axes labels
+  xlab <- grDevices::as.graphicsAnnot(xlab)
+  ylab <- grDevices::as.graphicsAnnot(ylab)
+  zlab <- grDevices::as.graphicsAnnot(zlab)
+
+  if (!is.null(xlab)) {
+    graphics::text(x = 0, y = 0, label = xlab, pos = 1,
+                   col = col.lab, cex = cex.lab, font = font.lab)
+  }
+  if (!is.null(ylab)) {
+    graphics::text(x = 1, y = 0, label = ylab, pos = 1,
+                   col = col.lab, cex = cex.lab, font = font.lab)
+  }
+  if (!is.null(zlab)) {
+    graphics::text(x = 0.5, y = .top, label = zlab, pos = 3,
+                   col = col.lab, cex = cex.lab, font = font.lab)
+  }
+
+  ## Title
+  graphics::title(main = main, sub = sub, xlab = NULL, ylab = NULL,
+                  line = line, outer = outer)
+
+  invisible()
 }
 
 # Geometry =====================================================================

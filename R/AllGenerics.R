@@ -61,6 +61,8 @@ setGeneric(
 #'  z axes.
 #' @param main A [`character`] string giving a main title for the plot.
 #' @param sub A [`character`] string giving a subtitle for the plot.
+#' @param ann A [`logical`] scalar: should the default annotation (title and x,
+#'  y and z axis labels) appear on the plot?
 #' @param axes A [`logical`] scalar: should axes be drawn on the plot?
 #' @param frame.plot A [`logical`] scalar: should a box be drawn around the
 #'  plot?
@@ -134,6 +136,29 @@ NULL
 #' @docType methods
 #' @family plot methods
 #' @name ternary_axis
+NULL
+
+#' Ternary Plot Annotation
+#'
+#' @param main A [`character`] string specifying the main title (on top).
+#' @param sub A [`character`] string specifying the sub-title (at bottom).
+#' @param xlab,ylab,zlab A [`character`] string giving a label for the x, y and
+#'  z axes.
+#' @param line Specifying a value for `line` overrides the default placement of
+#'  labels, and places them this many lines outwards from the plot edge.
+#' @param outer A [`logical`] scalar: should the titles be placed in the outer
+#'  margins of the plot?
+#' @param ... Other [graphical parameters][graphics::par] may also be passed as
+#'  arguments to this function, particularly, `font.main`, `cex.main` and
+#'  `col.main`, `font.sub`, `cex.sub` and `col.sub` for title annotation;
+#'  `font.lab`, `cex.lab` and `col.lab` for axis label.
+#' @return
+#'  `ternary_title()` is called it for its side-effects.
+#' @example inst/examples/ex-title.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+#' @name ternary_title
 NULL
 
 # Geometry =====================================================================

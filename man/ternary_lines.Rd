@@ -54,7 +54,8 @@ Other plot methods:
 \code{\link{ternary_plot}()},
 \code{\link{ternary_points}()},
 \code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()}
+\code{\link{ternary_text}()},
+\code{\link{ternary_title}()}
 }
 \author{
 N. Frerebeau

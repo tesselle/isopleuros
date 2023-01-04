@@ -22,6 +22,7 @@ ternary_plot(x, y, z, ...)
   zlab = NULL,
   main = NULL,
   sub = NULL,
+  ann = graphics::par("ann"),
   axes = TRUE,
   frame.plot = axes,
   panel.first = NULL,
@@ -39,6 +40,7 @@ ternary_plot(x, y, z, ...)
   zlab = NULL,
   main = NULL,
   sub = NULL,
+  ann = graphics::par("ann"),
   axes = TRUE,
   frame.plot = axes,
   panel.first = NULL,
@@ -68,6 +70,9 @@ z axes.}
 \item{main}{A \code{\link{character}} string giving a main title for the plot.}
 
 \item{sub}{A \code{\link{character}} string giving a subtitle for the plot.}
+
+\item{ann}{A \code{\link{logical}} scalar: should the default annotation (title and x,
+y and z axis labels) appear on the plot?}
 
 \item{axes}{A \code{\link{logical}} scalar: should axes be drawn on the plot?}
 
@@ -124,7 +129,8 @@ Other plot methods:
 \code{\link{ternary_lines}()},
 \code{\link{ternary_points}()},
 \code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()}
+\code{\link{ternary_text}()},
+\code{\link{ternary_title}()}
 }
 \author{
 N. Frerebeau
