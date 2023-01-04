@@ -10,6 +10,9 @@ NULL
 #'  of a set of points.
 #'  If `y` and `z` are missing, an attempt is made to interpret `x` in a
 #'  suitable way (see [grDevices::xyz.coords()]).
+#' @param missing A [`logical`] scalar: should [missing values][NA] be replaced
+#'  with zeros before the computation proceeds? If `FALSE` (the default),
+#'  incomplete cases are removed.
 #' @param ... Currently not used.
 #' @return A [`list`].
 #' @example inst/examples/ex-coordinates.R

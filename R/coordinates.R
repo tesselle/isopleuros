@@ -8,7 +8,19 @@ NULL
 setMethod(
   f = "coordinates_ternary",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
-  definition = function(x, y, z) {
+  definition = function(x, y, z, missing = FALSE) {
+    ## Missing values
+    if (missing) {
+      x[is.na(x)] <- 0
+      y[is.na(y)] <- 0
+      z[is.na(z)] <- 0
+    } else {
+      i <- !is.na(x) & !is.na(y) & !is.na(z)
+      x <- x[i]
+      y <- y[i]
+      z <- z[i]
+    }
+
     ## Validation
     if (any(x < 0 | y < 0 | z < 0)) {
       stop("Positive values are expected.", call. = FALSE)
@@ -29,9 +41,9 @@ setMethod(
 setMethod(
   f = "coordinates_ternary",
   signature = c(x = "ANY", y = "missing", z = "missing"),
-  definition = function(x) {
+  definition = function(x, missing = FALSE) {
     xyz <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, missing = missing)
   }
 )
 

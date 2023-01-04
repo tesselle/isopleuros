@@ -10,9 +10,9 @@
 \usage{
 coordinates_ternary(x, y, z, ...)
 
-\S4method{coordinates_ternary}{numeric,numeric,numeric}(x, y, z)
+\S4method{coordinates_ternary}{numeric,numeric,numeric}(x, y, z, missing = FALSE)
 
-\S4method{coordinates_ternary}{ANY,missing,missing}(x)
+\S4method{coordinates_ternary}{ANY,missing,missing}(x, missing = FALSE)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z cartesian coordinates
@@ -21,6 +21,10 @@ If \code{y} and \code{z} are missing, an attempt is made to interpret \code{x} i
 suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
 \item{...}{Currently not used.}
+
+\item{missing}{A \code{\link{logical}} scalar: should \link[=NA]{missing values} be replaced
+with zeros before the computation proceeds? If \code{FALSE} (the default),
+incomplete cases are removed.}
 }
 \value{
 A \code{\link{list}}.
