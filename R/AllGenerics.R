@@ -137,6 +137,26 @@ NULL
 NULL
 
 # Geometry =====================================================================
+#' Add Arrows to a Ternary Plot
+#'
+#' Draw arrows between pairs of points.
+#' @param x0,y0,z0 A [`numeric`] vector giving the x, y and z ternary
+#'  coordinates of points from which to draw.
+#' @param x1,y1,z1 A [`numeric`] vector giving the x, y and z ternary
+#'  coordinates of points to which to draw.
+#' @param ... Further arguments to be passed to [graphics::arrows()].
+#' @return
+#'  `ternary_arrows()` is called it for its side-effects.
+#' @seealso [graphics::arrows()]
+#' @example inst/examples/ex-geometry.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+setGeneric(
+  name = "ternary_arrows",
+  def = function(x0, y0, z0, ...) standardGeneric("ternary_arrows")
+)
+
 #' Add Connected Line Segments to a Ternary Plot
 #'
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
