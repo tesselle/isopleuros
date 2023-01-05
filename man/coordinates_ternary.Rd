@@ -10,9 +10,9 @@
 \usage{
 coordinates_ternary(x, y, z, ...)
 
-\S4method{coordinates_ternary}{numeric,numeric,numeric}(x, y, z, missing = FALSE)
+\S4method{coordinates_ternary}{numeric,numeric,numeric}(x, y, z, missing = getOption("isopleuros.missing"))
 
-\S4method{coordinates_ternary}{ANY,missing,missing}(x, missing = FALSE)
+\S4method{coordinates_ternary}{ANY,missing,missing}(x, missing = getOption("isopleuros.missing"))
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z cartesian coordinates

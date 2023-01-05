@@ -8,7 +8,7 @@ NULL
 setMethod(
   f = "coordinates_ternary",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
-  definition = function(x, y, z, missing = FALSE) {
+  definition = function(x, y, z, missing = getOption("isopleuros.missing")) {
     ## Missing values
     if (missing) {
       x[is.na(x)] <- 0
@@ -41,7 +41,7 @@ setMethod(
 setMethod(
   f = "coordinates_ternary",
   signature = c(x = "ANY", y = "missing", z = "missing"),
-  definition = function(x, missing = FALSE) {
+  definition = function(x, missing = getOption("isopleuros.missing")) {
     xyz <- grDevices::xyz.coords(x)
     methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, missing = missing)
   }

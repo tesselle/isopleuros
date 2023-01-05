@@ -17,6 +17,16 @@ Ternary plots made simple. This package allows to create ternary plot using 'gra
 \strong{License:} \tab GPL-3 \cr
 }
 }
+\section{Package options}{
+
+\code{isopleuros} uses the following \code{\link[=options]{options()}} to configure behavior:
+\itemize{
+\item \code{isopleuros.missing}: a \code{\link{logical}} scalar. Should \link[=NA]{missing values}
+be replaced with zeros before the ternary coordinates computation
+proceeds? If \code{FALSE} (the default), incomplete cases are removed.
+}
+}
+
 \seealso{
 Useful links:
 \itemize{

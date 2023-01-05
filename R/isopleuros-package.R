@@ -6,6 +6,12 @@
 #'  **License:** \tab GPL-3 \cr
 #' }
 #'
+#' @section Package options:
+#'  `isopleuros` uses the following [options()] to configure behavior:
+#'  * `isopleuros.missing`: a [`logical`] scalar. Should [missing values][NA]
+#'    be replaced with zeros before the ternary coordinates computation
+#'    proceeds? If `FALSE` (the default), incomplete cases are removed.
+#'
 #' @author
 #' **Full list of authors and contributors** (alphabetic order)
 #'
