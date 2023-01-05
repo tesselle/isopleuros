@@ -13,3 +13,6 @@ reference:
 - title: Statistical summaries
   contents:
   - has_concept("statistics")
+- title: Ternary charts
+  contents:
+  - has_concept("charts")

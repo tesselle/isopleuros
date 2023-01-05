@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' data-engine-version='2.0' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY='>
+    <rect x='152.64' y='59.04' width='443.52' height='443.52' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY=)'>
+<polygon points='176.02,472.22 374.40,128.62 572.78,472.22 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,128.62 407.12,323.81 278.63,294.50 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,128.62 407.12,323.81 516.83,375.31 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='278.63,294.50 407.12,323.81 367.02,396.93 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='407.12,323.81 516.83,375.31 572.78,472.22 ' style='stroke-width: 0.75; fill: none;' />
+<circle cx='374.40' cy='128.62' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='407.12' cy='323.81' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='278.63' cy='294.50' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='516.83' cy='375.31' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='367.02' cy='396.93' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='572.78' cy='472.22' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<text x='381.60' y='131.37' style='font-size: 12.00px; font-family: sans;' textLength='33.36px' lengthAdjust='spacingAndGlyphs'>quartz</text>
+<text x='414.32' y='326.56' style='font-size: 12.00px; font-family: sans;' textLength='46.70px' lengthAdjust='spacingAndGlyphs'>anorthite</text>
+<text x='271.43' y='297.25' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='62.70px' lengthAdjust='spacingAndGlyphs'>wollastonite</text>
+<text x='524.03' y='378.07' style='font-size: 12.00px; font-family: sans;' textLength='34.68px' lengthAdjust='spacingAndGlyphs'>mullite</text>
+<text x='359.82' y='399.69' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='48.71px' lengthAdjust='spacingAndGlyphs'>gehlenite</text>
+<text x='579.98' y='474.97' style='font-size: 12.00px; font-family: sans;' textLength='53.37px' lengthAdjust='spacingAndGlyphs'>corundum</text>
+</g>
+</svg>

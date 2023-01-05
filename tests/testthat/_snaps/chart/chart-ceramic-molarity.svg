@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' data-engine-version='2.0' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+</g>
+<defs>
+  <clipPath id='cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY='>
+    <rect x='152.64' y='59.04' width='443.52' height='443.52' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY=)'>
+<polygon points='176.02,472.22 374.40,128.62 572.78,472.22 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,128.62 374.40,300.42 275.21,300.42 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,128.62 374.40,300.42 493.43,334.78 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='275.21,300.42 374.40,300.42 324.81,386.32 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,300.42 493.43,334.78 572.78,472.22 ' style='stroke-width: 0.75; fill: none;' />
+<circle cx='374.40' cy='128.62' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='374.40' cy='300.42' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='275.21' cy='300.42' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='493.43' cy='334.78' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='324.81' cy='386.32' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='572.78' cy='472.22' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<text x='381.60' y='131.37' style='font-size: 12.00px; font-family: sans;' textLength='16.01px' lengthAdjust='spacingAndGlyphs'>qtz</text>
+<text x='381.60' y='303.17' style='font-size: 12.00px; font-family: sans;' textLength='13.35px' lengthAdjust='spacingAndGlyphs'>an</text>
+<text x='268.01' y='303.17' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='15.34px' lengthAdjust='spacingAndGlyphs'>wo</text>
+<text x='500.63' y='337.53' style='font-size: 12.00px; font-family: sans;' textLength='19.34px' lengthAdjust='spacingAndGlyphs'>mul</text>
+<text x='317.61' y='389.07' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='20.02px' lengthAdjust='spacingAndGlyphs'>geh</text>
+<text x='579.98' y='474.97' style='font-size: 12.00px; font-family: sans;' textLength='16.68px' lengthAdjust='spacingAndGlyphs'>crn</text>
+</g>
+</svg>

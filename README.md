@@ -46,19 +46,17 @@ remotes::install_github("tesselle/isopleuros")
 ## Usage
 
 ``` r
-## Install extra packages (if needed)
-# install.packages("folio")
-
-## Load packages
-library(folio) # Datasets
+## Load package
 library(isopleuros)
 ```
 
 **isopleuros** tries to mimic the way **graphics** works as much as
-possible. This means that you should not be confused if you are familiar
-with the standard R graphics environment.
+possible.
 
 ``` r
+## Install extra package (if needed)
+# install.packages("folio")
+
 ## Data from Barrera and Velde 1989
 data("verre", package = "folio")
 
@@ -73,7 +71,7 @@ groups <- split(coda, f = coda$Na2O > 5)
 
 ## Add tolerance ellipses
 for (group in groups) {
-  ternary_tolerance(group, level = 0.95, border = "blue", lty = 2)
+  ternary_tolerance(group, level = 0.975, border = "blue", lty = 2)
 }
 ```
 
@@ -81,13 +79,34 @@ for (group in groups) {
 
 ``` r
 ## Select data
-coda <- verre[, c("Na2O", "CaO", "K2O", "MgO", "P2O5", "SiO2", "Al2O3")]
+coda <- verre[, c("Na2O", "CaO", "K2O", "MgO", "P2O5", "Al2O3")]
 
 ## Ternary plots with marginal compositions
 ternary_pairs(coda, col = as.factor(coda$Na2O > 5))
 ```
 
 <img src="man/figures/README-pairs-1.png" style="display: block; margin: auto;" />
+
+``` r
+par(mfrow = c(2, 2), mar = c(0, 0, 0, 0) + 0.1)
+
+## Ceramic phase diagram
+ternary_plot(NULL, axes = FALSE, ann = FALSE, frame.plot = TRUE)
+triangle_phase_cas(symbol = TRUE, pch = 16)
+
+ternary_plot(NULL, xlab = "CaO", ylab = "Al2O3", zlab = "SiO2")
+triangle_phase_ceramic(symbol = TRUE, pch = 16)
+
+## HYPRES soil texture
+ternary_plot(NULL, xlab = "sand", ylab = "silt", zlab = "clay")
+triangle_soil_hypres()
+
+## USDA (1951) soil texture
+ternary_plot(NULL, xlab = "sand", ylab = "silt", zlab = "clay")
+triangle_soil_usda(symbol = TRUE)
+```
+
+<img src="man/figures/README-charts-1.png" style="display: block; margin: auto;" />
 
 ## Contributing
 

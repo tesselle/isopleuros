@@ -378,3 +378,32 @@ setGeneric(
   name = "ternary_mean",
   def = function(x, y, z, ...) standardGeneric("ternary_mean")
 )
+
+# Chart ========================================================================
+#' Ceramic Phase Diagram
+#'
+#' @param labels A [`logical`] scalar: should labels be displayed?
+#' @param symbol A [`logical`] scalar: should symbol be used instead of full
+#'  labels? Only used if `labels` is `TRUE`.
+#' @param mol A [`logical`] scalar: should molarity be used instead of molar
+#'  mass?
+#' @param ... Further arguments to be passed to [graphics::polygon()].
+#' @example inst/examples/ex-phases.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family charts
+#' @name triangle_phase_cas
+NULL
+
+#' Soil Texure Triangle
+#'
+#' @param labels A [`logical`] scalar: should labels be displayed?
+#' @param symbol A [`logical`] scalar: should symbol be used instead of full
+#'  labels? Only used if `labels` is `TRUE`.
+#' @param ... Further arguments to be passed to [graphics::polygon()].
+#' @example inst/examples/ex-soil.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family charts
+#' @name triangle_soil
+NULL
