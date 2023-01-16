@@ -82,7 +82,7 @@ setGeneric(
 #' @example inst/examples/ex-plot.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family graphical elements
 #' @aliases ternary_plot-method
 setGeneric(
   name = "ternary_plot",
@@ -108,7 +108,7 @@ setGeneric(
 #' @example inst/examples/ex-plot.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family graphical elements
 #' @name ternary_grid
 NULL
 
@@ -140,7 +140,7 @@ NULL
 #' @example inst/examples/ex-axis.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family graphical elements
 #' @name ternary_axis
 NULL
 
@@ -164,7 +164,7 @@ NULL
 #' @example inst/examples/ex-title.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family graphical elements
 #' @name ternary_title
 NULL
 
@@ -180,7 +180,7 @@ NULL
 #' @example inst/examples/ex-axis.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family graphical elements
 #' @name ternary_box
 NULL
 
@@ -201,7 +201,7 @@ NULL
 #' @example inst/examples/ex-pairs.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family graphical elements
 #' @aliases ternary_pairs-method
 setGeneric(
   name = "ternary_pairs",
@@ -223,7 +223,7 @@ setGeneric(
 #' @example inst/examples/ex-arrows.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family geometries
 #' @aliases ternary_arrows-method
 setGeneric(
   name = "ternary_arrows",
@@ -247,7 +247,7 @@ setGeneric(
 #' @example inst/examples/ex-lines.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family geometries
 #' @aliases ternary_lines-method
 setGeneric(
   name = "ternary_lines",
@@ -270,7 +270,7 @@ setGeneric(
 #' @example inst/examples/ex-points.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family geometries
 #' @aliases ternary_points-method
 setGeneric(
   name = "ternary_points",
@@ -290,7 +290,7 @@ setGeneric(
 #' @example inst/examples/ex-polygon.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family geometries
 #' @aliases ternary_polygon-method
 setGeneric(
   name = "ternary_polygon",
@@ -313,7 +313,7 @@ setGeneric(
 #' @example inst/examples/ex-text.R
 #' @author N. Frerebeau
 #' @docType methods
-#' @family plot methods
+#' @family geometries
 #' @aliases ternary_text-method
 setGeneric(
   name = "ternary_text",

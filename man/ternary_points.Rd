@@ -47,19 +47,13 @@ ternary_points(coda, col = "red", pch = 16)
 \seealso{
 \code{\link[graphics:points]{graphics::points()}}
 
-Other plot methods: 
+Other geometries: 
 \code{\link{ternary_arrows}()},
-\code{\link{ternary_axis}()},
-\code{\link{ternary_box}()},
-\code{\link{ternary_grid}()},
 \code{\link{ternary_lines}()},
-\code{\link{ternary_pairs}()},
-\code{\link{ternary_plot}()},
 \code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()},
-\code{\link{ternary_title}()}
+\code{\link{ternary_text}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{geometries}

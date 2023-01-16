@@ -31,19 +31,14 @@ ternary_plot(NULL, axes = FALSE)
 ternary_box(lty = "dashed", col = "red")
 }
 \seealso{
-Other plot methods: 
-\code{\link{ternary_arrows}()},
+Other graphical elements: 
 \code{\link{ternary_axis}()},
 \code{\link{ternary_grid}()},
-\code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},
 \code{\link{ternary_plot}()},
-\code{\link{ternary_points}()},
-\code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()},
 \code{\link{ternary_title}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{graphical elements}

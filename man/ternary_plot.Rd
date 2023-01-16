@@ -117,19 +117,14 @@ ternary_plot(coda, ylim = c(0.5, 1), panel.first = ternary_grid())
 ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
 }
 \seealso{
-Other plot methods: 
-\code{\link{ternary_arrows}()},
+Other graphical elements: 
 \code{\link{ternary_axis}()},
 \code{\link{ternary_box}()},
 \code{\link{ternary_grid}()},
-\code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},
-\code{\link{ternary_points}()},
-\code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()},
 \code{\link{ternary_title}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{graphical elements}

@@ -48,19 +48,13 @@ ternary_lines(coda, col = "red", lwd = 2)
 \seealso{
 \code{\link[graphics:lines]{graphics::lines()}}
 
-Other plot methods: 
+Other geometries: 
 \code{\link{ternary_arrows}()},
-\code{\link{ternary_axis}()},
-\code{\link{ternary_box}()},
-\code{\link{ternary_grid}()},
-\code{\link{ternary_pairs}()},
-\code{\link{ternary_plot}()},
 \code{\link{ternary_points}()},
 \code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()},
-\code{\link{ternary_title}()}
+\code{\link{ternary_text}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{geometries}

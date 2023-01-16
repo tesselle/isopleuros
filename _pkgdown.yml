@@ -9,7 +9,10 @@ template:
 reference:
 - title: Ternary plot
   contents:
-  - has_concept("plot methods")
+  - has_concept("graphical elements")
+- title: Geometries
+  contents:
+  - has_concept("geometries")
 - title: Statistical summaries
   contents:
   - has_concept("statistics")

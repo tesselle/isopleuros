@@ -4,7 +4,6 @@
   if (!is.null(x)) x else y
 }
 
-
 boundary <- function(side, limits) {
   limits <- range(limits)
   side_min <- diag(1, 3, 3) - limits[1L]

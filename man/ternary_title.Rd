@@ -51,19 +51,14 @@ ternary_title(main = "Main title", sub = "Subtitle",
               xlab = "A", ylab = "B", zlab = "C")
 }
 \seealso{
-Other plot methods: 
-\code{\link{ternary_arrows}()},
+Other graphical elements: 
 \code{\link{ternary_axis}()},
 \code{\link{ternary_box}()},
 \code{\link{ternary_grid}()},
-\code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},
-\code{\link{ternary_plot}()},
-\code{\link{ternary_points}()},
-\code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()}
+\code{\link{ternary_plot}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{graphical elements}

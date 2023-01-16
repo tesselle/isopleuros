@@ -42,19 +42,13 @@ ternary_polygon(coda, density = 5, border = "red")
 \seealso{
 \code{\link[graphics:polygon]{graphics::polygon()}}
 
-Other plot methods: 
+Other geometries: 
 \code{\link{ternary_arrows}()},
-\code{\link{ternary_axis}()},
-\code{\link{ternary_box}()},
-\code{\link{ternary_grid}()},
 \code{\link{ternary_lines}()},
-\code{\link{ternary_pairs}()},
-\code{\link{ternary_plot}()},
 \code{\link{ternary_points}()},
-\code{\link{ternary_text}()},
-\code{\link{ternary_title}()}
+\code{\link{ternary_text}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{geometries}

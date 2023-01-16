@@ -35,19 +35,13 @@ ternary_arrows(x0 = 40, y0 = 20, z0 = 40,
 \seealso{
 \code{\link[graphics:arrows]{graphics::arrows()}}
 
-Other plot methods: 
-\code{\link{ternary_axis}()},
-\code{\link{ternary_box}()},
-\code{\link{ternary_grid}()},
+Other geometries: 
 \code{\link{ternary_lines}()},
-\code{\link{ternary_pairs}()},
-\code{\link{ternary_plot}()},
 \code{\link{ternary_points}()},
 \code{\link{ternary_polygon}()},
-\code{\link{ternary_text}()},
-\code{\link{ternary_title}()}
+\code{\link{ternary_text}()}
 }
 \author{
 N. Frerebeau
 }
-\concept{plot methods}
+\concept{geometries}
