@@ -60,10 +60,14 @@ ternary_plot(NULL, axes = FALSE)
 ternary_axis(side = 1, col = "red")
 ternary_axis(side = 2, col = "blue")
 ternary_axis(side = 3, col = "green")
+
+ternary_plot(NULL, axes = FALSE)
+ternary_box(lty = "dashed", col = "red")
 }
 \seealso{
 Other plot methods: 
 \code{\link{ternary_arrows}()},
+\code{\link{ternary_box}()},
 \code{\link{ternary_grid}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},

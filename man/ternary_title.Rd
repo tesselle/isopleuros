@@ -54,6 +54,7 @@ ternary_title(main = "Main title", sub = "Subtitle",
 Other plot methods: 
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_axis}()},
+\code{\link{ternary_box}()},
 \code{\link{ternary_grid}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},

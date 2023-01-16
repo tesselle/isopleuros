@@ -62,8 +62,7 @@ setMethod(
 
     ## Plot frame
     if (frame.plot) {
-      graphics::polygon(x = c(0, 0.5, 1), y = c(0, .top, 0),
-                        border = fg, lty = "solid", lwd = 1)
+      ternary_box(lty = "solid", lwd = 1, col = fg)
     }
 
     ## Add annotation
@@ -163,6 +162,19 @@ ternary_axis <- function(side, at = NULL, labels = TRUE, tick = TRUE,
   }
 
   invisible()
+}
+
+# Box ==========================================================================
+#' @export
+#' @rdname ternary_box
+ternary_box <- function(lty = "solid", ...) {
+
+  ## Graphical parameters
+  col <- list(...)$col %||% graphics::par("fg")
+  lwd <- list(...)$lwd %||% 1
+
+  graphics::polygon(x = c(0, 0.5, 1), y = c(0, .top, 0),
+                    border = col, lty = lty, lwd = lwd)
 }
 
 # Grid =========================================================================

@@ -51,6 +51,7 @@ ternary_lines(coda, col = "red", lwd = 2)
 Other plot methods: 
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_axis}()},
+\code{\link{ternary_box}()},
 \code{\link{ternary_grid}()},
 \code{\link{ternary_pairs}()},
 \code{\link{ternary_plot}()},

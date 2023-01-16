@@ -64,6 +64,7 @@ ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
 Other plot methods: 
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_axis}()},
+\code{\link{ternary_box}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},
 \code{\link{ternary_plot}()},

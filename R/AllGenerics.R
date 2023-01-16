@@ -168,6 +168,22 @@ NULL
 #' @name ternary_title
 NULL
 
+## Box -------------------------------------------------------------------------
+#' Draw a Box around a Ternary Plot
+#'
+#' @param lty A [`character`] string or [`numeric`] value specifying the line
+#'  type of the box.
+#' @param ... Other [graphical parameters][graphics::par] may also be passed as
+#'  arguments to this function, particularly, `col` or `lwd`.
+#' @return
+#'  `ternary_box()` is called it for its side-effects.
+#' @example inst/examples/ex-axis.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family plot methods
+#' @name ternary_box
+NULL
+
 ## Pairs -----------------------------------------------------------------------
 #' Ternary Plot Matrices
 #'

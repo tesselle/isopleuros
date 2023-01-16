@@ -37,6 +37,7 @@ ternary_arrows(x0 = 40, y0 = 20, z0 = 40,
 
 Other plot methods: 
 \code{\link{ternary_axis}()},
+\code{\link{ternary_box}()},
 \code{\link{ternary_grid}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_pairs}()},
