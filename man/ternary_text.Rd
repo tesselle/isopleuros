@@ -50,7 +50,8 @@ Other geometries:
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_points}()},
-\code{\link{ternary_polygon}()}
+\code{\link{ternary_polygon}()},
+\code{\link{ternary_segments}()}
 }
 \author{
 N. Frerebeau

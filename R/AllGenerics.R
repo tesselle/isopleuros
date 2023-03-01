@@ -230,6 +230,29 @@ setGeneric(
   def = function(x0, y0, z0, ...) standardGeneric("ternary_arrows")
 )
 
+#' Add Line Segments to a Ternary Plot
+#'
+#' Draw line segments between pairs of points.
+#' @param x0,y0,z0 A [`numeric`] vector giving the x, y and z ternary
+#'  coordinates of points from which to draw.
+#' @param x1,y1,z1 A [`numeric`] vector giving the x, y and z ternary
+#'  coordinates of points to which to draw.
+#' @param ... Further graphical parameters (see [graphics::par()]) may also be
+#'  supplied as arguments, particularly, line type, `lty`, line width, `lwd` and
+#'  color, `col`. Also the line characteristics `lend`, `ljoin` and `lmitre`.
+#' @return
+#'  `ternary_segments()` is called it for its side-effects.
+#' @seealso [graphics::segments()]
+#' @example inst/examples/ex-segments.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family geometries
+#' @aliases ternary_segments-method
+setGeneric(
+  name = "ternary_segments",
+  def = function(x0, y0, z0, ...) standardGeneric("ternary_segments")
+)
+
 #' Add Connected Line Segments to a Ternary Plot
 #'
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates

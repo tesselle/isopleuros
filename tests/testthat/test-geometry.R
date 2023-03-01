@@ -57,6 +57,17 @@ test_that("Polygon", {
   }
   vdiffr::expect_doppelganger("geom_polygon", geom_polygon)
 })
+test_that("Segments", {
+  skip_if_not_installed("vdiffr")
+
+  ## Add Segments
+  geom_segments <- function() {
+    ternary_plot(NULL, panel.first = ternary_grid(5, 10))
+    ternary_segments(x0 = 40, y0 = 20, z0 = 40,
+                     x1 = 20, y1 = 40, z1 = 40)
+  }
+  vdiffr::expect_doppelganger("geom_segments", geom_segments)
+})
 test_that("Text", {
   skip_if_not_installed("vdiffr")
 

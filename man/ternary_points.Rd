@@ -51,6 +51,7 @@ Other geometries:
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_polygon}()},
+\code{\link{ternary_segments}()},
 \code{\link{ternary_text}()}
 }
 \author{
