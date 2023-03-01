@@ -36,6 +36,7 @@ ternary_arrows(x0 = 40, y0 = 20, z0 = 40,
 \code{\link[graphics:arrows]{graphics::arrows()}}
 
 Other geometries: 
+\code{\link{ternary_crosshairs}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_points}()},
 \code{\link{ternary_polygon}()},

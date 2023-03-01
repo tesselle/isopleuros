@@ -9,6 +9,34 @@ test_that("Arrows", {
   }
   vdiffr::expect_doppelganger("geom_arrows", geom_arrows)
 })
+test_that("Cross-hairs", {
+  skip_if_not_installed("vdiffr")
+
+  coda <- data.frame(
+    X = c(20, 60, 20, 20),
+    Y = c(20, 20, 60, 40),
+    Z = c(60, 20, 20, 40)
+  )
+
+  ## Add cross-hairs
+  geom_crosshairs_x <- function() {
+    ternary_plot(coda, panel.first = ternary_grid())
+    ternary_crosshairs(coda, y_mark = FALSE, z_mark = FALSE, col = "red")
+  }
+  vdiffr::expect_doppelganger("geom_crosshairs_x", geom_crosshairs_x)
+
+  geom_crosshairs_y <- function() {
+    ternary_plot(coda, panel.first = ternary_grid())
+    ternary_crosshairs(coda, x_mark = FALSE, z_mark = FALSE, col = "green")
+  }
+  vdiffr::expect_doppelganger("geom_crosshairs_y", geom_crosshairs_y)
+
+  geom_crosshairs_z <- function() {
+    ternary_plot(coda, panel.first = ternary_grid())
+    ternary_crosshairs(coda, x_mark = FALSE, y_mark = FALSE, col = "blue")
+  }
+  vdiffr::expect_doppelganger("geom_crosshairs_z", geom_crosshairs_z)
+})
 test_that("Lines", {
   skip_if_not_installed("vdiffr")
 

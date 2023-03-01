@@ -253,6 +253,29 @@ setGeneric(
   def = function(x0, y0, z0, ...) standardGeneric("ternary_segments")
 )
 
+#' Add Cross-Hairs to a Ternary Plot
+#'
+#' Draw lines that intersect at a point.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param x_mark,y_mark,z_mark A [`logical`] scalar: should the `x`, `y` or `z`
+#'  axis component be drawn?
+#' @param ... Further graphical parameters (see [graphics::par()]) may also be
+#'  supplied as arguments, particularly, line type, `lty`, line width, `lwd` and
+#'  color, `col`. Also the line characteristics `lend`, `ljoin` and `lmitre`.
+#' @return
+#'  `ternary_crosshairs()` is called it for its side-effects.
+#' @example inst/examples/ex-crosshairs.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family geometries
+#' @aliases ternary_crosshairs-method
+setGeneric(
+  name = "ternary_crosshairs",
+  def = function(x, y, z, ...) standardGeneric("ternary_crosshairs")
+)
+
 #' Add Connected Line Segments to a Ternary Plot
 #'
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
