@@ -10,9 +10,9 @@ setMethod(
   f = "ternary_ellipse",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
   definition = function(x, y, z, radius = 1, ...) {
-    ## ALR
+    ## ILR
     coda <- cbind(x, y, z)
-    ratio <- alr(coda)
+    ratio <- ilr(coda)
 
     ## Compute ellipse
     mu <- colMeans(ratio)
@@ -23,7 +23,7 @@ setMethod(
     xy <- ellipse(sigma = sigma, mu = mu, radius = radius)
 
     for (i in seq_along(xy)) {
-      tern <- alr_inv(xy[[i]]) # Inverse transform
+      tern <- ilr_inv(xy[[i]]) # Inverse transform
       coords <- coordinates_ternary(tern)
       graphics::polygon(x = coords$x, y = coords$y, ...)
     }

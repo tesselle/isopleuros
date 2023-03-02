@@ -104,39 +104,57 @@ gmean <- function(x, trim = 0, na.rm = FALSE) {
   exp(mean(log(unclass(x)[index]), trim = trim, na.rm = na.rm))
 }
 
-#' Additive Log-Ratios (ALR)
+
+#' Isometric Log-Ratios (ILR)
 #'
-#' Computes ALR transformation.
+#' Computes ILR transformation.
 #' @param x A [`numeric`] `matrix`.
-#' @param j An [`integer`] giving the index of the rationing part (denominator).
 #' @keywords internal
 #' @noRd
-alr <- function(x, j = ncol(x)) {
+ilr <- function(x) {
   D <- ncol(x)
-  parts <- colnames(x)
+  H <- ilr_base(D)
 
-  ## Reorder
-  j <- if (is.character(j)) which(parts == j) else as.integer(j)
-  ordering <- c(which(j != seq_len(D)), j)
-  parts <- parts[ordering]
-  x <- x[, ordering]
+  ## Rotated and centered values
+  y <- log(x, base = exp(1))
+  ilr <- y %*% H
 
-  base <- diag(1, nrow = D, ncol = D - 1)
-  base[D, ] <- -1
-
-  log(x, base = exp(1)) %*% base
+  ilr
 }
 
-#' Inverse Additive Log-Ratio Transformation
+#' Canonical Basis for Isometric Log-Ratio transformation
 #'
-#' Computes inverse ALR transformation.
-#' @param x A [`numeric`] `matrix`.
+#' Computes the canonical basis in the CLR plane used for ILR transformation.
+#' @param a A [`numeric`] value giving the number of parts of the simplex.
 #' @keywords internal
 #' @noRd
-alr_inv <- function(x) {
-  y <- exp(x)
-  y <- y / (1 + rowSums(y))
-  z <- 1 - rowSums(y)
+ilr_base <- function(n) {
+  seq_parts <- seq_len(n - 1)
 
-  cbind(y, z)
+  ## Helmert matrix (rotation matrix)
+  H <- stats::contr.helmert(n)                  # n x n-1
+  H <- t(H) / sqrt((seq_parts + 1) * seq_parts) # n-1 x n
+
+  ## Center
+  m <- diag(x = 1, nrow = n) - matrix(data = 1 / n, nrow = n, ncol = n)
+  H <- tcrossprod(m, H)
+
+  H
+}
+
+#' Inverse Isometric Log-Ratio Transformation
+#'
+#' Computes inverse ILR transformation.
+#' @param x A [`numeric`] `matrix` of log ratios.
+#' @keywords internal
+#' @noRd
+ilr_inv <- function(x) {
+  D <- ncol(x) + 1
+  H <- ilr_base(D)
+
+  y <- tcrossprod(x, H)
+  y <- exp(y)
+  y <- y / rowSums(y)
+
+  y
 }
