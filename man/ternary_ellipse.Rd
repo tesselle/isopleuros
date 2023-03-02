@@ -50,6 +50,10 @@ half-diameters.}
 \description{
 Computes and draws a confidence/tolerance ellipse.
 }
+\details{
+Ellipse coordinates are computed after an isometric log ratio transformation
+of the original data.
+}
 \examples{
 ## Compositional data
 coda <- data.frame(
@@ -70,6 +74,7 @@ ternary_confidence(coda, level = 0.95, border = "red", lty = 3)
 \code{\link[graphics:polygon]{graphics::polygon()}}
 
 Other statistics: 
+\code{\link{ternary_density}()},
 \code{\link{ternary_hull}()},
 \code{\link{ternary_mean}()}
 }

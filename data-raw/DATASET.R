@@ -1,3 +1,8 @@
+lava <- read.table("data-raw/lava.csv", header = TRUE, sep = ",", dec = ".",
+                   row.names = 1)
+usethis::use_data(lava, internal = FALSE, overwrite = TRUE)
+
+# Internal =====================================================================
 ## Phase diagram
 phases_triangle <- read.table("data-raw/phases.csv", header = TRUE, sep = ",", dec = ".")
 phases_chart <- phases_triangle$chart

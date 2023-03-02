@@ -45,6 +45,7 @@ ternary_confidence(coda, level = 0.95, border = "red", lty = 1)
 }
 \seealso{
 Other statistics: 
+\code{\link{ternary_density}()},
 \code{\link{ternary_ellipse}()},
 \code{\link{ternary_hull}()}
 }

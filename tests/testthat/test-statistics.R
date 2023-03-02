@@ -50,6 +50,16 @@ test_that("Convex hull", {
   }
   vdiffr::expect_doppelganger("convex_hull", convex_hull)
 })
+test_that("Density", {
+  skip_if_not_installed("vdiffr")
+
+  ## Density contours
+  density_contours <- function() {
+    ternary_plot(lava, panel.first = ternary_grid(5, 10))
+    ternary_density(lava, n = 500, nlevels = 10, col = c("yellow", "red"))
+  }
+  vdiffr::expect_doppelganger("density_contours", density_contours)
+})
 test_that("Mean", {
   skip_if_not_installed("vdiffr")
 

@@ -367,6 +367,7 @@ setGeneric(
 )
 
 # Statistics ===================================================================
+## Ellipse ---------------------------------------------------------------------
 #' Add an Ellipse to a Ternary Plot
 #'
 #' Computes and draws a confidence/tolerance ellipse.
@@ -377,6 +378,9 @@ setGeneric(
 #'  half-diameters.
 #' @param level A [`numeric`] vector specifying the confidence/tolerance level.
 #' @param ... Further arguments to be passed to [graphics::polygon()].
+#' @details
+#'  Ellipse coordinates are computed after an isometric log ratio transformation
+#'  of the original data.
 #' @return
 #'  `ternary_ellipse()` is called it for its side-effects.
 #' @seealso [graphics::polygon()]
@@ -402,6 +406,7 @@ setGeneric(
   def = function(x, y, z, ...) standardGeneric("ternary_tolerance")
 )
 
+## Convex hull -----------------------------------------------------------------
 #' Convex Hull of a Set of Points
 #'
 #' Computes and draws the convex hull of the set of points specified.
@@ -422,6 +427,47 @@ setGeneric(
   def = function(x, y, z, ...) standardGeneric("ternary_hull")
 )
 
+## Density ---------------------------------------------------------------------
+#' Density Contour Lines
+#'
+#' Computes and draws density contour lines.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param h A length-one [`numeric`] vector giving the bandwidth.
+#' @param n A length-one [`numeric`] specifying the number of grid points.
+#' @param nlevels A length-one [`numeric`] vector specifying the number of
+#'  contour levels desired. Only used if `levels` is `NULL`.
+#' @param levels A [`numeric`] vector of levels at which to draw contour lines.
+#' @param col Colors for the lines. If there are fewer colours than `levels`,
+#'  the colours will be interpolated and mapped to the level values.
+#' @param lty A [`character`] string or [`numeric`] value specifying the line
+#'  types.
+#' @param lwd A non-negative [`numeric`] value specifying the line widths.
+#' @param ... Further arguments to be passed to [ternary_lines()].
+#' @details
+#'  Two-dimensional kernel density estimation with an axis-aligned bivariate
+#'  normal kernel. Normal kernel is evaluated on a square grid, after an
+#'  isometric log ratio transformation of the original data.
+#' @return
+#'  `ternary_density()` is called it for its side-effects.
+#' @note
+#'  Two-dimensional kernel density estimation is adapted from [`MASS::kde2d()`].
+#'
+#'  This must be considered as experimental and subject to major changes
+#'  in a future release.
+#' @seealso [ternary_lines()]
+#' @example inst/examples/ex-density.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family statistics
+#' @aliases ternary_density-method
+setGeneric(
+  name = "ternary_density",
+  def = function(x, y, z, ...) standardGeneric("ternary_density")
+)
+
+## Mean ------------------------------------------------------------------------
 #' Compositional Mean
 #'
 #' Computes and draws the closed geometric mean of the set of points specified.

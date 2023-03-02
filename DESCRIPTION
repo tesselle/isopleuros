@@ -37,9 +37,11 @@ Collate:
     'AllGenerics.R'
     'chart.R'
     'coordinates.R'
+    'data.R'
     'isopleuros-package.R'
     'pairs.R'
     'plot.R'
     'statistics.R'
     'utilities.R'
     'zzz.R'
+LazyData: true
