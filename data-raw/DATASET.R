@@ -1,6 +1,15 @@
+## Data from Aitchison 1986
+arctic <- read.table("data-raw/arctic.csv", header = TRUE, sep = ",", dec = ".",
+                   row.names = 1)
+usethis::use_data(arctic, internal = FALSE, overwrite = TRUE)
+
 lava <- read.table("data-raw/lava.csv", header = TRUE, sep = ",", dec = ".",
                    row.names = 1)
 usethis::use_data(lava, internal = FALSE, overwrite = TRUE)
+
+boxite <- read.table("data-raw/boxite.csv", header = TRUE, sep = ",", dec = ".",
+                   row.names = 1)
+usethis::use_data(boxite, internal = FALSE, overwrite = TRUE)
 
 # Internal =====================================================================
 ## Phase diagram

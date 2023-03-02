@@ -33,25 +33,19 @@ axis component be drawn?}
 Draw lines that intersect at a point.
 }
 \examples{
-## Compositional data
-coda <- data.frame(
-  X = c(20, 60, 20, 20),
-  Y = c(20, 20, 60, 40),
-  Z = c(60, 20, 20, 40)
-)
-
 ## Add cross-hairs
-ternary_plot(coda, panel.first = ternary_grid())
-ternary_crosshairs(coda)
+## Data from Aitchison 1986
+ternary_plot(lava, panel.first = ternary_grid())
+ternary_crosshairs(lava)
 
-ternary_plot(coda, panel.first = ternary_grid())
-ternary_crosshairs(coda, y_mark = FALSE, z_mark = FALSE, col = "red")
+ternary_plot(lava, panel.first = ternary_grid())
+ternary_crosshairs(lava, y_mark = FALSE, z_mark = FALSE, col = "red")
 
-ternary_plot(coda, panel.first = ternary_grid())
-ternary_crosshairs(coda, x_mark = FALSE, z_mark = FALSE, col = "green")
+ternary_plot(lava, panel.first = ternary_grid())
+ternary_crosshairs(lava, x_mark = FALSE, z_mark = FALSE, col = "green")
 
-ternary_plot(coda, panel.first = ternary_grid())
-ternary_crosshairs(coda, x_mark = FALSE, y_mark = FALSE, col = "blue")
+ternary_plot(lava, panel.first = ternary_grid())
+ternary_crosshairs(lava, x_mark = FALSE, y_mark = FALSE, col = "blue")
 }
 \seealso{
 Other geometries: 

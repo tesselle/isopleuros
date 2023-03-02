@@ -19,3 +19,6 @@ reference:
 - title: Ternary charts
   contents:
   - has_concept("charts")
+- title: Datasets
+  contents:
+  - has_concept("datasets")

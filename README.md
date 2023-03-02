@@ -55,34 +55,42 @@ library(isopleuros)
 ```
 
 ``` r
+## Graphical parameters
+par(mfrow = c(1, 2), mar = c(0, 0, 0, 0) + 0.1)
+
+## Set colors
+col <- c("blue", "red")
+
+## Ternary plot
+## (data from Aitchison 1986)
+ternary_plot(
+  x = lava, 
+  panel.first = ternary_grid(),
+  col = col[as.factor(lava$A > 30)],
+)
+
+## Split data
+groups <- split(lava, f = lava$A > 30)
+
+## Add tolerance ellipses
+for (i in seq_along(groups)) {
+  ternary_tolerance(groups[[i]], level = 0.975, lty = 2, border = col[[i]])
+}
+
+## Density contours
+ternary_plot(lava, panel.first = ternary_grid())
+ternary_density(lava, n = 500, nlevels = 10, col = c("yellow", "red"))
+```
+
+<img src="man/figures/README-ternary-1.png" style="display: block; margin: auto;" />
+
+``` r
 ## Install extra package (if needed)
 # install.packages("folio")
 
 ## Data from Barrera and Velde 1989
 data("verre", package = "folio")
 
-## Select data
-coda <- verre[, c("Na2O", "CaO", "K2O")]
-
-## Ternary plot
-ternary_plot(
-  x = coda, 
-  panel.first = ternary_grid(),
-  col = as.factor(coda$Na2O > 5),
-)
-
-## Split data
-groups <- split(coda, f = coda$Na2O > 5)
-
-## Add tolerance ellipses
-for (group in groups) {
-  ternary_tolerance(group, level = 0.975, lty = 2)
-}
-```
-
-<img src="man/figures/README-ternary-1.png" style="display: block; margin: auto;" />
-
-``` r
 ## Select data
 coda <- verre[, c("Na2O", "CaO", "K2O", "MgO", "P2O5", "Al2O3")]
 
@@ -93,6 +101,7 @@ ternary_pairs(coda, col = as.factor(coda$Na2O > 5))
 <img src="man/figures/README-pairs-1.png" style="display: block; margin: auto;" />
 
 ``` r
+## Graphical parameters
 par(mfrow = c(2, 2), mar = c(0, 0, 0, 0) + 0.1)
 
 ## Ceramic phase diagram

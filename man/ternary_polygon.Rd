@@ -30,9 +30,9 @@ Draws the polygons whose vertices are given in \code{x}, \code{y} and \code{z}.
 \examples{
 ## Compositional data
 coda <- data.frame(
-  X = c(20, 60, 20, 20),
-  Y = c(20, 20, 60, 40),
-  Z = c(60, 20, 20, 40)
+  X = c(20, 60, 20),
+  Y = c(20, 20, 60),
+  Z = c(60, 20, 20)
 )
 
 ## Add a polygon

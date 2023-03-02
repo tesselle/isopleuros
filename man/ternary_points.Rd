@@ -33,16 +33,10 @@ any of the types as in \code{\link[graphics:plot.default]{graphics::plot.default
 Add Points to a Ternary Plot
 }
 \examples{
-## Compositional data
-coda <- data.frame(
-  X = c(20, 60, 20, 20),
-  Y = c(20, 20, 60, 40),
-  Z = c(60, 20, 20, 40)
-)
-
 ## Add points
+## Data from Aitchison 1986
 ternary_plot(NULL, panel.first = ternary_grid())
-ternary_points(coda, col = "red", pch = 16)
+ternary_points(lava, col = "red", pch = 16)
 }
 \seealso{
 \code{\link[graphics:points]{graphics::points()}}
