@@ -2,6 +2,7 @@
 #' @include AllGenerics.R
 NULL
 
+# Ternary to cartesian =========================================================
 #' @export
 #' @rdname coordinates_ternary
 #' @aliases coordinates_ternary,numeric,numeric,numeric-method
@@ -47,6 +48,7 @@ setMethod(
   }
 )
 
+# Cartesian to ternary =========================================================
 #' @export
 #' @rdname coordinates_cartesian
 #' @aliases coordinates_cartesian,numeric,numeric-method
@@ -78,3 +80,58 @@ setMethod(
     methods::callGeneric(x = xy$x, y = xy$y)
   }
 )
+
+# Isometric Log-Ratios =========================================================
+#' Isometric Log-Ratios (ILR)
+#'
+#' Computes ILR transformation.
+#' @param x A [`numeric`] `matrix`.
+#' @keywords internal
+#' @noRd
+ilr <- function(x) {
+  D <- ncol(x)
+  H <- ilr_base(D)
+
+  ## Rotated and centered values
+  y <- log(x, base = exp(1))
+  ilr <- y %*% H
+
+  ilr
+}
+
+#' Canonical Basis for Isometric Log-Ratio transformation
+#'
+#' Computes the canonical basis in the CLR plane used for ILR transformation.
+#' @param a A [`numeric`] value giving the number of parts of the simplex.
+#' @keywords internal
+#' @noRd
+ilr_base <- function(n) {
+  seq_parts <- seq_len(n - 1)
+
+  ## Helmert matrix (rotation matrix)
+  H <- stats::contr.helmert(n)                  # n x n-1
+  H <- t(H) / sqrt((seq_parts + 1) * seq_parts) # n-1 x n
+
+  ## Center
+  m <- diag(x = 1, nrow = n) - matrix(data = 1 / n, nrow = n, ncol = n)
+  H <- tcrossprod(m, H)
+
+  H
+}
+
+#' Inverse Isometric Log-Ratio Transformation
+#'
+#' Computes inverse ILR transformation.
+#' @param x A [`numeric`] `matrix` of log ratios.
+#' @keywords internal
+#' @noRd
+ilr_inv <- function(x) {
+  D <- ncol(x) + 1
+  H <- ilr_base(D)
+
+  y <- tcrossprod(x, H)
+  y <- exp(y)
+  y <- y / rowSums(y)
+
+  y
+}

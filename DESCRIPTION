@@ -8,13 +8,13 @@ Authors@R:
              email = "nicolas.frerebeau@u-bordeaux-montaigne.fr",
              comment = c(ORCID = "0000-0001-5759-4944", 
                          affiliation = "Université Bordeaux Montaigne")))
-Maintainer: Nicolas Frerebeau
-    <nicolas.frerebeau@u-bordeaux-montaigne.fr>
-Description: Ternary plots made simple. This package allows to create ternary 
-    plot using 'graphics'. It provides functions to display the data in the 
-    ternary space, to add or tune graphical elements and to display statistical 
-    summaries. It also includes common ternary diagrams useful for the 
-    archaeologist (e.g. soil texture charts, ceramic phase diagram).
+Maintainer: Nicolas Frerebeau <nicolas.frerebeau@u-bordeaux-montaigne.fr>
+Description: Ternary plots made simple. This package allows to create
+    ternary plot using 'graphics'. It provides functions to display the
+    data in the ternary space, to add or tune graphical elements and to
+    display statistical summaries. It also includes common ternary
+    diagrams useful for the archaeologist (e.g. soil texture charts,
+    ceramic phase diagram).
 License: GPL (>= 3)
 URL: https://packages.tesselle.org/isopleuros/,
     https://github.com/tesselle/isopleuros
@@ -31,17 +31,32 @@ Suggests:
     vdiffr (>= 1.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Collate: 
     'AllGenerics.R'
-    'chart.R'
     'coordinates.R'
     'data.R'
     'isopleuros-package.R'
-    'pairs.R'
-    'plot.R'
-    'statistics.R'
+    'ternary_arrows.R'
+    'ternary_axes.R'
+    'ternary_box.R'
+    'ternary_crosshairs.R'
+    'ternary_density.R'
+    'ternary_ellipse.R'
+    'ternary_grid.R'
+    'ternary_hull.R'
+    'ternary_lines.R'
+    'ternary_mean.R'
+    'ternary_pairs.R'
+    'ternary_plot.R'
+    'ternary_points.R'
+    'ternary_polygon.R'
+    'ternary_segments.R'
+    'ternary_text.R'
+    'ternary_title.R'
+    'triangle_phase.R'
+    'triangle_soil.R'
     'utilities.R'
     'zzz.R'
-LazyData: true
