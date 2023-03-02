@@ -11,45 +11,24 @@ setMethod(
   definition = function(x, y, z, h = NULL, n = 25, nlevels = 10, levels = NULL,
                         col = graphics::par("fg"), lty = graphics::par("lty"),
                         lwd = graphics::par("lwd"), ...) {
-    ## ILR
-    coda <- cbind(x, y, z)
-    ratio <- ilr(coda)
+    ## Calculate density contour lines
+    xy <- coordinates_kde(x = x, y = y, z = z, h = h, n = n,
+                          nlevels = nlevels, levels = levels)
 
-    ## Compute KDE
-    lims <- range(ratio)
-    lims <- lims + c(-1, 1) * (diff(lims) * 0.2) # Expand range
-    dens <- kde(
-      x = ratio[, 1],
-      y = ratio[, 2],
-      h = h,
-      n = n,
-      lims = c(lims, lims) # x and y range should be same
-    )
-
-    ## Compute contours
-    xy <- grDevices::contourLines(
-      x = dens$x,
-      y = dens$y,
-      z = dens$z,
-      nlevels = nlevels,
-      levels = levels %||% pretty(range(dens$z, na.rm = TRUE), nlevels)
-    )
+    ## Get contour levels
+    lvl <- vapply(X = xy, FUN = getElement, FUN.VALUE = numeric(1),
+                  name = "level")
 
     ## Map colors
     if (length(col) == 1) col <- rep(col, length(xy))
     if (length(col) < length(xy)) {
-      k <- vapply(
-        X = xy,
-        FUN = getElement,
-        FUN.VALUE = numeric(1),
-        name = "level"
-      )
-      k <- (k - min(k)) / (max(k) - min(k))
+      k <- (lvl - min(lvl)) / (max(lvl) - min(lvl))
       r <- grDevices::colorRamp(col)(k)
       col <- grDevices::rgb(r[, 1], r[, 2], r[, 3], maxColorValue = 255)
     }
 
     for (i in seq_along(xy)) {
+      ## Get contour
       level <- xy[[i]]
 
       ## Inverse ILR transform
@@ -58,6 +37,8 @@ setMethod(
       ## Plot ternary lines
       ternary_lines(tern, col = col[[i]], lty = lty, lwd = lwd, ...)
     }
+
+    invisible(list(levels = lvl, colors = col))
   }
 )
 
@@ -76,6 +57,54 @@ setMethod(
                          col = col, lty = lty, lwd = lwd, ...)
   }
 )
+
+#' Calculate KDE Contour Lines
+#'
+#' Computes 2D-KDE contours coordinates.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param h A length-one [`numeric`] vector giving the bandwidth.
+#' @param n A length-one [`numeric`] specifying the number of grid points.
+#' @param nlevels A length-one [`numeric`] vector specifying the number of
+#'  contour levels desired. Only used if `levels` is `NULL`.
+#' @param levels A [`numeric`] vector of levels at which to draw contour lines.
+#' @return
+#'  A [`list`] of contours, each itself a list with elements
+#'  (see [grDevices::contourLines()]):
+#'  \tabular{ll}{
+#'   `level` \tab The contour level. \cr
+#'   `x`     \tab The ILR x-coordinates of the contour. \cr
+#'   `y`     \tab The ILR y-coordinates of the contour. \cr
+#'  }
+#' @keywords internal
+#' @noRd
+coordinates_kde <- function(x, y, z, h = NULL, n = 25,
+                            nlevels = 10, levels = NULL) {
+  ## ILR
+  coda <- cbind(x, y, z)
+  ratio <- ilr(coda)
+
+  ## Compute KDE
+  lims <- range(ratio)
+  lims <- lims + c(-1, 1) * (diff(lims) * 0.2) # Expand range
+  dens <- kde(
+    x = ratio[, 1],
+    y = ratio[, 2],
+    h = h,
+    n = n,
+    lims = c(lims, lims) # x and y range should be same
+  )
+
+  ## Compute contours
+  grDevices::contourLines(
+    x = dens$x,
+    y = dens$y,
+    z = dens$z,
+    nlevels = nlevels,
+    levels = levels %||% pretty(range(dens$z, na.rm = TRUE), nlevels)
+  )
+}
 
 ## Adapted from MASS::kde2d
 kde <- function(x, y, h = NULL, n = 25, lims = c(range(x), range(y))) {

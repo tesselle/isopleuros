@@ -50,14 +50,16 @@ setMethod(
 #' @param scale If `sigma` is a correlation matrix, then the standard deviations
 #'  of each parameter can be given in the scale parameter.
 #'  Defaults to `c(1, 1)`, so no rescaling will be done.
-#' @param level A length-one [`numeric`] vector giving the confidence level of
-#'  a pairwise confidence region.
+#' @param level A length-\eqn{k} [`numeric`] vector giving the confidence level
+#'  of a pairwise confidence region.
 #' @param radius The size of the ellipse may also be controlled by specifying
 #'  the value of a t-statistic on its boundary.
 #' @param n A length-one [`numeric`] vector specifying the number of points used
 #'  in the ellipse.
 #' @note Adapted from [ellipse::ellipse()].
-#' @return An \eqn{n \times 2}{n x 2} `matrix`, suitable for plotting.
+#' @return
+#'  A [`list`] of \eqn{k} \eqn{n \times 2}{n x 2} `matrix`, suitable for
+#'  plotting.
 #' @keywords internal
 #' @noRd
 ellipse <- function(sigma, mu = c(0, 0), scale = c(1, 1), level = 0.95,

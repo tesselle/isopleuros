@@ -453,6 +453,9 @@ setGeneric(
 #'  isometric log ratio transformation of the original data.
 #' @return
 #'  `ternary_density()` is called it for its side-effects.
+#'
+#'  Invisibly returns a [`list`] with elements `levels` (the contour levels) and
+#'  `colors` (the contour colors) that can be used for a legend.
 #' @note
 #'  Two-dimensional kernel density estimation is adapted from [`MASS::kde2d()`].
 #'
