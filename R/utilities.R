@@ -4,6 +4,20 @@
   if (!is.null(x)) x else y
 }
 
+#' Expand Range
+#'
+#' @param x A [`numeric`] vector.
+#' @param mult A [`numeric`] value giving the multiplicative constant.
+#' @param add A [`numeric`] value giving the additive constant.
+#' @return A length-two [`numeric`] vector.
+#' @keywords internal
+#' @noRd
+expand_range <- function(x, mult = 0, add = 0) {
+  lims <- range(x)
+  lims <- lims + c(-1, 1) * (diff(lims) * mult + add)
+  lims
+}
+
 #' Rotate Around a Point
 #'
 #' @param x A column vector giving the x and y coordinates of the point to be

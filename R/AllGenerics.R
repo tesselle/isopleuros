@@ -429,6 +429,43 @@ setGeneric(
   def = function(x, y, z, ...) standardGeneric("ternary_hull")
 )
 
+## Contour ---------------------------------------------------------------------
+#' Contour Lines
+#'
+#' Computes and draws contour lines.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param value A [`numeric`] vector giving the values to be plotted.
+#' @param n A length-one [`numeric`] specifying the number of grid points.
+#' @param nlevels A length-one [`numeric`] vector specifying the number of
+#'  contour levels desired. Only used if `levels` is `NULL`.
+#' @param levels A [`numeric`] vector of levels at which to draw contour lines.
+#' @param palette A color palette [`function`] that takes a single integer
+#'  argument (the number of levels) and returns a vector of colors.
+#' @param ... Further arguments to be passed to [ternary_lines()].
+#' @details
+#'  Contour are computed from a bivariate interpolation onto a grid,
+#'  after an isometric log ratio transformation of the original data.
+#' @return
+#'  `ternary_contour()` is called it for its side-effects.
+#'
+#'  Invisibly returns a [`list`] with elements `levels` (the contour levels) and
+#'  `colors` (the contour colors) that can be used for a legend.
+#' @note
+#'  **This must be considered as highly experimental and subject to major
+#'  changes in a future release.**
+#' @seealso [akima::interp()]
+#' @example inst/examples/ex-contour.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family statistics
+#' @aliases ternary_contour-method
+setGeneric(
+  name = "ternary_contour",
+  def = function(x, y, z, ...) standardGeneric("ternary_contour")
+)
+
 ## Density ---------------------------------------------------------------------
 #' Density Contour Lines
 #'
@@ -441,11 +478,8 @@ setGeneric(
 #' @param nlevels A length-one [`numeric`] vector specifying the number of
 #'  contour levels desired. Only used if `levels` is `NULL`.
 #' @param levels A [`numeric`] vector of levels at which to draw contour lines.
-#' @param col Colors for the lines. If there are fewer colours than `levels`,
-#'  the colours will be interpolated and mapped to the level values.
-#' @param lty A [`character`] string or [`numeric`] value specifying the line
-#'  types.
-#' @param lwd A non-negative [`numeric`] value specifying the line widths.
+#' @param palette A color palette [`function`] that takes a single integer
+#'  argument (the number of levels) and returns a vector of colors.
 #' @param ... Further arguments to be passed to [ternary_lines()].
 #' @details
 #'  Two-dimensional kernel density estimation with an axis-aligned bivariate
@@ -459,9 +493,8 @@ setGeneric(
 #' @note
 #'  Two-dimensional kernel density estimation is adapted from [`MASS::kde2d()`].
 #'
-#'  This must be considered as experimental and subject to major changes
-#'  in a future release.
-#' @seealso [ternary_lines()]
+#'  **This must be considered as experimental and subject to major changes
+#'  in a future release.**
 #' @example inst/examples/ex-density.R
 #' @author N. Frerebeau
 #' @docType methods

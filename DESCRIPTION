@@ -27,6 +27,7 @@ Imports:
     methods,
     utils
 Suggests: 
+    akima,
     testthat (>= 3.0.0),
     vdiffr (>= 1.0.0)
 Config/testthat/edition: 3
@@ -42,6 +43,7 @@ Collate:
     'ternary_arrows.R'
     'ternary_axes.R'
     'ternary_box.R'
+    'ternary_contour.R'
     'ternary_crosshairs.R'
     'ternary_density.R'
     'ternary_ellipse.R'

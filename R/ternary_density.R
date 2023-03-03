@@ -9,8 +9,8 @@ setMethod(
   f = "ternary_density",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
   definition = function(x, y, z, h = NULL, n = 25, nlevels = 10, levels = NULL,
-                        col = graphics::par("fg"), lty = graphics::par("lty"),
-                        lwd = graphics::par("lwd"), ...) {
+                        palette = function(i) grDevices::hcl.colors(i, "YlOrRd", rev = TRUE),
+                        ...) {
     ## Calculate density contour lines
     xy <- coordinates_kde(x = x, y = y, z = z, h = h, n = n,
                           nlevels = nlevels, levels = levels)
@@ -19,14 +19,13 @@ setMethod(
     lvl <- vapply(X = xy, FUN = getElement, FUN.VALUE = numeric(1),
                   name = "level")
 
-    ## Map colors
-    if (length(col) == 1) col <- rep(col, length(xy))
-    if (length(col) < length(xy)) {
-      k <- (lvl - min(lvl)) / (max(lvl) - min(lvl))
-      r <- grDevices::colorRamp(col)(k)
-      col <- grDevices::rgb(r[, 1], r[, 2], r[, 3], maxColorValue = 255)
-    }
+    ## Colors
+    ## (number of levels may differ from nlevels due to pretty())
+    col <- palette(length(unique(lvl)))
+    names(col) <- unique(lvl)
+    col <- col[as.character(lvl)]
 
+    ## Plot
     for (i in seq_along(xy)) {
       ## Get contour
       level <- xy[[i]]
@@ -35,7 +34,7 @@ setMethod(
       tern <- ilr_inv(cbind(level$x, level$y))
 
       ## Plot ternary lines
-      ternary_lines(tern, col = col[[i]], lty = lty, lwd = lwd, ...)
+      ternary_lines(tern, col = col[[i]], ...)
     }
 
     invisible(list(levels = lvl, colors = col))
@@ -49,12 +48,12 @@ setMethod(
   f = "ternary_density",
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, h = NULL, n = 25, nlevels = 10, levels = NULL,
-                        col = graphics::par("fg"), lty = graphics::par("lty"),
-                        lwd = graphics::par("lwd"), ...) {
+                        palette = function(i) grDevices::hcl.colors(i, "YlOrRd", rev = TRUE),
+                        ...) {
     x <- grDevices::xyz.coords(x)
     methods::callGeneric(x = x$x, y = x$y, z = x$z,
                          h = h, n = n, nlevels = nlevels, levels = levels,
-                         col = col, lty = lty, lwd = lwd, ...)
+                         palette = palette, ...)
   }
 )
 
@@ -86,8 +85,7 @@ coordinates_kde <- function(x, y, z, h = NULL, n = 25,
   ratio <- ilr(coda)
 
   ## Compute KDE
-  lims <- range(ratio)
-  lims <- lims + c(-1, 1) * (diff(lims) * 0.2) # Expand range
+  lims <- expand_range(ratio, mult = 0.2)
   dens <- kde(
     x = ratio[, 1],
     y = ratio[, 2],

@@ -37,6 +37,7 @@ ternary_hull(lava, border = "red")
 \code{\link[grDevices:chull]{grDevices::chull()}}, \code{\link[graphics:polygon]{graphics::polygon()}}
 
 Other statistics: 
+\code{\link{ternary_contour}()},
 \code{\link{ternary_density}()},
 \code{\link{ternary_ellipse}()},
 \code{\link{ternary_mean}()}

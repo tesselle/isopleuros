@@ -1,7 +1,7 @@
 ## Add density
 ## Data from Aitchison 1986
-ternary_plot(lava, panel.first = ternary_grid())
-levels <- ternary_density(lava, n = 500, nlevels = 10)
+ternary_plot(arctic, panel.first = ternary_grid())
+levels <- ternary_contour(arctic, value = arctic$depth, n = 100, nlevels = 10)
 
 ## Add a legend
 legend_image <- grDevices::as.raster(rev(levels$colors))

@@ -79,7 +79,7 @@ for (i in seq_along(groups)) {
 
 ## Density contours
 ternary_plot(lava, panel.first = ternary_grid())
-ternary_density(lava, n = 500, nlevels = 10, col = c("yellow", "red"))
+ternary_density(lava, n = 500, nlevels = 10)
 ```
 
 <img src="man/figures/README-ternary-1.png" style="display: block; margin: auto;" />

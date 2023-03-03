@@ -65,7 +65,7 @@ test_that("Density", {
   ## Density contours
   density_contours <- function() {
     ternary_plot(coda, panel.first = ternary_grid(5, 10))
-    ternary_density(coda, n = 500, nlevels = 10, col = c("yellow", "red"))
+    ternary_density(coda, n = 500, nlevels = 10)
   }
   vdiffr::expect_doppelganger("density_contours", density_contours)
 })
