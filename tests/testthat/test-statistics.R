@@ -50,6 +50,38 @@ test_that("Convex hull", {
   }
   vdiffr::expect_doppelganger("convex_hull", convex_hull)
 })
+test_that("Contour", {
+  skip_if_not_installed("vdiffr")
+  skip_if_not_installed("akima")
+
+  a <- matrix(rep(seq(0, 1, length = 50), each = 50), nrow = 50, byrow = TRUE)
+  b <- matrix(rep(seq(0, 1, length = 50), each = 50), nrow = 50, byrow = FALSE)
+  mask <- a + b <= 1
+  a <- a[mask]
+  b <- b[mask]
+  coords <- cbind(b, 1 - a - b, a)
+  value <- sin(3.2 * pi * (a + b)) + sin(3 * pi * (a - b))
+
+  # col <- colorRamp(c("blue", "red"))(scales::rescale_mid(value))
+  # col <- rgb(col[, 1], col[, 2], col[, 3], maxColorValue = 255)
+  # ternary_plot(coords, panel.first = ternary_grid(), pch = 16, col = col)
+
+  ## Contour ILR
+  contour_ilr <- function() {
+    ternary_plot(NULL)
+    ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = TRUE)
+  }
+  vdiffr::expect_doppelganger("contour_ilr", contour_ilr)
+
+  ## Contour Cartesian
+  contour_cartesian <- function() {
+    ternary_plot(NULL)
+    suppressWarnings( # Remove warning from akima (collinear points)
+      ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = FALSE)
+    )
+  }
+  vdiffr::expect_doppelganger("contour_cartesian", contour_cartesian)
+})
 test_that("Density", {
   skip_if_not_installed("vdiffr")
 

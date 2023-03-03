@@ -83,6 +83,8 @@ graphics::rasterImage(legend_image, 0.85, 0.75, 0.9, 1)
 graphics::text(x = 0.9, y = c(0.75, 1), labels = range(levels$levels), pos = 4)
 }
 \seealso{
+\code{\link[grDevices:contourLines]{grDevices::contourLines()}}
+
 Other statistics: 
 \code{\link{ternary_contour}()},
 \code{\link{ternary_ellipse}()},

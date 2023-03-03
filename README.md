@@ -26,9 +26,9 @@ ternary space, to add or tune graphical elements and to display
 statistical summaries. It also includes common ternary diagrams useful
 for the archaeologist (e.g. soil texture charts, ceramic phase diagram).
 
-**isopleuros** is a dependency-free package designed to be as simple as
-possible. If you need finer tuning or more advanced features, you should
-consider the [**Ternary**](https://ms609.github.io/Ternary/) or
+**isopleuros** is a dependency-free package[^1] designed to be as simple
+as possible. If you need finer tuning or more advanced features, you
+should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 [**ggtern**](http://www.ggtern.com/) package.
 
 ## Installation
@@ -127,3 +127,6 @@ triangle_soil_usda(symbol = TRUE)
 Please note that the **isopleuros** project is released with a
 [Contributor Code of Conduct](https://www.tesselle.org/conduct.html). By
 contributing to this project, you agree to abide by its terms.
+
+[^1]: The only exception is the `ternary_contour()` function for which
+    the **akima** package is required, but is not installed by default.

@@ -443,6 +443,12 @@ setGeneric(
 #' @param levels A [`numeric`] vector of levels at which to draw contour lines.
 #' @param palette A color palette [`function`] that takes a single integer
 #'  argument (the number of levels) and returns a vector of colors.
+#' @param ilr A [`logical`] scalar: should interpolation be computed in ILR
+#'  space? If `FALSE`, interpolation is computed in Cartesian space.
+#' @param linear A [`logical`] scalar: should linear interpolation be used?
+#'  If `FALSE`, spline interpolation is used (see [akima::interp()]).
+#' @param extrapolate A [`logical`] scalar: should extrapolation be used outside
+#'  of the convex hull determined by the data points (see [akima::interp()])?
 #' @param ... Further arguments to be passed to [ternary_lines()].
 #' @details
 #'  Contour are computed from a bivariate interpolation onto a grid,
@@ -453,9 +459,8 @@ setGeneric(
 #'  Invisibly returns a [`list`] with elements `levels` (the contour levels) and
 #'  `colors` (the contour colors) that can be used for a legend.
 #' @note
-#'  **This must be considered as highly experimental and subject to major
-#'  changes in a future release.**
-#' @seealso [akima::interp()]
+#'  The \pkg{akima} package needs to be installed on your machine.
+#' @seealso [akima::interp()], [grDevices::contourLines()]
 #' @example inst/examples/ex-contour.R
 #' @author N. Frerebeau
 #' @docType methods
@@ -495,6 +500,7 @@ setGeneric(
 #'
 #'  **This must be considered as experimental and subject to major changes
 #'  in a future release.**
+#' @seealso [grDevices::contourLines()]
 #' @example inst/examples/ex-density.R
 #' @author N. Frerebeau
 #' @docType methods

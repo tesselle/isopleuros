@@ -18,6 +18,9 @@ ternary_contour(x, y, z, ...)
   n = 50,
   nlevels = 10,
   levels = pretty(range(value, na.rm = TRUE), nlevels),
+  ilr = TRUE,
+  linear = TRUE,
+  extrapolate = FALSE,
   palette = function(i) grDevices::hcl.colors(i, "YlOrRd", rev = TRUE),
   ...
 )
@@ -28,6 +31,9 @@ ternary_contour(x, y, z, ...)
   n = 50,
   nlevels = 10,
   levels = pretty(range(value, na.rm = TRUE), nlevels),
+  ilr = TRUE,
+  linear = TRUE,
+  extrapolate = FALSE,
   palette = function(i) grDevices::hcl.colors(i, "YlOrRd", rev = TRUE),
   ...
 )
@@ -48,6 +54,15 @@ contour levels desired. Only used if \code{levels} is \code{NULL}.}
 
 \item{levels}{A \code{\link{numeric}} vector of levels at which to draw contour lines.}
 
+\item{ilr}{A \code{\link{logical}} scalar: should interpolation be computed in ILR
+space? If \code{FALSE}, interpolation is computed in Cartesian space.}
+
+\item{linear}{A \code{\link{logical}} scalar: should linear interpolation be used?
+If \code{FALSE}, spline interpolation is used (see \code{\link[akima:interp]{akima::interp()}}).}
+
+\item{extrapolate}{A \code{\link{logical}} scalar: should extrapolation be used outside
+of the convex hull determined by the data points (see \code{\link[akima:interp]{akima::interp()}})?}
+
 \item{palette}{A color palette \code{\link{function}} that takes a single integer
 argument (the number of levels) and returns a vector of colors.}
 }
@@ -65,8 +80,7 @@ Contour are computed from a bivariate interpolation onto a grid,
 after an isometric log ratio transformation of the original data.
 }
 \note{
-\strong{This must be considered as highly experimental and subject to major
-changes in a future release.}
+The \pkg{akima} package needs to be installed on your machine.
 }
 \examples{
 ## Add density
@@ -80,7 +94,7 @@ graphics::rasterImage(legend_image, 0.85, 0.75, 0.9, 1)
 graphics::text(x = 0.9, y = c(0.75, 1), labels = range(levels$levels), pos = 4)
 }
 \seealso{
-\code{\link[akima:interp]{akima::interp()}}
+\code{\link[akima:interp]{akima::interp()}}, \code{\link[grDevices:contourLines]{grDevices::contourLines()}}
 
 Other statistics: 
 \code{\link{ternary_density}()},
