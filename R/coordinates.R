@@ -27,6 +27,10 @@ setMethod(
       stop("Positive values are expected.", call. = FALSE)
     }
 
+    ## Triangle vertex coordinates
+    # vertex <- matrix(data = c(0, 1, 0.5, 0, 0, .top), ncol = 2)
+    # cbind(x, y, z) %*% vertex
+
     total <- x + y + z
     x <- x / total
     y <- y / total
@@ -80,6 +84,33 @@ setMethod(
     methods::callGeneric(x = xy$x, y = xy$y)
   }
 )
+
+# Centered Log-Ratios ==========================================================
+#' Centered Log-Ratios (CLR)
+#'
+#' Computes CLR transformation.
+#' @param x A [`numeric`] `matrix`.
+#' @keywords internal
+#' @noRd
+clr <- function(x) {
+  J <- ncol(x)
+  clr <- log(x, base = exp(1)) %*% diag(J)
+
+  clr
+}
+
+#' Inverse Centered Log-Ratios Transformation
+#'
+#' Computes inverse CLR transformation.
+#' @param x A [`numeric`] `matrix` of log ratios.
+#' @keywords internal
+#' @noRd
+clr_inv <- function(x) {
+  y <- exp(x)
+  y <- y / rowSums(y)
+
+  y
+}
 
 # Isometric Log-Ratios =========================================================
 #' Isometric Log-Ratios (ILR)

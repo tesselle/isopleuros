@@ -52,6 +52,7 @@ Collate:
     'ternary_lines.R'
     'ternary_mean.R'
     'ternary_pairs.R'
+    'ternary_pca.R'
     'ternary_plot.R'
     'ternary_points.R'
     'ternary_polygon.R'

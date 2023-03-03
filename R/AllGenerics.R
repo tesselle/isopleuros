@@ -531,6 +531,27 @@ setGeneric(
   def = function(x, y, z, ...) standardGeneric("ternary_mean")
 )
 
+## PCA -------------------------------------------------------------------------
+#' Principal Component Analysis
+#'
+#' Computes and draws principal component.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param axis An [`integer`] specifying the dimension to be plotted.
+#' @param ... Further arguments to be passed to [graphics::lines()].
+#' @return
+#'  `ternary_pca()` is called it for its side-effects.
+#' @example inst/examples/ex-pca.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family statistics
+#' @aliases ternary_pca-method
+setGeneric(
+  name = "ternary_pca",
+  def = function(x, y, z, ...) standardGeneric("ternary_pca")
+)
+
 # Chart ========================================================================
 #' Ceramic Phase Diagram
 #'

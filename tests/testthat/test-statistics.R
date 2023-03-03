@@ -120,3 +120,13 @@ test_that("Mean", {
   }
   vdiffr::expect_doppelganger("geometric_mean", geometric_mean)
 })
+test_that("PCA", {
+  skip_if_not_installed("vdiffr")
+
+  ## PC1
+  pca_1 <- function() {
+    ternary_plot(lava)
+    ternary_pca(lava, axis = 1)
+  }
+  vdiffr::expect_doppelganger("pca_1", pca_1)
+})

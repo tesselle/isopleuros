@@ -39,7 +39,8 @@ Other statistics:
 \code{\link{ternary_contour}()},
 \code{\link{ternary_density}()},
 \code{\link{ternary_ellipse}()},
-\code{\link{ternary_hull}()}
+\code{\link{ternary_hull}()},
+\code{\link{ternary_pca}()}
 }
 \author{
 N. Frerebeau
