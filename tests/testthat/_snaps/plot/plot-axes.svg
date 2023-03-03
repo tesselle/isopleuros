@@ -25,12 +25,12 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY=)'>
-<circle cx='176.02' cy='472.22' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='572.78' cy='472.22' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='374.40' cy='128.62' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='374.40' cy='357.69' r='2.70' style='stroke-width: 0.75;' />
-<text x='176.02' y='486.30' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>X</text>
-<text x='572.78' y='486.30' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>Y</text>
-<text x='374.40' y='121.42' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='7.33px' lengthAdjust='spacingAndGlyphs'>Z</text>
+<circle cx='172.99' cy='455.22' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='575.81' cy='455.22' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='374.40' cy='106.38' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='374.40' cy='338.94' r='2.70' style='stroke-width: 0.75;' />
+<text x='172.99' y='469.31' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>X</text>
+<text x='575.81' y='469.31' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>Y</text>
+<text x='374.40' y='99.18' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='7.33px' lengthAdjust='spacingAndGlyphs'>Z</text>
 </g>
 </svg>

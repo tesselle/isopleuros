@@ -21,6 +21,7 @@ setMethod(
 
     ## Graphical parameters
     fg <- list(...)$fg %||% graphics::par("fg")
+    cex.lab <- list(...)$cex.lab %||% graphics::par("cex.lab")
 
     ## Open new window
     grDevices::dev.hold()
@@ -29,7 +30,12 @@ setMethod(
 
     ## Set plotting coordinates
     if (is.null(xlim) && is.null(ylim) && is.null(zlim)) {
-      lim <- list(x = c(0, 1), y = c(-graphics::par("cxy")[2L], 1))
+      dx <- max(graphics::strwidth(c(xlab, ylab, zlab), cex = cex.lab)) / 2
+      rx <- expand_range(c(0, 1), add = dx)
+      lim <- list(
+        x = rx,
+        y = .top / 2 + c(-1, 1) * diff(rx) / 2
+      )
     } else {
       xrange <- yrange <- zrange <- NULL
       if (!is.null(xlim)) xrange <- boundary(1, xlim)

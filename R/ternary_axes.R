@@ -28,7 +28,7 @@ ternary_axis <- function(side, at = NULL, labels = TRUE, tick = TRUE,
   tick_start <- matrix(c(at, rep(0, length(at))), ncol = 2)
   tick_start <- rotate(t(tick_start), theta = axis_radian)
 
-  h <- abs(tcl * graphics::par("cxy")[2L])
+  h <- abs(tcl * graphics::strheight("1", cex = 1))
   dx <- sin(pi / 6) * h
   dy <- cos(pi / 6) * h
   tick_end <- matrix(c(at + dx, rep(-dy, length(at))), ncol = 2)

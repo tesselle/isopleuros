@@ -10,7 +10,7 @@ ceramic,1,1,2,3,4,anorthite,an
 ceramic,2,1,1,3,2,gehlenite,geh
 ceramic,1,1,2,4,4,anorthite,an
 ceramic,0,3,2,4,4,mullite,mul
-ceramic,0,1,0,4,4,corundum,crn
+ceramic,0,1,0,4,1,corundum,crn
 CAS,0,0,1,1,4,S,
 CAS,1,1,2,1,4,CAS2,
 CAS,1,0,1,1,2,CS,

@@ -25,22 +25,22 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMTUyLjY0fDU5Ni4xNnw1OS4wNHw1MDIuNTY=)'>
-<polygon points='176.02,472.22 374.40,128.62 572.78,472.22 ' style='stroke-width: 0.75; fill: none;' />
-<polygon points='374.40,128.62 407.12,323.81 278.63,294.50 ' style='stroke-width: 0.75; fill: none;' />
-<polygon points='374.40,128.62 407.12,323.81 516.83,375.31 ' style='stroke-width: 0.75; fill: none;' />
-<polygon points='278.63,294.50 407.12,323.81 367.02,396.93 ' style='stroke-width: 0.75; fill: none;' />
-<polygon points='407.12,323.81 516.83,375.31 572.78,472.22 ' style='stroke-width: 0.75; fill: none;' />
-<circle cx='374.40' cy='128.62' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='407.12' cy='323.81' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='278.63' cy='294.50' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='516.83' cy='375.31' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='367.02' cy='396.93' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='572.78' cy='472.22' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<text x='381.60' y='131.37' style='font-size: 12.00px; font-family: sans;' textLength='33.36px' lengthAdjust='spacingAndGlyphs'>quartz</text>
-<text x='414.32' y='326.56' style='font-size: 12.00px; font-family: sans;' textLength='46.70px' lengthAdjust='spacingAndGlyphs'>anorthite</text>
-<text x='271.43' y='297.25' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='62.70px' lengthAdjust='spacingAndGlyphs'>wollastonite</text>
-<text x='524.03' y='378.07' style='font-size: 12.00px; font-family: sans;' textLength='34.68px' lengthAdjust='spacingAndGlyphs'>mullite</text>
-<text x='359.82' y='399.69' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='48.71px' lengthAdjust='spacingAndGlyphs'>gehlenite</text>
-<text x='579.98' y='474.97' style='font-size: 12.00px; font-family: sans;' textLength='53.37px' lengthAdjust='spacingAndGlyphs'>corundum</text>
+<polygon points='172.03,456.06 374.40,105.54 576.77,456.06 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,105.54 407.78,304.66 276.70,274.76 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='374.40,105.54 407.78,304.66 519.70,357.20 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='276.70,274.76 407.78,304.66 366.88,379.26 ' style='stroke-width: 0.75; fill: none;' />
+<polygon points='407.78,304.66 519.70,357.20 576.77,456.06 ' style='stroke-width: 0.75; fill: none;' />
+<circle cx='374.40' cy='105.54' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='407.78' cy='304.66' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='276.70' cy='274.76' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='519.70' cy='357.20' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='366.88' cy='379.26' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='576.77' cy='456.06' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<text x='381.60' y='108.29' style='font-size: 12.00px; font-family: sans;' textLength='33.36px' lengthAdjust='spacingAndGlyphs'>quartz</text>
+<text x='414.98' y='307.41' style='font-size: 12.00px; font-family: sans;' textLength='46.70px' lengthAdjust='spacingAndGlyphs'>anorthite</text>
+<text x='269.50' y='277.51' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='62.70px' lengthAdjust='spacingAndGlyphs'>wollastonite</text>
+<text x='526.90' y='359.95' style='font-size: 12.00px; font-family: sans;' textLength='34.68px' lengthAdjust='spacingAndGlyphs'>mullite</text>
+<text x='359.68' y='382.01' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='48.71px' lengthAdjust='spacingAndGlyphs'>gehlenite</text>
+<text x='576.77' y='470.14' text-anchor='middle' style='font-size: 12.00px; font-family: sans;' textLength='53.37px' lengthAdjust='spacingAndGlyphs'>corundum</text>
 </g>
 </svg>
