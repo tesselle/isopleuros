@@ -5,7 +5,7 @@
 \alias{isopleuros-package}
 \alias{_PACKAGE}
 \alias{isopleuros}
-\title{isopleuros: Ternary Plot}
+\title{isopleuros: Ternary Plots}
 \description{
 Ternary plots made simple. This package allows to create ternary plot using 'graphics'. It provides functions to display the data in the ternary space, to add or tune graphical elements and to display statistical summaries. It also includes common ternary diagrams useful for the archaeologist (e.g. soil texture charts, ceramic phase diagram).
 }
@@ -13,7 +13,7 @@ Ternary plots made simple. This package allows to create ternary plot using 'gra
 \tabular{ll}{
 \strong{Package:} \tab isopleuros \cr
 \strong{Type:} \tab Package \cr
-\strong{Version:} \tab 0.0.0 \cr
+\strong{Version:} \tab 1.0.0 \cr
 \strong{License:} \tab GPL-3 \cr
 }
 }

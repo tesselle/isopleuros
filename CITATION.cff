@@ -1,0 +1,157 @@
+# -----------------------------------------------------------
+# CITATION file created with {cffr} R package, v0.4.1
+# See also: https://docs.ropensci.org/cffr/
+# -----------------------------------------------------------
+ 
+cff-version: 1.2.0
+message: 'To cite package "isopleuros" in publications use:'
+type: software
+license: GPL-3.0-or-later
+title: 'isopleuros: Ternary Plots'
+version: 1.0.0
+abstract: Ternary plots made simple. This package allows to create ternary plot using
+  'graphics'. It provides functions to display the data in the ternary space, to add
+  or tune graphical elements and to display statistical summaries. It also includes
+  common ternary diagrams useful for the archaeologist (e.g. soil texture charts,
+  ceramic phase diagram).
+authors:
+- family-names: Frerebeau
+  given-names: Nicolas
+  email: nicolas.frerebeau@u-bordeaux-montaigne.fr
+  orcid: https://orcid.org/0000-0001-5759-4944
+  affiliation: Université Bordeaux Montaigne
+preferred-citation:
+  type: manual
+  title: 'isopleuros: Ternary Plots'
+  authors:
+  - family-names: Frerebeau
+    given-names: Nicolas
+    email: nicolas.frerebeau@u-bordeaux-montaigne.fr
+    orcid: https://orcid.org/0000-0001-5759-4944
+    affiliation: Université Bordeaux Montaigne
+  year: '2023'
+  location:
+    name: Pessac, France
+  notes: R package version 1.0.0
+  url: https://packages.tesselle.org/isopleuros/
+  institution:
+    name: Université Bordeaux Montaigne
+repository-code: https://github.com/tesselle/isopleuros
+url: https://packages.tesselle.org/isopleuros/
+contact:
+- family-names: Frerebeau
+  given-names: Nicolas
+  email: nicolas.frerebeau@u-bordeaux-montaigne.fr
+  orcid: https://orcid.org/0000-0001-5759-4944
+  affiliation: Université Bordeaux Montaigne
+keywords:
+- archaeometry
+- archaeological science
+- ternary plot
+- r package
+references:
+- type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  notes: Depends
+  url: https://www.R-project.org/
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2023'
+  institution:
+    name: R Foundation for Statistical Computing
+  version: '>= 2.10'
+- type: software
+  title: graphics
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2023'
+  institution:
+    name: R Foundation for Statistical Computing
+- type: software
+  title: grDevices
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2023'
+  institution:
+    name: R Foundation for Statistical Computing
+- type: software
+  title: methods
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2023'
+  institution:
+    name: R Foundation for Statistical Computing
+- type: software
+  title: utils
+  abstract: 'R: A Language and Environment for Statistical Computing'
+  notes: Imports
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2023'
+  institution:
+    name: R Foundation for Statistical Computing
+- type: software
+  title: akima
+  abstract: 'akima: Interpolation of Irregularly and Regularly Spaced Data'
+  notes: Suggests
+  repository: https://CRAN.R-project.org/package=akima
+  authors:
+  - family-names: Akima
+    given-names: Hiroshi
+  - family-names: Gebhardt
+    given-names: Albrecht
+    email: albrecht.gebhardt@aau.at
+  year: '2023'
+- type: software
+  title: testthat
+  abstract: 'testthat: Unit Testing for R'
+  notes: Suggests
+  url: https://testthat.r-lib.org
+  repository: https://CRAN.R-project.org/package=testthat
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  year: '2023'
+  version: '>= 3.0.0'
+- type: software
+  title: vdiffr
+  abstract: 'vdiffr: Visual Regression Testing and Graphical Diffing'
+  notes: Suggests
+  url: https://vdiffr.r-lib.org/
+  repository: https://CRAN.R-project.org/package=vdiffr
+  authors:
+  - family-names: Henry
+    given-names: Lionel
+    email: lionel@rstudio.com
+  - family-names: Pedersen
+    given-names: Thomas Lin
+    email: thomas.pedersen@rstudio.com
+    orcid: https://orcid.org/0000-0002-5147-4711
+  - family-names: Luciani
+    given-names: T Jake
+    email: jake@apache.org
+  - family-names: Decorde
+    given-names: Matthieu
+    email: matthieu.decorde@ens-lyon.fr
+  - family-names: Lise
+    given-names: Vaudor
+    email: lise.vaudor@ens-lyon.fr
+  year: '2023'
+  version: '>= 1.0.0'

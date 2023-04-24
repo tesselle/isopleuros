@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/tesselle/isopleuros/workflows/R-CMD-check/badge.svg)](https://github.com/tesselle/isopleuros/actions)
-[![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tesselle/isopleuros)
+[![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://codecov.io/gh/tesselle/isopleuros)
 [![CodeFactor](https://www.codefactor.io/repository/github/tesselle/isopleuros/badge/main)](https://www.codefactor.io/repository/github/tesselle/isopleuros/overview/main)
 
 <a href="https://tesselle.r-universe.dev" class="pkgdown-devel"><img
@@ -30,6 +30,28 @@ for the archaeologist (e.g. soil texture charts, ceramic phase diagram).
 as possible. If you need finer tuning or more advanced features, you
 should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 [**ggtern**](http://www.ggtern.com/) package.
+
+
+    To cite isopleuros in publications use:
+
+      Frerebeau N (2023). _isopleuros: Ternary Plot_. Université Bordeaux
+      Montaigne, Pessac, France. R package version 1.0.0,
+      <https://packages.tesselle.org/isopleuros/>.
+
+    Une entrée BibTeX pour les utilisateurs LaTeX est
+
+      @Manual{,
+        author = {Nicolas Frerebeau},
+        title = {{isopleuros: Ternary Plot}},
+        year = {2023},
+        organization = {Université Bordeaux Montaigne},
+        address = {Pessac, France},
+        note = {R package version 1.0.0},
+        url = {https://packages.tesselle.org/isopleuros/},
+      }
+
+    This package is a part of the tesselle project
+    <https://www.tesselle.org>.
 
 ## Installation
 
