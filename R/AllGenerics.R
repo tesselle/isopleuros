@@ -1,6 +1,4 @@
 # GENERIC METHODS
-#' @importFrom methods setGeneric setMethod .valueClassTest
-NULL
 
 .top <- sqrt(3) / 2
 

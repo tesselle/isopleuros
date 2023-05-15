@@ -35,3 +35,11 @@
 #' @docType package
 #' @keywords internal
 "_PACKAGE"
+
+#' @importFrom graphics arrows layout lines par points polygon segments
+#' strheight strwidth text plot plot.default plot.new plot.window rasterImage
+#' @importFrom grDevices as.graphicsAnnot as.raster chull colorRampPalette
+#' contourLines dev.flush dev.hold hcl.colors xyz.coords
+#' @importFrom methods setGeneric setMethod .valueClassTest
+#' @importFrom utils combn
+NULL
