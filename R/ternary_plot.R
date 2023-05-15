@@ -16,6 +16,7 @@ setMethod(
                         panel.first = NULL, panel.last = NULL, ...) {
 
     ## Save and restore graphical parameters
+    ## pty: square plotting region, independent of device size
     old_par <- graphics::par(pty = "s", no.readonly = TRUE)
     on.exit(graphics::par(old_par), add = TRUE)
 
