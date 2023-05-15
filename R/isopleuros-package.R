@@ -17,6 +17,7 @@
 #'
 #' \tabular{ll}{
 #'  Nicolas Frerebeau \tab *Université Bordeaux Montaigne, France* \cr
+#'  Brice Lebrun \tab *Université Bordeaux Montaigne, France* \cr
 #' }
 #'
 #' **Package maintainer**

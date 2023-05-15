@@ -13,11 +13,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-# isopleuros
+# isopleuros <img width=120px src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/tesselle/isopleuros/workflows/R-CMD-check/badge.svg)](https://github.com/tesselle/isopleuros/actions)
-[![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://codecov.io/gh/tesselle/isopleuros)
+[![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://app.codecov.io/gh/tesselle/isopleuros)
 [![CodeFactor](https://www.codefactor.io/repository/github/tesselle/isopleuros/badge/main)](https://www.codefactor.io/repository/github/tesselle/isopleuros/overview/main)
 
 [![r-universe](https://tesselle.r-universe.dev/badges/isopleuros)](https://tesselle.r-universe.dev){.pkgdown-devel}

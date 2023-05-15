@@ -1,12 +1,12 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# isopleuros
+# isopleuros <img width=120px src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/tesselle/isopleuros/workflows/R-CMD-check/badge.svg)](https://github.com/tesselle/isopleuros/actions)
-[![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://codecov.io/gh/tesselle/isopleuros)
+[![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://app.codecov.io/gh/tesselle/isopleuros)
 [![CodeFactor](https://www.codefactor.io/repository/github/tesselle/isopleuros/badge/main)](https://www.codefactor.io/repository/github/tesselle/isopleuros/overview/main)
 
 <a href="https://tesselle.r-universe.dev" class="pkgdown-devel"><img
@@ -31,10 +31,9 @@ as possible. If you need finer tuning or more advanced features, you
 should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 [**ggtern**](http://www.ggtern.com/) package.
 
-
     To cite isopleuros in publications use:
 
-      Frerebeau N (2023). _isopleuros: Ternary Plot_. Université Bordeaux
+      Frerebeau N (2023). _isopleuros: Ternary Plots_. Université Bordeaux
       Montaigne, Pessac, France. R package version 1.0.0,
       <https://packages.tesselle.org/isopleuros/>.
 
@@ -42,7 +41,7 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 
       @Manual{,
         author = {Nicolas Frerebeau},
-        title = {{isopleuros: Ternary Plot}},
+        title = {{isopleuros: Ternary Plots}},
         year = {2023},
         organization = {Université Bordeaux Montaigne},
         address = {Pessac, France},
