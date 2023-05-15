@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.2.3 (2023-03-15)",
+  "runtimePlatform": "R version 4.3.0 (2023-04-21)",
   "author": [
     {
       "@type": "Person",
@@ -22,6 +22,15 @@
       "familyName": "Frerebeau",
       "email": "nicolas.frerebeau@u-bordeaux-montaigne.fr",
       "@id": "https://orcid.org/0000-0001-5759-4944"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Brice",
+      "familyName": "Lebrun",
+      "email": "brice.lebrun@u-bordeaux-montaigne.fr",
+      "@id": "https://orcid.org/0000-0001-7503-8685"
     }
   ],
   "maintainer": [
@@ -102,7 +111,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "823.865KB",
+  "fileSize": "928.103KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -121,7 +130,7 @@
   ],
   "releaseNotes": "https://github.com/tesselle/isopleuros/blob/master/NEWS.md",
   "readme": "https://github.com/tesselle/isopleuros/blob/main/README.md",
-  "contIntegration": ["https://github.com/tesselle/isopleuros/actions", "https://codecov.io/gh/tesselle/isopleuros"],
+  "contIntegration": ["https://github.com/tesselle/isopleuros/actions", "https://app.codecov.io/gh/tesselle/isopleuros"],
   "developmentStatus": "https://www.repostatus.org/#active",
   "keywords": ["archaeological-science", "archaeometry", "ternary-plots", "r-package"]
 }
