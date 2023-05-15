@@ -7,7 +7,7 @@
 \alias{triangle_soil_folk}
 \alias{triangle_soil_shepard}
 \alias{triangle_soil_usda}
-\title{Soil Texure Triangle}
+\title{Soil Texture Triangle}
 \usage{
 triangle_soil_hypres(labels = TRUE, symbol = FALSE, ...)
 
@@ -26,7 +26,7 @@ labels? Only used if \code{labels} is \code{TRUE}.}
 \item{...}{Further arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}.}
 }
 \description{
-Soil Texure Triangle
+Soil Texture Triangle
 }
 \examples{
 ## HYPRES soil texture

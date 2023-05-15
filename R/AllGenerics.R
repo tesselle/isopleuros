@@ -191,7 +191,7 @@ NULL
 #' @param x A [`matrix`] or a [`data.frame`]. Columns are converted to `numeric`
 #'  in the same way that [data.matrix()] does.
 #' @param margin A [`character`] string or an [`integer`] giving the index of
-#'  the column to be used as the thrid part of the ternary plots. If `NULL`
+#'  the column to be used as the third part of the ternary plots. If `NULL`
 #'  (the default), marginal compositions will be used (i.e. the geometric mean
 #'  of the non-selected parts).
 #' @param ... Further arguments to be passed to [graphics::arrows()].
@@ -566,7 +566,7 @@ setGeneric(
 #' @name triangle_phase_cas
 NULL
 
-#' Soil Texure Triangle
+#' Soil Texture Triangle
 #'
 #' @param labels A [`logical`] scalar: should labels be displayed?
 #' @param symbol A [`logical`] scalar: should symbol be used instead of full
