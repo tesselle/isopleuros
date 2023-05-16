@@ -17,6 +17,7 @@ Ternary plots made simple. This package allows to create ternary plots using 'gr
 \strong{Type:} \tab Package \cr
 \strong{Version:} \tab 1.0.0 \cr
 \strong{License:} \tab GPL-3 \cr
+\strong{Zenodo:} \tab \doi{10.5281/zenodo.7940389} \cr
 }
 }
 \section{Package options}{

@@ -12,10 +12,24 @@
 <a href="https://tesselle.r-universe.dev" class="pkgdown-devel"><img
 src="https://tesselle.r-universe.dev/badges/isopleuros"
 alt="r-universe" /></a>
+<a href="https://cran.r-project.org/package=isopleuros"
+class="pkgdown-release"><img
+src="http://www.r-pkg.org/badges/version/isopleuros"
+alt="CRAN Version" /></a> <a
+href="https://cran.r-project.org/web/checks/check_results_isopleuros.html"
+class="pkgdown-release"><img
+src="https://badges.cranchecks.info/worst/isopleuros.svg"
+alt="CRAN checks" /></a>
+<a href="https://cran.r-project.org/package=isopleuros"
+class="pkgdown-release"><img
+src="http://cranlogs.r-pkg.org/badges/isopleuros"
+alt="CRAN Downloads" /></a>
 
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7940389.svg)](https://doi.org/10.5281/zenodo.7940389)
 <!-- badges: end -->
 
 ## Overview
@@ -34,7 +48,8 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
     To cite isopleuros in publications use:
 
       Frerebeau N (2023). _isopleuros: Ternary Plots_. Université Bordeaux
-      Montaigne, Pessac, France. R package version 1.0.0,
+      Montaigne, Pessac, France. doi:10.5281/zenodo.7940389
+      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.0.0,
       <https://packages.tesselle.org/isopleuros/>.
 
     Une entrée BibTeX pour les utilisateurs LaTeX est
@@ -47,6 +62,7 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
         address = {Pessac, France},
         note = {R package version 1.0.0},
         url = {https://packages.tesselle.org/isopleuros/},
+        doi = {10.5281/zenodo.7940389},
       }
 
     This package is a part of the tesselle project

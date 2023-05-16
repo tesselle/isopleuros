@@ -2,13 +2,13 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "isopleuros",
-  "description": "Ternary plots made simple. This package allows to create ternary plot using 'graphics'. It provides functions to display the data in the ternary space, to add or tune graphical elements and to display statistical summaries. It also includes common ternary diagrams useful for the archaeologist (e.g. soil texture charts, ceramic phase diagram).",
+  "description": "Ternary plots made simple. This package allows to create ternary plots using 'graphics'. It provides functions to display the data in the ternary space, to add or tune graphical elements and to display statistical summaries. It also includes common ternary diagrams which are useful for the archaeologist (e.g. soil texture charts, ceramic phase diagram).",
   "name": "isopleuros: Ternary Plots",
   "relatedLink": "https://packages.tesselle.org/isopleuros/",
   "codeRepository": "https://github.com/tesselle/isopleuros",
   "issueTracker": "https://github.com/tesselle/isopleuros/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "1.0.0",
+  "version": "1.0.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -111,7 +111,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "928.103KB",
+  "fileSize": "930.17KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -124,13 +124,16 @@
         }
       ],
       "name": "{isopleuros: Ternary Plots}",
+      "identifier": "10.5281/zenodo.7940389",
       "url": "https://packages.tesselle.org/isopleuros/",
-      "description": "R package version 1.0.0"
+      "description": "R package version 1.0.0",
+      "@id": "https://doi.org/10.5281/zenodo.7940389",
+      "sameAs": "https://doi.org/10.5281/zenodo.7940389"
     }
   ],
   "releaseNotes": "https://github.com/tesselle/isopleuros/blob/master/NEWS.md",
   "readme": "https://github.com/tesselle/isopleuros/blob/main/README.md",
   "contIntegration": ["https://github.com/tesselle/isopleuros/actions", "https://app.codecov.io/gh/tesselle/isopleuros"],
   "developmentStatus": "https://www.repostatus.org/#active",
-  "keywords": ["archaeological-science", "archaeometry", "ternary-plots", "r-package"]
+  "keywords": ["archaeological-science", "archaeometry", "ternary-plots", "r-package", "data-visualization"]
 }
