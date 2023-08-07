@@ -1,26 +1,19 @@
 Package: isopleuros
 Title: Ternary Plots
 Version: 1.0.0.9000
-Authors@R: 
-    c(person(given = "Nicolas",
-             family = "Frerebeau",
-             role = c("aut", "cre"),
-             email = "nicolas.frerebeau@u-bordeaux-montaigne.fr",
-             comment = c(ORCID = "0000-0001-5759-4944", 
-                         affiliation = "Université Bordeaux Montaigne")),
-      person(given = "Brice",
-             family = "Lebrun",
-             role = "ctb",
-             email = "brice.lebrun@u-bordeaux-montaigne.fr",
-             comment = c(ORCID = "0000-0001-7503-8685",
-                         affiliation = "Université Bordeaux Montaigne")))
+Authors@R: c(
+    person("Nicolas", "Frerebeau", , "nicolas.frerebeau@u-bordeaux-montaigne.fr", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-5759-4944", affiliation = "Université Bordeaux Montaigne")),
+    person("Brice", "Lebrun", , "brice.lebrun@u-bordeaux-montaigne.fr", role = "ctb",
+           comment = c(ORCID = "0000-0001-7503-8685", affiliation = "Université Bordeaux Montaigne"))
+  )
 Maintainer: Nicolas Frerebeau <nicolas.frerebeau@u-bordeaux-montaigne.fr>
 Description: Ternary plots made simple. This package allows to create
     ternary plots using 'graphics'. It provides functions to display the
     data in the ternary space, to add or tune graphical elements and to
     display statistical summaries. It also includes common ternary
-    diagrams which are useful for the archaeologist (e.g. soil texture charts,
-    ceramic phase diagram).
+    diagrams which are useful for the archaeologist (e.g. soil texture
+    charts, ceramic phase diagram).
 License: GPL (>= 3)
 URL: https://packages.tesselle.org/isopleuros/,
     https://github.com/tesselle/isopleuros
@@ -34,9 +27,10 @@ Imports:
     utils
 Suggests: 
     akima,
-    testthat (>= 3.0.0),
-    vdiffr (>= 1.0.0)
-Config/testthat/edition: 3
+    rsvg,
+    svglite,
+    tinysnapshot,
+    tinytest
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -45,6 +39,7 @@ Collate:
     'AllGenerics.R'
     'coordinates.R'
     'data.R'
+    'isopleuros-internal.R'
     'isopleuros-package.R'
     'ternary_arrows.R'
     'ternary_axes.R'
@@ -67,5 +62,4 @@ Collate:
     'ternary_title.R'
     'triangle_phase.R'
     'triangle_soil.R'
-    'utilities.R'
     'zzz.R'
