@@ -19,7 +19,7 @@ URL: https://packages.tesselle.org/isopleuros/,
     https://github.com/tesselle/isopleuros
 BugReports: https://github.com/tesselle/isopleuros/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 3.5)
 Imports: 
     graphics,
     grDevices,
