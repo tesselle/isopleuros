@@ -107,6 +107,8 @@ setMethod(
       panel.last = panel.last,
       ...
     )
+
+    invisible(x)
   }
 )
 

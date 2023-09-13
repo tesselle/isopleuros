@@ -50,6 +50,7 @@ ternary_crosshairs(lava, x_mark = FALSE, y_mark = FALSE, col = "blue")
 \seealso{
 Other geometries: 
 \code{\link{ternary_arrows}()},
+\code{\link{ternary_labels}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_points}()},
 \code{\link{ternary_polygon}()},

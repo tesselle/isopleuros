@@ -78,7 +78,7 @@ setGeneric(
 #'  arguments to this function.
 #' @return
 #'  `ternary_plot()` is called it for its side-effects: it results in a graphic
-#'  being displayed.
+#'  being displayed. Invisibly returns `x`.
 #' @example inst/examples/ex-plot.R
 #' @author N. Frerebeau
 #' @docType methods
@@ -194,10 +194,10 @@ NULL
 #'  the column to be used as the third part of the ternary plots. If `NULL`
 #'  (the default), marginal compositions will be used (i.e. the geometric mean
 #'  of the non-selected parts).
-#' @param ... Further arguments to be passed to [graphics::arrows()].
+#' @param ... Further [graphical parameters][graphics::par()].
 #' @return
-#'  `ternary_pairs()` is called it for its side-effects.
-#' @seealso [graphics::arrows()]
+#'  `ternary_pairs()` is called it for its side-effects: it results in a graphic
+#'  being displayed. Invisibly returns `x`.
 #' @example inst/examples/ex-pairs.R
 #' @author N. Frerebeau
 #' @docType methods
@@ -364,6 +364,30 @@ setGeneric(
 setGeneric(
   name = "ternary_text",
   def = function(x, y, z, ...) standardGeneric("ternary_text")
+)
+
+#' Non-Overlapping Text Labels
+#'
+#' Optimize the location of text labels to minimize overplotting text.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param labels A [`character`] vector or [`expression`] specifying the text
+#'  to be written.
+#' @param ... Further graphical parameters (see [graphics::par()]) may also be
+#'  supplied as arguments, particularly, character expansion, `cex` and
+#'  color, `col`.
+#' @return
+#'  `ternary_labels()` is called it for its side-effects.
+#' @seealso [graphics::text()]
+#' @example inst/examples/ex-labels.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family geometries
+#' @aliases ternary_labels-method
+setGeneric(
+  name = "ternary_labels",
+  def = function(x, y, z, ...) standardGeneric("ternary_labels")
 )
 
 # Statistics ===================================================================

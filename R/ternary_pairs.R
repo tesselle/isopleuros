@@ -61,6 +61,8 @@ setMethod(
       graphics::text(x = 0.5, y = 0.5, labels = part,
                      cex = cex.lab, col = col.lab, font = font.lab)
     }
+
+    invisible(x)
   }
 )
 
@@ -73,5 +75,7 @@ setMethod(
   definition = function(x, margin = NULL, ...) {
     x <- data.matrix(x)
     methods::callGeneric(x = x, margin = margin, ...)
+
+    invisible(x)
   }
 )

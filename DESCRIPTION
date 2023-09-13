@@ -24,6 +24,7 @@ Imports:
     graphics,
     grDevices,
     methods,
+    stats,
     utils
 Suggests: 
     akima,
@@ -50,6 +51,7 @@ Collate:
     'ternary_ellipse.R'
     'ternary_grid.R'
     'ternary_hull.R'
+    'ternary_labels.R'
     'ternary_lines.R'
     'ternary_mean.R'
     'ternary_pairs.R'

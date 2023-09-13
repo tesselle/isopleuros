@@ -44,6 +44,7 @@ ternary_points(lava, col = "red", pch = 16)
 Other geometries: 
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_crosshairs}()},
+\code{\link{ternary_labels}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_polygon}()},
 \code{\link{ternary_segments}()},

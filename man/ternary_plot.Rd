@@ -89,7 +89,7 @@ place but before the axes, title and box are added.}
 }
 \value{
 \code{ternary_plot()} is called it for its side-effects: it results in a graphic
-being displayed.
+being displayed. Invisibly returns \code{x}.
 }
 \description{
 Produces a ternary plot.

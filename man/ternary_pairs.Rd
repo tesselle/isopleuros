@@ -19,7 +19,7 @@ ternary_pairs(x, ...)
 \item{x}{A \code{\link{matrix}} or a \code{\link{data.frame}}. Columns are converted to \code{numeric}
 in the same way that \code{\link[=data.matrix]{data.matrix()}} does.}
 
-\item{...}{Further arguments to be passed to \code{\link[graphics:arrows]{graphics::arrows()}}.}
+\item{...}{Further \link[graphics:par]{graphical parameters}.}
 
 \item{margin}{A \code{\link{character}} string or an \code{\link{integer}} giving the index of
 the column to be used as the third part of the ternary plots. If \code{NULL}
@@ -27,7 +27,8 @@ the column to be used as the third part of the ternary plots. If \code{NULL}
 of the non-selected parts).}
 }
 \value{
-\code{ternary_pairs()} is called it for its side-effects.
+\code{ternary_pairs()} is called it for its side-effects: it results in a graphic
+being displayed. Invisibly returns \code{x}.
 }
 \description{
 Produces a matrix of ternary plots.
@@ -41,8 +42,6 @@ ternary_pairs(boxite)
 ternary_pairs(boxite, margin = "E")
 }
 \seealso{
-\code{\link[graphics:arrows]{graphics::arrows()}}
-
 Other graphical elements: 
 \code{\link{ternary_axis}()},
 \code{\link{ternary_box}()},
