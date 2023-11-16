@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.3.1 (2023-06-16)",
+  "runtimePlatform": "R version 4.3.2 (2023-10-31)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -37,6 +37,16 @@
       "familyName": "Lebrun",
       "email": "brice.lebrun@u-bordeaux-montaigne.fr",
       "@id": "https://orcid.org/0000-0001-7503-8685"
+    }
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": "Université Bordeaux Montaigne"
+    },
+    {
+      "@type": "Organization",
+      "name": "CNRS"
     }
   ],
   "maintainer": [
@@ -134,12 +144,17 @@
     },
     "5": {
       "@type": "SoftwareApplication",
+      "identifier": "stats",
+      "name": "stats"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
       "identifier": "utils",
       "name": "utils"
     },
     "SystemRequirements": null
   },
-  "fileSize": "914.548KB",
+  "fileSize": "921.954KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -159,6 +174,7 @@
       "sameAs": "https://doi.org/10.5281/zenodo.7940389"
     }
   ],
+  "releaseNotes": "https://github.com/tesselle/isopleuros/blob/master/NEWS.md",
   "readme": "https://github.com/tesselle/isopleuros/blob/main/README.md",
   "contIntegration": ["https://github.com/tesselle/isopleuros/actions", "https://app.codecov.io/gh/tesselle/isopleuros"],
   "developmentStatus": "https://www.repostatus.org/#active",
