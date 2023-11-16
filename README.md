@@ -9,7 +9,8 @@
 [![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://app.codecov.io/gh/tesselle/isopleuros)
 [![CodeFactor](https://www.codefactor.io/repository/github/tesselle/isopleuros/badge/main)](https://www.codefactor.io/repository/github/tesselle/isopleuros/overview/main)
 
-<a href="https://tesselle.r-universe.dev" class="pkgdown-devel"><img
+<a href="https://tesselle.r-universe.dev/isopleuros"
+class="pkgdown-devel"><img
 src="https://tesselle.r-universe.dev/badges/isopleuros"
 alt="r-universe" /></a>
 <a href="https://cran.r-project.org/package=isopleuros"
@@ -34,7 +35,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 
 ## Overview
 
-Ternary plots made simple. **isopleuros** allows to create ternary plot
+Ternary plots made simple. **isopleuros** allows to create ternary plots
 using **graphics**. It provides functions to display the data in the
 ternary space, to add or tune graphical elements and to display
 statistical summaries. It also includes common ternary diagrams useful
@@ -49,10 +50,10 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 
       Frerebeau N (2023). _isopleuros: Ternary Plots_. Université Bordeaux
       Montaigne, Pessac, France. doi:10.5281/zenodo.7940389
-      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.0.0,
+      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.0.0, 
       <https://packages.tesselle.org/isopleuros/>.
 
-    Une entrée BibTeX pour les utilisateurs LaTeX est
+    A BibTeX entry for LaTeX users is
 
       @Manual{,
         author = {Nicolas Frerebeau},
