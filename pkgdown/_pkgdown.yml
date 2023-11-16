@@ -2,9 +2,6 @@ url: https://packages.tesselle.org/isopleuros
 
 template:
   package: tekton
-  opengraph:
-    twitter:
-      creator: "@nfrerebeau"
 
 reference:
 - title: Ternary plot
