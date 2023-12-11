@@ -50,7 +50,7 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 
       Frerebeau N (2023). _isopleuros: Ternary Plots_. Université Bordeaux
       Montaigne, Pessac, France. doi:10.5281/zenodo.7940389
-      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.0.0, 
+      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.1.0,
       <https://packages.tesselle.org/isopleuros/>.
 
     A BibTeX entry for LaTeX users is
@@ -61,7 +61,7 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
         year = {2023},
         organization = {Université Bordeaux Montaigne},
         address = {Pessac, France},
-        note = {R package version 1.0.0},
+        note = {R package version 1.1.0},
         url = {https://packages.tesselle.org/isopleuros/},
         doi = {10.5281/zenodo.7940389},
       }
@@ -167,5 +167,5 @@ Please note that the **isopleuros** project is released with a
 contributing to this project, you agree to abide by its terms.
 
 [^1]: The only exception is the `ternary_contour()` function for which
-    the [**interp**](https://cran.r-project.org/package=interp) package 
+    the [**interp**](https://cran.r-project.org/package=interp) package
     is required, but is not installed by default.

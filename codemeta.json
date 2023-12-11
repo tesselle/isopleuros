@@ -8,7 +8,7 @@
   "codeRepository": "https://github.com/tesselle/isopleuros",
   "issueTracker": "https://github.com/tesselle/isopleuros/issues",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "1.0.0.9000",
+  "version": "1.1.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -61,15 +61,15 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
-      "identifier": "akima",
-      "name": "akima",
+      "identifier": "interp",
+      "name": "interp",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=akima"
+      "sameAs": "https://CRAN.R-project.org/package=interp"
     },
     {
       "@type": "SoftwareApplication",
@@ -154,7 +154,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "921.954KB",
+  "fileSize": "926.553KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -169,7 +169,7 @@
       "name": "{isopleuros: Ternary Plots}",
       "identifier": "10.5281/zenodo.7940389",
       "url": "https://packages.tesselle.org/isopleuros/",
-      "description": "R package version 1.0.0.9000",
+      "description": "R package version 1.1.0",
       "@id": "https://doi.org/10.5281/zenodo.7940389",
       "sameAs": "https://doi.org/10.5281/zenodo.7940389"
     }

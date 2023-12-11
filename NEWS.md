@@ -1,4 +1,4 @@
-# isopleuros 1.0.0.9000
+# isopleuros 1.1.0
 ## New classes and methods
 * Add `ternary_labels()` to draw non-overlapping text labels.
 
