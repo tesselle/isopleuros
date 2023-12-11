@@ -12,7 +12,7 @@ coordinates_cartesian(x, y, z, ...)
 
 \S4method{coordinates_cartesian}{numeric,numeric}(x, y)
 
-\S4method{coordinates_cartesian}{ANY,missing}(x)
+\S4method{coordinates_cartesian}{ANY,missing}(x, xlab = NULL, ylab = NULL)
 }
 \arguments{
 \item{x, y}{A \code{\link{numeric}} vector giving the x and y ternary coordinates of a
@@ -20,9 +20,17 @@ set of points. If \code{y} is missing, an attempt is made to interpret \code{x} 
 suitable way (see \code{\link[grDevices:xy.coords]{grDevices::xy.coords()}}).}
 
 \item{...}{Currently not used.}
+
+\item{xlab, ylab}{A \code{\link{character}} string specifying the names for the x and y
+variables to be extracted.}
 }
 \value{
-A \code{\link{list}}.
+A \code{\link{list}} with the components:
+\tabular{ll}{
+\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
+\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
+\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
+}
 }
 \description{
 Computes cartesian coordinates.

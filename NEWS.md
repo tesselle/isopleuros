@@ -2,6 +2,9 @@
 ## New classes and methods
 * Add `ternary_labels()` to draw non-overlapping text labels.
 
+## Bugfixes & changes
+* Prevent division by zero when calculating ternary coordinates.
+
 ## Internals
 * Use **tinytest** and **tinysnapshot** instead of **testthat** and **vdiffr**.
 

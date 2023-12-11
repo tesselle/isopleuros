@@ -45,3 +45,21 @@ rotate <- function(x, theta = 0, origin = c(0.5, sqrt(3) / 6)) {
   if (nrow(x) < 3) x <- rbind(x, rep(1, ncol(x)))
   t(trans %*% rot %*% solve(trans) %*% x)
 }
+
+#' Check Object Length
+#'
+#' @param x An object to be checked.
+#' @param expected An appropriate expected value.
+#' @return
+#'  Throws an error, if any, and returns `x` invisibly otherwise.
+#' @keywords internal
+#' @noRd
+assert_length <- function(x, expected) {
+  arg <- deparse(substitute(x))
+  if (length(x) != expected) {
+    str <- "%s must be of length %d; not %d."
+    msg <- sprintf(str, sQuote(arg), expected, length(x))
+    stop(msg, call. = FALSE)
+  }
+  invisible(x)
+}

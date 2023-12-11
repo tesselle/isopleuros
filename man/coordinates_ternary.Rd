@@ -12,7 +12,13 @@ coordinates_ternary(x, y, z, ...)
 
 \S4method{coordinates_ternary}{numeric,numeric,numeric}(x, y, z, missing = getOption("isopleuros.missing"))
 
-\S4method{coordinates_ternary}{ANY,missing,missing}(x, missing = getOption("isopleuros.missing"))
+\S4method{coordinates_ternary}{ANY,missing,missing}(
+  x,
+  xlab = NULL,
+  ylab = NULL,
+  zlab = NULL,
+  missing = getOption("isopleuros.missing")
+)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z cartesian coordinates
@@ -25,9 +31,16 @@ suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 \item{missing}{A \code{\link{logical}} scalar: should \link[=NA]{missing values} be replaced
 with zeros before the computation proceeds? If \code{FALSE} (the default),
 incomplete cases are removed.}
+
+\item{xlab, ylab, zlab}{A \code{\link{character}} string specifying the names for the x,
+y and z variables to be extracted.}
 }
 \value{
-A \code{\link{list}}.
+A \code{\link{list}} with the components:
+\tabular{ll}{
+\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
+\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
+}
 }
 \description{
 Computes ternary coordinates.

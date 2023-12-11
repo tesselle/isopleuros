@@ -10,33 +10,40 @@ setMethod(
   f = "coordinates_ternary",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
   definition = function(x, y, z, missing = getOption("isopleuros.missing")) {
+    ## Validation
+    n <- length(x)
+    assert_length(y, n)
+    assert_length(z, n)
+
     ## Missing values
     if (missing) {
       x[is.na(x)] <- 0
       y[is.na(y)] <- 0
       z[is.na(z)] <- 0
-    } else {
-      i <- !is.na(x) & !is.na(y) & !is.na(z)
-      x <- x[i]
-      y <- y[i]
-      z <- z[i]
     }
+
+    total <- x + y + z
+    na <- is.na(x) | is.na(y) | is.na(z)
+    zero <- total == 0
+
+    x <- x[!na & !zero]
+    y <- y[!na & !zero]
+    z <- z[!na & !zero]
+    total <- total[!na & !zero]
 
     ## Validation
     if (any(x < 0 | y < 0 | z < 0)) {
       stop("Positive values are expected.", call. = FALSE)
     }
 
-    ## Triangle vertex coordinates
-    # vertex <- matrix(data = c(0, 1, 0.5, 0, 0, .top), ncol = 2)
-    # cbind(x, y, z) %*% vertex
-
-    total <- x + y + z
     x <- x / total
     y <- y / total
     z <- z / total
 
-    list(x = y + z / 2, y = z * sqrt(3) / 2)
+    list(
+      x = y + z / 2,
+      y = z * sqrt(3) / 2
+    )
   }
 )
 
@@ -46,8 +53,9 @@ setMethod(
 setMethod(
   f = "coordinates_ternary",
   signature = c(x = "ANY", y = "missing", z = "missing"),
-  definition = function(x, missing = getOption("isopleuros.missing")) {
-    xyz <- grDevices::xyz.coords(x)
+  definition = function(x, xlab = NULL, ylab = NULL, zlab = NULL,
+                        missing = getOption("isopleuros.missing")) {
+    xyz <- grDevices::xyz.coords(x, xlab = xlab, ylab = ylab, zlab = zlab)
     methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, missing = missing)
   }
 )
@@ -61,15 +69,18 @@ setMethod(
   signature = c(x = "numeric", y = "numeric"),
   definition = function(x, y) {
     ## Validation
-    if (any(x < 0 | y < 0)) {
-      stop("Positive values are expected.", call. = FALSE)
-    }
+    n <- length(x)
+    assert_length(y, n)
 
-    k = y * 2 / sqrt(3)
-    j = x - k / 2
-    i = 1 - (j + k)
+    k <- y * 2 / sqrt(3)
+    j <- x - k / 2
+    i <- 1 - (j + k)
 
-    list(x = i, y = j, z = k)
+    list(
+      x = i,
+      y = j,
+      z = k
+    )
   }
 )
 
@@ -79,8 +90,8 @@ setMethod(
 setMethod(
   f = "coordinates_cartesian",
   signature = c(x = "ANY", y = "missing"),
-  definition = function(x) {
-    xy <- grDevices::xy.coords(x)
+  definition = function(x, xlab = NULL, ylab = NULL) {
+    xy <- grDevices::xy.coords(x, xlab = xlab, ylab = ylab)
     methods::callGeneric(x = xy$x, y = xy$y)
   }
 )

@@ -10,11 +10,18 @@
 #'  of a set of points.
 #'  If `y` and `z` are missing, an attempt is made to interpret `x` in a
 #'  suitable way (see [grDevices::xyz.coords()]).
+#' @param xlab,ylab,zlab A [`character`] string specifying the names for the x,
+#'  y and z variables to be extracted.
 #' @param missing A [`logical`] scalar: should [missing values][NA] be replaced
 #'  with zeros before the computation proceeds? If `FALSE` (the default),
 #'  incomplete cases are removed.
 #' @param ... Currently not used.
-#' @return A [`list`].
+#' @return
+#'  A [`list`] with the components:
+#'  \tabular{ll}{
+#'   `x` \tab A [`numeric`] vector of x values. \cr
+#'   `y` \tab A [`numeric`] vector of y values. \cr
+#'  }
 #' @example inst/examples/ex-coordinates.R
 #' @author N. Frerebeau
 #' @docType methods
@@ -33,8 +40,16 @@ setGeneric(
 #' @param x,y A [`numeric`] vector giving the x and y ternary coordinates of a
 #'  set of points. If `y` is missing, an attempt is made to interpret `x` in a
 #'  suitable way (see [grDevices::xy.coords()]).
+#' @param xlab,ylab A [`character`] string specifying the names for the x and y
+#'  variables to be extracted.
 #' @param ... Currently not used.
-#' @return A [`list`].
+#' @return
+#'  A [`list`] with the components:
+#'  \tabular{ll}{
+#'   `x` \tab A [`numeric`] vector of x values. \cr
+#'   `y` \tab A [`numeric`] vector of y values. \cr
+#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'  }
 #' @example inst/examples/ex-coordinates.R
 #' @author N. Frerebeau
 #' @docType methods
