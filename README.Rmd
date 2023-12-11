@@ -35,7 +35,7 @@ Sys.setlocale("LC_MESSAGES", 'en_GB.UTF-8') # Force locale
 
 Ternary plots made simple. **isopleuros** allows to create ternary plots using **graphics**. It provides functions to display the data in the ternary space, to add or tune graphical elements and to display statistical summaries. It also includes common ternary diagrams useful for the archaeologist (e.g. soil texture charts, ceramic phase diagram).
 
-**isopleuros** is a dependency-free package^[The only exception is the `ternary_contour()` function for which the **akima** package is required, but is not installed by default.] designed to be as simple as possible. If you need finer tuning or more advanced features, you should consider the [**Ternary**](https://ms609.github.io/Ternary/) or [**ggtern**](http://www.ggtern.com/) package.
+**isopleuros** is a dependency-free package^[The only exception is the `ternary_contour()` function for which the [**interp**](https://cran.r-project.org/package=interp) package is required, but is not installed by default.] designed to be as simple as possible. If you need finer tuning or more advanced features, you should consider the [**Ternary**](https://ms609.github.io/Ternary/) or [**ggtern**](http://www.ggtern.com/) package.
 
 ```{r citation, echo=FALSE, comment=''}
 utils::citation("isopleuros")

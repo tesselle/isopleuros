@@ -29,7 +29,7 @@ Imports:
     stats,
     utils
 Suggests: 
-    akima,
+    interp,
     rsvg,
     svglite,
     tinysnapshot,

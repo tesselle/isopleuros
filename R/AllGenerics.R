@@ -482,10 +482,10 @@ setGeneric(
 #'  argument (the number of levels) and returns a vector of colors.
 #' @param ilr A [`logical`] scalar: should interpolation be computed in ILR
 #'  space? If `FALSE`, interpolation is computed in Cartesian space.
-#' @param linear A [`logical`] scalar: should linear interpolation be used?
-#'  If `FALSE`, spline interpolation is used (see [akima::interp()]).
+#' @param method A [`character`] string: specifying the method for interpolation
+#'  (see [interp::interp()]).
 #' @param extrapolate A [`logical`] scalar: should extrapolation be used outside
-#'  of the convex hull determined by the data points (see [akima::interp()])?
+#'  of the convex hull determined by the data points (see [interp::interp()])?
 #' @param ... Further arguments to be passed to [ternary_lines()].
 #' @details
 #'  Contour are computed from a bivariate interpolation onto a grid,
@@ -496,8 +496,8 @@ setGeneric(
 #'  Invisibly returns a [`list`] with elements `levels` (the contour levels) and
 #'  `colors` (the contour colors) that can be used for a legend.
 #' @note
-#'  The \pkg{akima} package needs to be installed on your machine.
-#' @seealso [akima::interp()], [grDevices::contourLines()]
+#'  The \pkg{interp} package needs to be installed on your machine.
+#' @seealso [interp::interp()], [grDevices::contourLines()]
 #' @example inst/examples/ex-contour.R
 #' @author N. Frerebeau
 #' @docType methods

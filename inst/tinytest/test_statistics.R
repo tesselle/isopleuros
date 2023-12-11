@@ -65,7 +65,7 @@ if (at_home()) {
   }
   expect_snapshot_plot(pca_1, "pca_1")
 }
-if (at_home() && requireNamespace("akima", quietly = TRUE)) {
+if (at_home() && requireNamespace("interp", quietly = TRUE)) {
   using("tinysnapshot")
   options(tinysnapshot_device = "svglite")
   options(tinysnapshot_height = 7) # inches
@@ -96,7 +96,7 @@ if (at_home() && requireNamespace("akima", quietly = TRUE)) {
   ## Contour Cartesian
   contour_cartesian <- function() {
     ternary_plot(NULL)
-    suppressWarnings( # Remove warning from akima (collinear points)
+    suppressWarnings( # Remove warnings (collinear points)
       ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = FALSE)
     )
   }

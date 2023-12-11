@@ -6,6 +6,7 @@
 * Prevent division by zero when calculating ternary coordinates.
 
 ## Internals
+* Use **interp** instead of **akima**.
 * Use **tinytest** and **tinysnapshot** instead of **testthat** and **vdiffr**.
 
 # isopleuros 1.0.0

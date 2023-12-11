@@ -167,4 +167,5 @@ Please note that the **isopleuros** project is released with a
 contributing to this project, you agree to abide by its terms.
 
 [^1]: The only exception is the `ternary_contour()` function for which
-    the **akima** package is required, but is not installed by default.
+    the [**interp**](https://cran.r-project.org/package=interp) package 
+    is required, but is not installed by default.
