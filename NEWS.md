@@ -1,4 +1,6 @@
 # isopleuros 1.1.0.9000
+## Enhancements
+* Allow to center and scale data before plotting.
 
 # isopleuros 1.1.0
 ## New classes and methods

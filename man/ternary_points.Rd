@@ -10,9 +10,9 @@
 \usage{
 ternary_points(x, y, z, ...)
 
-\S4method{ternary_points}{numeric,numeric,numeric}(x, y, z, type = "p", ...)
+\S4method{ternary_points}{numeric,numeric,numeric}(x, y, z, center = FALSE, scale = FALSE, type = "p", ...)
 
-\S4method{ternary_points}{ANY,missing,missing}(x, type = "p", ...)
+\S4method{ternary_points}{ANY,missing,missing}(x, center = FALSE, scale = FALSE, type = "p", ...)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z ternary coordinates
@@ -23,11 +23,23 @@ interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDe
 supplied as arguments, particularly, plotting character, \code{pch}, character
 expansion, \code{cex} and color, \code{col}.}
 
+\item{center}{A \code{\link{logical}} scalar: should the data be centered?}
+
+\item{scale}{A \code{\link{logical}} scalar: should the data be scaled?}
+
 \item{type}{A \code{\link{character}} string indicating the type of plotting; actually
 any of the types as in \code{\link[graphics:plot.default]{graphics::plot.default()}}.}
 }
 \value{
-\code{ternary_points()} is called it for its side-effects.
+\code{ternary_points()} is called it for its side-effects. Invisibly returns
+a \code{\link{list}} with the components:
+\tabular{ll}{
+\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
+\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
+\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
+\code{center} \tab A \code{\link{numeric}} vector giving the center. \cr
+\code{scale} \tab A \code{\link{numeric}} vector giving the scale factor. \cr
+}
 }
 \description{
 Add Points to a Ternary Plot
@@ -37,6 +49,12 @@ Add Points to a Ternary Plot
 ## Data from Aitchison 1986
 ternary_plot(NULL, panel.first = ternary_grid())
 ternary_points(lava, col = "red", pch = 16)
+
+## Center and scale
+ternary_plot(NULL, axes = FALSE, frame.plot = TRUE)
+ternary_points(lava, col = "red", pch = 16)
+ternary_points(lava, center = TRUE, col = "blue", pch = 16)
+ternary_points(lava, center = TRUE, scale = TRUE, col = "green", pch = 16)
 }
 \seealso{
 \code{\link[graphics:points]{graphics::points()}}

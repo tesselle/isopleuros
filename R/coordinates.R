@@ -9,7 +9,8 @@ NULL
 setMethod(
   f = "coordinates_ternary",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
-  definition = function(x, y, z, missing = getOption("isopleuros.missing")) {
+  definition = function(x, y, z, center = FALSE, scale = FALSE,
+                        missing = getOption("isopleuros.missing")) {
     ## Validation
     n <- length(x)
     assert_length(y, n)
@@ -36,13 +37,14 @@ setMethod(
       stop("Positive values are expected.", call. = FALSE)
     }
 
-    x <- x / total
-    y <- y / total
-    z <- z / total
+    coord <- matrix(data = c(x, y, z), ncol = 3) / total
+    coord <- scale(coord, center = center, scale = scale)
 
     list(
-      x = y + z / 2,
-      y = z * sqrt(3) / 2
+      x = coord$y + coord$z / 2,
+      y = coord$z * sqrt(3) / 2,
+      center = coord$center,
+      scale = coord$scale
     )
   }
 )
@@ -54,9 +56,11 @@ setMethod(
   f = "coordinates_ternary",
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, xlab = NULL, ylab = NULL, zlab = NULL,
+                        center = FALSE, scale = FALSE,
                         missing = getOption("isopleuros.missing")) {
     xyz <- grDevices::xyz.coords(x, xlab = xlab, ylab = ylab, zlab = zlab)
-    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, missing = missing)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
+                         center = center, scale = scale, missing = missing)
   }
 )
 
@@ -95,6 +99,82 @@ setMethod(
     methods::callGeneric(x = xy$x, y = xy$y)
   }
 )
+
+# Scale ========================================================================
+#' Center and Scale
+#'
+#' @param x,y,z The x, y and z coordinates of a set of points. Both y and z can
+#'  be left at `NULL`. In this case, an attempt is made to interpret x in a way
+#'  suitable for plotting.
+#' @param center A [`logical`] scalar or a [`numeric`] vector giving the center.
+#' @param scale A [`logical`] scalar or a length-one [`numeric`] vector giving a
+#'  scaling factor.
+#' @return
+#'  A [`list`] with the components:
+#'  \tabular{ll}{
+#'   `x` \tab A [`numeric`] vector of x values. \cr
+#'   `y` \tab A [`numeric`] vector of y values. \cr
+#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'   `center` \tab A [`numeric`] vector giving the center. \cr
+#'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
+#'  }
+#' @keywords internal
+#' @noRd
+scale <- function(x, y = NULL, z = NULL, center = TRUE, scale = TRUE) {
+  xyz <- grDevices::xyz.coords(x = x, y = y, z = z)
+  xyz <- matrix(data = c(xyz$x, xyz$y, xyz$z), ncol = 3)
+
+  y <- xyz
+  if (!isFALSE(center) && !is.null(center)) {
+    if (isTRUE(center)) {
+      center <- apply(X = xyz, MARGIN = 2, FUN = gmean, simplify = TRUE)
+      center <- center / sum(center)
+    }
+    assert_length(center, NCOL(xyz))
+
+    y <- t(t(y) / center)
+    y <- y / rowSums(y)
+  } else {
+    center <- rep(1, NCOL(xyz))
+  }
+
+  if (!isFALSE(scale) && !is.null(scale)) {
+    if (isTRUE(scale)) {
+      scale <- sqrt(mean(diag(stats::cov(clr(xyz)))))
+    }
+    assert_length(scale, 1)
+
+    y <- y^(1 / scale)
+    y <- y / rowSums(y)
+  } else {
+    scale <- 1
+  }
+
+  list(
+    x = y[, 1],
+    y = y[, 2],
+    z = y[, 3],
+    center = center,
+    scale = scale
+  )
+}
+
+#' Geometric Mean
+#'
+#' @param x A [`numeric`] vector.
+#' @param trim A length-one [`numeric`] vector specifying the fraction (0 to 0.5)
+#'  of observations to be trimmed from each end of `x` before the mean is
+#'  computed.
+#' @param na.rm A [`logical`] scalar: should `NA` values be stripped before the
+#'  computation proceeds?
+#' @return A [`numeric`] vector.
+#' @keywords internal
+#' @noRd
+gmean <- function(x, trim = 0, na.rm = FALSE) {
+  if (na.rm) x <- x[is.finite(x)]
+  x <- x[x > 0]
+  exp(mean(log(x), trim = trim))
+}
 
 # Centered Log-Ratios ==========================================================
 #' Centered Log-Ratios (CLR)

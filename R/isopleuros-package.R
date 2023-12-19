@@ -43,6 +43,6 @@
 #' @importFrom grDevices as.graphicsAnnot as.raster chull colorRampPalette
 #' contourLines dev.flush dev.hold hcl.colors xyz.coords
 #' @importFrom methods setGeneric setMethod .valueClassTest
-#' @importFrom utils combn
+#' @importFrom utils combn modifyList
 #' @importFrom stats as.dist optim
 NULL

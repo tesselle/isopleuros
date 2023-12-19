@@ -11,7 +11,8 @@ setMethod(
   definition = function(x, y, z, type = "l", ...) {
     coords <- coordinates_ternary(x, y, z)
     graphics::lines(x = coords, type = type, ...)
-    invisible(data.frame(x = x, y = y, z = z))
+
+    invisible(list(x = coords$x, y = coords$y, z = coords$z))
   }
 )
 
@@ -23,6 +24,7 @@ setMethod(
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, type = "l", ...) {
     xyz <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, type = type, ...)
+    pt <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, type = type, ...)
+    invisible(pt)
   }
 )

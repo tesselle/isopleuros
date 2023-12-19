@@ -14,6 +14,8 @@ ternary_plot(x, y, z, ...)
   x,
   y,
   z,
+  center = FALSE,
+  scale = FALSE,
   xlim = NULL,
   ylim = NULL,
   zlim = NULL,
@@ -56,6 +58,10 @@ interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDe
 \item{...}{Other \link[graphics:par]{graphical parameters} may also be passed as
 arguments to this function.}
 
+\item{center}{A \code{\link{logical}} scalar: should the data be centered?}
+
+\item{scale}{A \code{\link{logical}} scalar: should the data be scaled?}
+
 \item{xlim}{A length-two \code{\link{numeric}} vector giving the \code{x} limits in the
 range \eqn{[0,1]}.}
 
@@ -89,7 +95,14 @@ place but before the axes, title and box are added.}
 }
 \value{
 \code{ternary_plot()} is called it for its side-effects: it results in a graphic
-being displayed. Invisibly returns \code{x}.
+being displayed. Invisibly returns a \code{\link{list}} with the components:
+\tabular{ll}{
+\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
+\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
+\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
+\code{center} \tab A \code{\link{numeric}} vector giving the center. \cr
+\code{scale} \tab A \code{\link{numeric}} vector giving the scale factor. \cr
+}
 }
 \description{
 Produces a ternary plot.

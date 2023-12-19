@@ -8,6 +8,8 @@
 ternary_grid(
   primary = NULL,
   secondary = NULL,
+  center = getOption("isopleuros.center"),
+  scale = getOption("isopleuros.scale"),
   col.primary = "darkgray",
   col.secondary = "lightgray",
   lty.primary = "dashed",
@@ -22,6 +24,12 @@ grid in \code{x}, \code{y} and \code{z} direction.}
 
 \item{secondary}{An \code{\link{integer}} specifying the number of cells of the
 secondary grid in \code{x}, \code{y} and \code{z} direction.}
+
+\item{center}{A \code{\link{numeric}} vector giving the center. If \code{NULL}
+(the default), data are assumed not centered.}
+
+\item{scale}{A \code{\link{numeric}} vector giving the scale factor. If \code{NULL}
+(the default), data are assumed not scaled.}
 
 \item{col.primary, col.secondary}{A \code{\link{character}} string specifying the color
 of the grid lines.}
@@ -39,31 +47,17 @@ the line width of the grid lines.}
 Adds a triangular grid to an existing plot.
 }
 \examples{
-## Blank plot
-ternary_plot(NULL)
-
-## Compositional data
-coda <- data.frame(
-  X = c(20, 60, 20, 1/3),
-  Y = c(20, 20, 60, 1/3),
-  Z = c(60, 20, 20, 1/3)
-)
-
-## Ternary plot
-ternary_plot(coda, pch = 16, col = "red")
-
-## Add a grid
-ternary_plot(coda, panel.first = ternary_grid(5, 10))
-
-## Zoom
-ternary_plot(coda, xlim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, ylim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
-
-## Color according to a supplementary variable
 ## Data from Aitchison 1986
-col <- grDevices::colorRampPalette(c("red", "blue"))(nrow(arctic))
-ternary_plot(arctic, panel.first = ternary_grid(), pch = 16, col = col)
+ternary_plot(lava, center = FALSE, scale = FALSE, col = "red", pch = 16)
+ternary_grid(5)
+
+## Center
+z <- ternary_plot(lava, center = TRUE, col = "blue", pch = 16)
+ternary_grid(5, center = z$center)
+
+## Center and scale
+z <- ternary_plot(lava, center = TRUE, scale = TRUE, col = "green", pch = 16)
+ternary_grid(5, center = z$center, scale = z$scale)
 }
 \seealso{
 Other graphical elements: 

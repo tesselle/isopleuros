@@ -10,6 +10,9 @@
 #'  of a set of points.
 #'  If `y` and `z` are missing, an attempt is made to interpret `x` in a
 #'  suitable way (see [grDevices::xyz.coords()]).
+#' @param center A [`logical`] scalar or a [`numeric`] vector giving the center.
+#' @param scale A [`logical`] scalar or a length-one [`numeric`] vector giving a
+#'  scaling factor.
 #' @param xlab,ylab,zlab A [`character`] string specifying the names for the x,
 #'  y and z variables to be extracted.
 #' @param missing A [`logical`] scalar: should [missing values][NA] be replaced
@@ -21,6 +24,9 @@
 #'  \tabular{ll}{
 #'   `x` \tab A [`numeric`] vector of x values. \cr
 #'   `y` \tab A [`numeric`] vector of y values. \cr
+#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'   `center` \tab A [`numeric`] vector giving the center. \cr
+#'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
 #'  }
 #' @example inst/examples/ex-coordinates.R
 #' @author N. Frerebeau
@@ -69,6 +75,8 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param center A [`logical`] scalar: should the data be centered?
+#' @param scale A [`logical`] scalar: should the data be scaled?
 #' @param xlim A length-two [`numeric`] vector giving the `x` limits in the
 #'  range \eqn{[0,1]}.
 #' @param ylim A length-two [`numeric`] vector giving the `y` limits in the
@@ -93,7 +101,14 @@ setGeneric(
 #'  arguments to this function.
 #' @return
 #'  `ternary_plot()` is called it for its side-effects: it results in a graphic
-#'  being displayed. Invisibly returns `x`.
+#'  being displayed. Invisibly returns a [`list`] with the components:
+#'  \tabular{ll}{
+#'   `x` \tab A [`numeric`] vector of x values. \cr
+#'   `y` \tab A [`numeric`] vector of y values. \cr
+#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'   `center` \tab A [`numeric`] vector giving the center. \cr
+#'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
+#'  }
 #' @example inst/examples/ex-plot.R
 #' @author N. Frerebeau
 #' @docType methods
@@ -112,6 +127,10 @@ setGeneric(
 #'  grid in `x`, `y` and `z` direction.
 #' @param secondary An [`integer`] specifying the number of cells of the
 #'  secondary grid in `x`, `y` and `z` direction.
+#' @param center A [`numeric`] vector giving the center. If `NULL`
+#'  (the default), data are assumed not centered.
+#' @param scale A [`numeric`] vector giving the scale factor. If `NULL`
+#'  (the default), data are assumed not scaled.
 #' @param col.primary,col.secondary A [`character`] string specifying the color
 #'  of the grid lines.
 #' @param lty.primary,lty.secondary A [`character`] string or [`numeric`]
@@ -120,7 +139,7 @@ setGeneric(
 #'  the line width of the grid lines.
 #' @return
 #'  `ternary_grid()` is called it for its side-effects.
-#' @example inst/examples/ex-plot.R
+#' @example inst/examples/ex-scale.R
 #' @author N. Frerebeau
 #' @docType methods
 #' @family graphical elements
@@ -140,6 +159,10 @@ NULL
 #'  placed at the tickpoints. If this is not `logical`, `at` should also be
 #'  supplied and of the same length.
 #' @param tick A [`logical`] scalar: should tickmarks and an axis line be drawn?
+#' @param center A [`numeric`] vector giving the center. If `NULL`
+#'  (the default), data are assumed not centered.
+#' @param scale A [`numeric`] vector giving the scale factor. If `NULL`
+#'  (the default), data are assumed not scaled.
 #' @param font font for text. Defaults to `par("font.axis")`.
 #' @param lty A [`character`] string or [`numeric`] value specifying the line
 #'  type for both the axis line and the tick marks.
@@ -320,13 +343,23 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param center A [`logical`] scalar: should the data be centered?
+#' @param scale A [`logical`] scalar: should the data be scaled?
 #' @param type A [`character`] string indicating the type of plotting; actually
 #'  any of the types as in [graphics::plot.default()].
 #' @param ... Further graphical parameters (see [graphics::par()]) may also be
 #'  supplied as arguments, particularly, plotting character, `pch`, character
 #'  expansion, `cex` and color, `col`.
 #' @return
-#'  `ternary_points()` is called it for its side-effects.
+#'  `ternary_points()` is called it for its side-effects. Invisibly returns
+#'  a [`list`] with the components:
+#'  \tabular{ll}{
+#'   `x` \tab A [`numeric`] vector of x values. \cr
+#'   `y` \tab A [`numeric`] vector of y values. \cr
+#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'   `center` \tab A [`numeric`] vector giving the center. \cr
+#'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
+#'  }
 #' @seealso [graphics::points()]
 #' @example inst/examples/ex-points.R
 #' @author N. Frerebeau

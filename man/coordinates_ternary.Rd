@@ -10,13 +10,22 @@
 \usage{
 coordinates_ternary(x, y, z, ...)
 
-\S4method{coordinates_ternary}{numeric,numeric,numeric}(x, y, z, missing = getOption("isopleuros.missing"))
+\S4method{coordinates_ternary}{numeric,numeric,numeric}(
+  x,
+  y,
+  z,
+  center = FALSE,
+  scale = FALSE,
+  missing = getOption("isopleuros.missing")
+)
 
 \S4method{coordinates_ternary}{ANY,missing,missing}(
   x,
   xlab = NULL,
   ylab = NULL,
   zlab = NULL,
+  center = FALSE,
+  scale = FALSE,
   missing = getOption("isopleuros.missing")
 )
 }
@@ -27,6 +36,11 @@ If \code{y} and \code{z} are missing, an attempt is made to interpret \code{x} i
 suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
 \item{...}{Currently not used.}
+
+\item{center}{A \code{\link{logical}} scalar or a \code{\link{numeric}} vector giving the center.}
+
+\item{scale}{A \code{\link{logical}} scalar or a length-one \code{\link{numeric}} vector giving a
+scaling factor.}
 
 \item{missing}{A \code{\link{logical}} scalar: should \link[=NA]{missing values} be replaced
 with zeros before the computation proceeds? If \code{FALSE} (the default),
@@ -40,6 +54,9 @@ A \code{\link{list}} with the components:
 \tabular{ll}{
 \code{x} \tab A \code{\link{numeric}} vector of x values. \cr
 \code{y} \tab A \code{\link{numeric}} vector of y values. \cr
+\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
+\code{center} \tab A \code{\link{numeric}} vector giving the center. \cr
+\code{scale} \tab A \code{\link{numeric}} vector giving the scale factor. \cr
 }
 }
 \description{

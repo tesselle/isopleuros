@@ -8,7 +8,7 @@ NULL
 setMethod(
   f = "ternary_plot",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
-  definition = function(x, y, z,
+  definition = function(x, y, z, center = FALSE, scale = FALSE,
                         xlim = NULL, ylim = NULL, zlim = NULL,
                         xlab = NULL, ylab = NULL, zlab = NULL,
                         main = NULL, sub = NULL, ann = graphics::par("ann"),
@@ -48,20 +48,27 @@ setMethod(
     }
     graphics::plot.window(xlim = lim$x, ylim = lim$y, asp = 1)
 
+    ## Compute ternary coordinates
+    pt <- coordinates_ternary(x = x, y = y, z = z, center = center, scale = scale)
+
+    ## Save center and scale for further use, e.g. grid or axes.
+    options(isopleuros.center = pt$center)
+    options(isopleuros.scale = pt$scale)
+
     ## Evaluate pre-plot expressions
     panel.first
 
     ## Plot
-    ternary_points(x = x, y = y, z = z, ...)
+    graphics::points(x = pt, ...)
 
     ## Evaluate post-plot and pre-axis expressions
     panel.last
 
     ## Construct Axis
     if (axes) {
-      ternary_axis(side = 1, col = fg)
-      ternary_axis(side = 2, col = fg)
-      ternary_axis(side = 3, col = fg)
+      ternary_axis(side = 1, center = pt$center, scale = pt$scale, col = fg)
+      ternary_axis(side = 2, center = pt$center, scale = pt$scale, col = fg)
+      ternary_axis(side = 3, center = pt$center, scale = pt$scale, col = fg)
     }
 
     ## Plot frame
@@ -75,7 +82,7 @@ setMethod(
                     zlab = zlab, ...)
     }
 
-    invisible(data.frame(x = x, y = y, z = z))
+    invisible(pt)
   }
 )
 
@@ -92,7 +99,7 @@ setMethod(
                         panel.first = NULL, panel.last = NULL, ...) {
 
     xyz <- grDevices::xyz.coords(x, xlab = xlab, ylab = ylab, zlab = zlab)
-    methods::callGeneric(
+    pt <- methods::callGeneric(
       x = xyz$x, y = xyz$y, z = xyz$z,
       xlim = xlim,
       ylim = ylim,
@@ -108,7 +115,7 @@ setMethod(
       ...
     )
 
-    invisible(x)
+    invisible(pt)
   }
 )
 
