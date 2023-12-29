@@ -48,9 +48,9 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 
     To cite isopleuros in publications use:
 
-      Frerebeau N (2023). _isopleuros: Ternary Plots_. Université Bordeaux
+      Frerebeau N (2024). _isopleuros: Ternary Plots_. Université Bordeaux
       Montaigne, Pessac, France. doi:10.5281/zenodo.7940389
-      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.1.0,
+      <https://doi.org/10.5281/zenodo.7940389>, R package version 1.2.0,
       <https://packages.tesselle.org/isopleuros/>.
 
     A BibTeX entry for LaTeX users is
@@ -58,10 +58,10 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
       @Manual{,
         author = {Nicolas Frerebeau},
         title = {{isopleuros: Ternary Plots}},
-        year = {2023},
+        year = {2024},
         organization = {Université Bordeaux Montaigne},
         address = {Pessac, France},
-        note = {R package version 1.1.0},
+        note = {R package version 1.2.0},
         url = {https://packages.tesselle.org/isopleuros/},
         doi = {10.5281/zenodo.7940389},
       }
