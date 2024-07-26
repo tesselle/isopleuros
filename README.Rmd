@@ -20,6 +20,7 @@ Sys.setlocale("LC_MESSAGES", 'en_GB.UTF-8') # Force locale
 [![R-CMD-check](https://github.com/tesselle/isopleuros/workflows/R-CMD-check/badge.svg)](https://github.com/tesselle/isopleuros/actions)
 [![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://app.codecov.io/gh/tesselle/isopleuros)
 [![CodeFactor](https://www.codefactor.io/repository/github/tesselle/isopleuros/badge/main)](https://www.codefactor.io/repository/github/tesselle/isopleuros/overview/main)
+[![Dependencies](https://tinyverse.netlify.app/badge/isopleuros)](https://cran.r-project.org/package=isopleuros)
 
 [![r-universe](https://tesselle.r-universe.dev/badges/isopleuros)](https://tesselle.r-universe.dev/isopleuros){.pkgdown-devel}
 [![CRAN Version](http://www.r-pkg.org/badges/version/isopleuros)](https://cran.r-project.org/package=isopleuros){.pkgdown-release}

@@ -8,6 +8,7 @@
 [![R-CMD-check](https://github.com/tesselle/isopleuros/workflows/R-CMD-check/badge.svg)](https://github.com/tesselle/isopleuros/actions)
 [![codecov](https://codecov.io/gh/tesselle/isopleuros/branch/main/graph/badge.svg?token=QnnAqgIIUp)](https://app.codecov.io/gh/tesselle/isopleuros)
 [![CodeFactor](https://www.codefactor.io/repository/github/tesselle/isopleuros/badge/main)](https://www.codefactor.io/repository/github/tesselle/isopleuros/overview/main)
+[![Dependencies](https://tinyverse.netlify.app/badge/isopleuros)](https://cran.r-project.org/package=isopleuros)
 
 <a href="https://tesselle.r-universe.dev/isopleuros"
 class="pkgdown-devel"><img
