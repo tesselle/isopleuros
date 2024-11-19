@@ -10,9 +10,17 @@
 \usage{
 ternary_text(x, y, z, ...)
 
-\S4method{ternary_text}{numeric,numeric,numeric}(x, y, z, labels = seq_along(x), ...)
+\S4method{ternary_text}{numeric,numeric,numeric}(
+  x,
+  y,
+  z,
+  center = FALSE,
+  scale = FALSE,
+  labels = seq_along(x),
+  ...
+)
 
-\S4method{ternary_text}{ANY,missing,missing}(x, labels = seq_along(x$x), ...)
+\S4method{ternary_text}{ANY,missing,missing}(x, center = FALSE, scale = FALSE, labels = seq_along(x$x), ...)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z ternary coordinates
@@ -20,6 +28,12 @@ of a set of points. If \code{y} and \code{z} are missing, an attempt is made to
 interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
 \item{...}{Further arguments to be passed to \code{\link[graphics:text]{graphics::text()}}.}
+
+\item{center}{A \code{\link{logical}} scalar specifying wether the data should be
+centered, or a \code{\link{numeric}} vector giving the center.}
+
+\item{scale}{A \code{\link{logical}} scalar specifying wether the data should be
+scaled, or a \code{\link{numeric}} vector giving the scale factor.}
 
 \item{labels}{A \code{\link{character}} vector or \code{\link{expression}} specifying the text
 to be written.}

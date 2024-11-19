@@ -1,4 +1,6 @@
 # isopleuros 1.2.0.9000
+## Enhancements
+* Allow to center and scale label positions.
 
 # isopleuros 1.2.0
 ## Enhancements

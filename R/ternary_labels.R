@@ -8,13 +8,13 @@ NULL
 setMethod(
   f = "ternary_labels",
   signature = c(x = "numeric", y = "numeric", z = "numeric"),
-  definition = function(x, y, z, labels = seq_along(x),
-                        type = c("text", "shadow"), ...) {
+  definition = function(x, y, z, center = FALSE, scale = FALSE,
+                        labels = seq_along(x), type = c("text", "shadow"), ...) {
     ## Validation
     type <- match.arg(type, several.ok = FALSE)
 
     ## Compute label positions
-    coords <- coordinates_ternary(x, y, z)
+    coords <- coordinates_ternary(x, y, z, center = center, scale = scale)
     labs <- compute_labels(x = coords$x, y = coords$y, labels = labels, ...)
 
     ## Draw labels
@@ -36,9 +36,10 @@ setMethod(
 setMethod(
   f = "ternary_labels",
   signature = c(x = "ANY", y = "missing", z = "missing"),
-  definition = function(x, labels = seq_along(x$x), ...) {
+  definition = function(x, center = FALSE, scale = FALSE, labels = seq_along(x$x), ...) {
     x <- grDevices::xyz.coords(x)
     coords <- methods::callGeneric(x = x$x, y = x$y, z = x$z,
+                                   center = center, scale = scale,
                                    labels = labels, ...)
     invisible(coords)
   }

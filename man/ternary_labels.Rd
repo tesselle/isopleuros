@@ -10,9 +10,18 @@
 \usage{
 ternary_labels(x, y, z, ...)
 
-\S4method{ternary_labels}{numeric,numeric,numeric}(x, y, z, labels = seq_along(x), type = c("text", "shadow"), ...)
+\S4method{ternary_labels}{numeric,numeric,numeric}(
+  x,
+  y,
+  z,
+  center = FALSE,
+  scale = FALSE,
+  labels = seq_along(x),
+  type = c("text", "shadow"),
+  ...
+)
 
-\S4method{ternary_labels}{ANY,missing,missing}(x, labels = seq_along(x$x), ...)
+\S4method{ternary_labels}{ANY,missing,missing}(x, center = FALSE, scale = FALSE, labels = seq_along(x$x), ...)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z ternary coordinates
@@ -22,6 +31,12 @@ interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDe
 \item{...}{Further graphical parameters (see \code{\link[graphics:par]{graphics::par()}}) may also be
 supplied as arguments, particularly, character expansion, \code{cex} and
 color, \code{col}.}
+
+\item{center}{A \code{\link{logical}} scalar specifying wether the data should be
+centered, or a \code{\link{numeric}} vector giving the center.}
+
+\item{scale}{A \code{\link{logical}} scalar specifying wether the data should be
+scaled, or a \code{\link{numeric}} vector giving the scale factor.}
 
 \item{labels}{A \code{\link{character}} vector or \code{\link{expression}} specifying the text
 to be written.}

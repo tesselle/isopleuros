@@ -23,9 +23,11 @@ interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDe
 supplied as arguments, particularly, plotting character, \code{pch}, character
 expansion, \code{cex} and color, \code{col}.}
 
-\item{center}{A \code{\link{logical}} scalar: should the data be centered?}
+\item{center}{A \code{\link{logical}} scalar specifying wether the data should be
+centered, or a \code{\link{numeric}} vector giving the center.}
 
-\item{scale}{A \code{\link{logical}} scalar: should the data be scaled?}
+\item{scale}{A \code{\link{logical}} scalar specifying wether the data should be
+scaled, or a \code{\link{numeric}} vector giving the scale factor.}
 
 \item{type}{A \code{\link{character}} string indicating the type of plotting; actually
 any of the types as in \code{\link[graphics:plot.default]{graphics::plot.default()}}.}

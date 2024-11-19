@@ -343,8 +343,10 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
-#' @param center A [`logical`] scalar: should the data be centered?
-#' @param scale A [`logical`] scalar: should the data be scaled?
+#' @param center A [`logical`] scalar specifying wether the data should be
+#'  centered, or a [`numeric`] vector giving the center.
+#' @param scale A [`logical`] scalar specifying wether the data should be
+#'  scaled, or a [`numeric`] vector giving the scale factor.
 #' @param type A [`character`] string indicating the type of plotting; actually
 #'  any of the types as in [graphics::plot.default()].
 #' @param ... Further graphical parameters (see [graphics::par()]) may also be
@@ -398,6 +400,10 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param center A [`logical`] scalar specifying wether the data should be
+#'  centered, or a [`numeric`] vector giving the center.
+#' @param scale A [`logical`] scalar specifying wether the data should be
+#'  scaled, or a [`numeric`] vector giving the scale factor.
 #' @param labels A [`character`] vector or [`expression`] specifying the text
 #'  to be written.
 #' @param ... Further arguments to be passed to [graphics::text()].
@@ -420,6 +426,10 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param center A [`logical`] scalar specifying wether the data should be
+#'  centered, or a [`numeric`] vector giving the center.
+#' @param scale A [`logical`] scalar specifying wether the data should be
+#'  scaled, or a [`numeric`] vector giving the scale factor.
 #' @param labels A [`character`] vector or [`expression`] specifying the text
 #'  to be written.
 #' @param type A [`character`] string specifying the shape of the field.
@@ -488,6 +498,10 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param center A [`logical`] scalar specifying wether the data should be
+#'  centered, or a [`numeric`] vector giving the center.
+#' @param scale A [`logical`] scalar specifying wether the data should be
+#'  scaled, or a [`numeric`] vector giving the scale factor.
 #' @param ... Further arguments to be passed to [graphics::polygon()].
 #' @return
 #'  `ternary_hull()` is called it for its side-effects.

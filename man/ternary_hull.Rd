@@ -10,9 +10,9 @@
 \usage{
 ternary_hull(x, y, z, ...)
 
-\S4method{ternary_hull}{numeric,numeric,numeric}(x, y, z, ...)
+\S4method{ternary_hull}{numeric,numeric,numeric}(x, y, z, center = FALSE, scale = FALSE, ...)
 
-\S4method{ternary_hull}{ANY,missing,missing}(x, y, z, ...)
+\S4method{ternary_hull}{ANY,missing,missing}(x, center = FALSE, scale = FALSE, ...)
 }
 \arguments{
 \item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z ternary coordinates
@@ -20,6 +20,12 @@ of a set of points. If \code{y} and \code{z} are missing, an attempt is made to
 interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
 \item{...}{Further arguments to be passed to \code{\link[graphics:polygon]{graphics::polygon()}}.}
+
+\item{center}{A \code{\link{logical}} scalar specifying wether the data should be
+centered, or a \code{\link{numeric}} vector giving the center.}
+
+\item{scale}{A \code{\link{logical}} scalar specifying wether the data should be
+scaled, or a \code{\link{numeric}} vector giving the scale factor.}
 }
 \value{
 \code{ternary_hull()} is called it for its side-effects.
