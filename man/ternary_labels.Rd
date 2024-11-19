@@ -10,7 +10,7 @@
 \usage{
 ternary_labels(x, y, z, ...)
 
-\S4method{ternary_labels}{numeric,numeric,numeric}(x, y, z, labels = seq_along(x), ...)
+\S4method{ternary_labels}{numeric,numeric,numeric}(x, y, z, labels = seq_along(x), type = c("text", "shadow"), ...)
 
 \S4method{ternary_labels}{ANY,missing,missing}(x, labels = seq_along(x$x), ...)
 }
@@ -25,6 +25,10 @@ color, \code{col}.}
 
 \item{labels}{A \code{\link{character}} vector or \code{\link{expression}} specifying the text
 to be written.}
+
+\item{type}{A \code{\link{character}} string specifying the shape of the field.
+It must be one of "\code{text}" or "\code{shadow}". Any unambiguous substring
+can be given.}
 }
 \value{
 \code{ternary_labels()} is called it for its side-effects.

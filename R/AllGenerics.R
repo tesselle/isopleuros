@@ -422,6 +422,9 @@ setGeneric(
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
 #' @param labels A [`character`] vector or [`expression`] specifying the text
 #'  to be written.
+#' @param type A [`character`] string specifying the shape of the field.
+#'  It must be one of "`text`" or "`shadow`". Any unambiguous substring
+#'  can be given.
 #' @param ... Further graphical parameters (see [graphics::par()]) may also be
 #'  supplied as arguments, particularly, character expansion, `cex` and
 #'  color, `col`.
