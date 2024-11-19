@@ -12,6 +12,9 @@ setMethod(
     coords <- coordinates_ternary(x, y, z)
     hull <- grDevices::chull(coords)
     graphics::polygon(x = coords$x[hull], y = coords$y[hull], ...)
+
+    coords <- utils::modifyList(coords, list(x = x, y = y, z = z))
+    invisible(coords)
   }
 )
 
@@ -22,7 +25,8 @@ setMethod(
   f = "ternary_hull",
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, ...) {
-    x <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = x$x, y = x$y, z = x$z, ...)
+    xyz <- grDevices::xyz.coords(x)
+    coords <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, ...)
+    invisible(coords)
   }
 )

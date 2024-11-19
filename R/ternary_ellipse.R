@@ -27,6 +27,8 @@ setMethod(
       coords <- coordinates_ternary(tern)
       graphics::polygon(x = coords$x, y = coords$y, ...)
     }
+
+    invisible(list(x = x, y = y, z = z))
   }
 )
 
@@ -37,8 +39,10 @@ setMethod(
   f = "ternary_ellipse",
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, radius = 1, ...) {
-    x <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = x$x, y = x$y, z = x$z, radius = radius, ...)
+    xyz <- grDevices::xyz.coords(x)
+    pt <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
+                               radius = radius, ...)
+    invisible(pt)
   }
 )
 

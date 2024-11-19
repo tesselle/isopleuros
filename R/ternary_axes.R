@@ -61,5 +61,5 @@ ternary_axis <- function(side, at = NULL, labels = TRUE, tick = TRUE,
     )
   }
 
-  invisible()
+  invisible(NULL)
 }

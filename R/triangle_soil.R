@@ -6,24 +6,28 @@ NULL
 #' @rdname triangle_soil
 triangle_soil_hypres <- function(labels = TRUE, symbol = FALSE, ...) {
   .triangle_soil("HYPRES", labels = labels, symbol = symbol, ...)
+  invisible(NULL)
 }
 
 #' @export
 #' @rdname triangle_soil
 triangle_soil_folk <- function(labels = TRUE, symbol = FALSE, ...) {
   .triangle_soil("folk1954", labels = labels, symbol = symbol, ...)
+  invisible(NULL)
 }
 
 #' @export
 #' @rdname triangle_soil
 triangle_soil_shepard <- function(labels = TRUE, symbol = FALSE, ...) {
   .triangle_soil("shepard1954", labels = labels, symbol = symbol, ...)
+  invisible(NULL)
 }
 
 #' @export
 #' @rdname triangle_soil
 triangle_soil_usda <- function(labels = TRUE, symbol = FALSE, ...) {
   .triangle_soil("USDA1951", labels = labels, symbol = symbol, ...)
+  invisible(NULL)
 }
 
 .triangle_soil <- function(chart, labels = TRUE, symbol = FALSE, ...) {

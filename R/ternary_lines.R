@@ -12,7 +12,7 @@ setMethod(
     coords <- coordinates_ternary(x, y, z)
     graphics::lines(x = coords, type = type, ...)
 
-    invisible(list(x = coords$x, y = coords$y, z = coords$z))
+    invisible(list(x = x, y = y, z = z))
   }
 )
 
@@ -24,7 +24,8 @@ setMethod(
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, type = "l", ...) {
     xyz <- grDevices::xyz.coords(x)
-    pt <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, type = type, ...)
-    invisible(pt)
+    coords <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
+                                   type = type, ...)
+    invisible(coords)
   }
 )

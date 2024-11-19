@@ -25,8 +25,8 @@ setMethod(
     )
     fun(labs, labels = labels, ...)
 
-    pt <- utils::modifyList(coords, list(x = x, y = y, z = z))
-    invisible(pt)
+    coords <- utils::modifyList(coords, list(x = x, y = y, z = z))
+    invisible(coords)
   }
 )
 
@@ -38,8 +38,9 @@ setMethod(
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, labels = seq_along(x$x), ...) {
     x <- grDevices::xyz.coords(x)
-    pt <- methods::callGeneric(x = x$x, y = x$y, z = x$z, labels = labels, ...)
-    invisible(pt)
+    coords <- methods::callGeneric(x = x$x, y = x$y, z = x$z,
+                                   labels = labels, ...)
+    invisible(coords)
   }
 )
 

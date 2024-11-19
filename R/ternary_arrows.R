@@ -13,5 +13,7 @@ setMethod(
     coords1 <- coordinates_ternary(x1, y1, z1)
     graphics::arrows(x0 = coords0$x, y0 = coords0$y,
                      x1 = coords1$x, y1 = coords1$y, ...)
+
+    invisible(NULL)
   }
 )

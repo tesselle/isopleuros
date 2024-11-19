@@ -33,5 +33,5 @@ ternary_title <- function(main = NULL, sub = NULL, xlab = NULL, ylab = NULL,
   graphics::title(main = main, sub = sub, xlab = NULL, ylab = NULL,
                   line = line, outer = outer)
 
-  invisible()
+  invisible(NULL)
 }

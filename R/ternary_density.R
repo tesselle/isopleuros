@@ -50,10 +50,11 @@ setMethod(
   definition = function(x, h = NULL, n = 25, nlevels = 10, levels = NULL,
                         palette = function(i) grDevices::hcl.colors(i, "YlOrRd", rev = TRUE),
                         ...) {
-    x <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = x$x, y = x$y, z = x$z,
-                         h = h, n = n, nlevels = nlevels, levels = levels,
-                         palette = palette, ...)
+    xyz <- grDevices::xyz.coords(x)
+    pt <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
+                               h = h, n = n, nlevels = nlevels, levels = levels,
+                               palette = palette, ...)
+    invisible(pt)
   }
 )
 

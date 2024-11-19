@@ -26,7 +26,7 @@ setMethod(
                        x1 = 1 - (z / total), y1 = zero, z1 = z / total, ...)
     }
 
-    invisible(data.frame(x = x, y = y, z = z))
+    invisible(list(x = x, y = y, z = z))
   }
 )
 
@@ -38,7 +38,8 @@ setMethod(
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, x_mark = TRUE, y_mark = TRUE, z_mark = TRUE, ...) {
     xyz <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
-                         x_mark = x_mark, y_mark = y_mark, z_mark = z_mark, ...)
+    pt <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
+                               x_mark = x_mark, y_mark = y_mark, z_mark = z_mark, ...)
+    invisible(pt)
   }
 )

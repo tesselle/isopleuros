@@ -32,6 +32,8 @@ setMethod(
 
     ## Plot
     graphics::lines(coords, ...)
+
+    invisible(list(x = x, y = y, z = z))
   }
 )
 
@@ -42,7 +44,8 @@ setMethod(
   f = "ternary_pca",
   signature = c(x = "ANY", y = "missing", z = "missing"),
   definition = function(x, axis = 1, ...) {
-    x <- grDevices::xyz.coords(x)
-    methods::callGeneric(x = x$x, y = x$y, z = x$z, axis = axis, ...)
+    xyz <- grDevices::xyz.coords(x)
+    coords <- methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z, axis = axis, ...)
+    invisible(coords)
   }
 )

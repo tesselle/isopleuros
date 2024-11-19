@@ -10,6 +10,8 @@ triangle_phase_cas <- function(labels = TRUE, symbol = FALSE,
   oxide_mass <- c(CaO  = 56.0774, Al2O3 = 101.9600, SiO2 = 60.0800)
   .triangle_phases("CAS", oxide_mass = oxide_mass, mol = mol,
                    labels = labels, symbol = symbol, ...)
+
+  invisible(NULL)
 }
 
 #' @export
@@ -19,6 +21,8 @@ triangle_phase_ceramic <- function(labels = TRUE, symbol = FALSE,
   oxide_mass <- c(CaO  = 56.0774, Al2O3 = 101.9600, SiO2 = 60.0800)
   .triangle_phases("ceramic", oxide_mass = oxide_mass, mol = mol,
                    labels = labels, symbol = symbol, ...)
+
+  invisible(NULL)
 }
 
 .triangle_phases <- function(chart, oxide_mass, mol = FALSE,

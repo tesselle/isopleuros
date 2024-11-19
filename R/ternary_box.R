@@ -13,5 +13,5 @@ ternary_box <- function(lty = "solid", ...) {
   graphics::polygon(x = c(0, 0.5, 1), y = c(0, .top, 0),
                     border = col, lty = lty, lwd = lwd)
 
-  invisible()
+  invisible(NULL)
 }

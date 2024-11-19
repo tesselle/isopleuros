@@ -26,7 +26,7 @@ ternary_grid <- function(primary = NULL, secondary = NULL,
                   col = col.secondary, lty = lty.secondary, lwd = lwd.secondary)
   }
 
-  invisible()
+  invisible(NULL)
 }
 
 .ternary_grid <- function(x, center = NULL, scale = NULL,
