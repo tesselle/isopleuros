@@ -15,6 +15,8 @@ setMethod(
     n <- length(x)
     assert_length(y, n)
     assert_length(z, n)
+    assert_center(center)
+    assert_scale(scale)
 
     ## Missing values
     if (missing) {

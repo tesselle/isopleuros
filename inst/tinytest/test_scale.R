@@ -1,3 +1,15 @@
+ternary_plot(lava, center = TRUE, scale = FALSE)
+expect_message(ternary_points(lava), "The current plot has been centered")
+
+ternary_plot(lava, center = FALSE, scale = TRUE)
+expect_message(ternary_points(lava), "The current plot has been scaled")
+
+ternary_plot(lava, center = TRUE, scale = TRUE)
+expect_message(ternary_points(lava))
+
+ternary_plot(lava, center = FALSE, scale = FALSE)
+expect_silent(ternary_points(lava))
+
 if (at_home()) {
   using("tinysnapshot")
   options(tinysnapshot_device = "svglite")

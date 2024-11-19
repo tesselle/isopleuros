@@ -48,6 +48,10 @@ setMethod(
     }
     graphics::plot.window(xlim = lim$x, ylim = lim$y, asp = 1)
 
+    ## Reset center and scale
+    options(isopleuros.center = NULL)
+    options(isopleuros.scale = NULL)
+
     ## Compute ternary coordinates
     pt <- coordinates_ternary(x = x, y = y, z = z, center = center, scale = scale)
 

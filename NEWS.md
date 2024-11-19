@@ -1,6 +1,7 @@
 # isopleuros 1.2.0.9000
 ## Enhancements
-* Allow to center and scale label positions.
+* Allow to center and scale label coordinates.
+* Generate diagnostic messages if coordinates are not centered/scaled when they should be.
 
 # isopleuros 1.2.0
 ## Enhancements

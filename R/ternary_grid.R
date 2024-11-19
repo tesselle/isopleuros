@@ -54,8 +54,8 @@ ternary_grid <- function(primary = NULL, secondary = NULL,
     for (i in x) {
       start <- matrix(data = c(i, 0, 1 - i, 1 - i, i, 0, 0, 1 - i, i), ncol = 3)
       end <- matrix(data = c(i, 1 - i, 0, 0, i, 1 - i, 1 - i, 0, i), ncol = 3)
-      start <- coordinates_ternary(start)
-      end <- coordinates_ternary(end)
+      start <- list(x = start[, 2] + start[, 3] / 2, y = start[, 3] * sqrt(3) / 2)
+      end <- list(x = end[, 2] + end[, 3] / 2, y = end[, 3] * sqrt(3) / 2)
 
       mapply(
         FUN = function(x_from, x_to, y_from, y_to, n, center, scale) {
