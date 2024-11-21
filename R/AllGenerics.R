@@ -461,7 +461,11 @@ setGeneric(
 #'  tiles on each axis.
 #' @param palette A [`function`] that takes a single `numeric` vector
 #'  (the output of `f`) as argument and returns a vector of color.
+#'  If `NULL`, the default color scheme will be used. If `FALSE`, the output
+#'  of `f` is used as colors.
 #' @param ... Further parameters to be passed to `f`.
+#' @return
+#'  `ternary_image()` is called it for its side-effects.
 #' @example inst/examples/ex-image.R
 #' @author N. Frerebeau
 #' @docType methods

@@ -9,12 +9,7 @@
 \usage{
 ternary_image(f, ...)
 
-\S4method{ternary_image}{function}(
-  f,
-  n = 48,
-  palette = grDevices::colorRamp(c("red", "green")),
-  ...
-)
+\S4method{ternary_image}{function}(f, n = 48, palette = NULL, ...)
 }
 \arguments{
 \item{f}{A \code{\link{function}} that takes three arguments (x, y and z coordinates)
@@ -26,15 +21,21 @@ and returns a \code{numeric} vector.}
 tiles on each axis.}
 
 \item{palette}{A \code{\link{function}} that takes a single \code{numeric} vector
-(the output of \code{f}) as argument and returns a vector of color.}
+(the output of \code{f}) as argument and returns a vector of color.
+If \code{NULL}, the default color scheme will be used. If \code{FALSE}, the output
+of \code{f} is used as colors.}
+}
+\value{
+\code{ternary_image()} is called it for its side-effects.
 }
 \description{
 Creates a grid of colored triangles with colors corresponding to the output
 of a function.
 }
 \examples{
+## RGB
 ternary_plot(NULL, xlab = "Red", ylab = "Green", zlab = "Blue")
-ternary_image(f = rgb, n = 20, palette = NULL)
+ternary_image(f = rgb, n = 20, palette = FALSE)
 }
 \seealso{
 Other geometries: 

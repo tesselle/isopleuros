@@ -8,19 +8,23 @@ NULL
 setMethod(
   f = "ternary_image",
   signature = c(f = "function"),
-  definition = function(f, n = 48,
-                        palette = grDevices::colorRamp(c("red", "green")), ...) {
+  definition = function(f, n = 48, palette = NULL, ...) {
 
     tri <- .triangle_center(n)
     xyz <- coordinates_cartesian(tri$x, tri$y)
     val <- f(xyz$x, xyz$y, xyz$z, ...)
 
-    if (is.null(palette)) {
+    if (isFALSE(palette)) {
       color <- val
-    } else {
-      if (is.numeric(val)) {
-        val <- (val - min(val)) / (max(val) - min(val)) # Rescale to [0,1]
-      }
+    }
+    if (is.null(palette)) {
+     palette <- function(x) {
+       x <- (x - min(x)) / (max(x) - min(x)) # Rescale to [0,1]
+       col <- grDevices::hcl.colors(256L, palette = "viridis")
+       grDevices::rgb(grDevices::colorRamp(col)(x), maxColorValue = 255)
+     }
+    }
+    if (is.function(palette)) {
       color <- palette(val)
     }
 
