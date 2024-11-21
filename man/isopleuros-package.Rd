@@ -3,7 +3,6 @@
 \docType{package}
 \name{isopleuros-package}
 \alias{isopleuros-package}
-\alias{_PACKAGE}
 \alias{isopleuros}
 \title{isopleuros: Ternary Plots}
 \description{

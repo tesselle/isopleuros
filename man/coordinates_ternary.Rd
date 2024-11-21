@@ -52,9 +52,8 @@ y and z variables to be extracted.}
 \value{
 A \code{\link{list}} with the components:
 \tabular{ll}{
-\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
-\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
-\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
+\code{x} \tab A \code{\link{numeric}} vector of x coordinates. \cr
+\code{y} \tab A \code{\link{numeric}} vector of y coordinates. \cr
 \code{center} \tab A \code{\link{numeric}} vector giving the center. \cr
 \code{scale} \tab A \code{\link{numeric}} vector giving the scale factor. \cr
 }

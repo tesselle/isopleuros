@@ -8,7 +8,7 @@
 \alias{coordinates_cartesian,ANY,missing-method}
 \title{Cartesian Coordinates}
 \usage{
-coordinates_cartesian(x, y, z, ...)
+coordinates_cartesian(x, y, ...)
 
 \S4method{coordinates_cartesian}{numeric,numeric}(x, y)
 
@@ -27,9 +27,9 @@ variables to be extracted.}
 \value{
 A \code{\link{list}} with the components:
 \tabular{ll}{
-\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
-\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
-\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
+\code{x} \tab A \code{\link{numeric}} vector of x coordinates. \cr
+\code{y} \tab A \code{\link{numeric}} vector of y coordinates. \cr
+\code{z} \tab A \code{\link{numeric}} vector of z coordinates. \cr
 }
 }
 \description{

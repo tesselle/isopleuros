@@ -22,9 +22,8 @@
 #' @return
 #'  A [`list`] with the components:
 #'  \tabular{ll}{
-#'   `x` \tab A [`numeric`] vector of x values. \cr
-#'   `y` \tab A [`numeric`] vector of y values. \cr
-#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'   `x` \tab A [`numeric`] vector of x coordinates. \cr
+#'   `y` \tab A [`numeric`] vector of y coordinates. \cr
 #'   `center` \tab A [`numeric`] vector giving the center. \cr
 #'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
 #'  }
@@ -52,9 +51,9 @@ setGeneric(
 #' @return
 #'  A [`list`] with the components:
 #'  \tabular{ll}{
-#'   `x` \tab A [`numeric`] vector of x values. \cr
-#'   `y` \tab A [`numeric`] vector of y values. \cr
-#'   `z` \tab A [`numeric`] vector of z values. \cr
+#'   `x` \tab A [`numeric`] vector of x coordinates. \cr
+#'   `y` \tab A [`numeric`] vector of y coordinates. \cr
+#'   `z` \tab A [`numeric`] vector of z coordinates. \cr
 #'  }
 #' @example inst/examples/ex-coordinates.R
 #' @author N. Frerebeau
@@ -64,7 +63,7 @@ setGeneric(
 #' @keywords internal
 setGeneric(
   name = "coordinates_cartesian",
-  def = function(x, y, z, ...) standardGeneric("coordinates_cartesian"),
+  def = function(x, y, ...) standardGeneric("coordinates_cartesian"),
   valueClass = "list"
 )
 
@@ -605,10 +604,10 @@ setGeneric(
 #'  Invisibly returns a [`list`] with elements `levels` (the contour levels) and
 #'  `colors` (the contour colors) that can be used for a legend.
 #' @note
-#'  Two-dimensional kernel density estimation is adapted from [`MASS::kde2d()`].
-#'
 #'  **This must be considered as experimental and subject to major changes
 #'  in a future release.**
+#' @source
+#'  Two-dimensional kernel density estimation is adapted from [`MASS::kde2d()`].
 #' @seealso [grDevices::contourLines()]
 #' @example inst/examples/ex-density.R
 #' @author N. Frerebeau
