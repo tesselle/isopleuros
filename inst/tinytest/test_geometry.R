@@ -74,4 +74,11 @@ if (at_home()) {
     ternary_text(coda, col = "red")
   }
   expect_snapshot_plot(geom_text, "geom_text")
+
+  # Image ======================================================================
+  image_rgb <- function() {
+    ternary_plot(NULL, xlab = "Red", ylab = "Green", zlab = "Blue")
+    ternary_image(f = grDevices::rgb, n = 20, palette = NULL)
+  }
+  expect_snapshot_plot(image_rgb, "image_rgb")
 }

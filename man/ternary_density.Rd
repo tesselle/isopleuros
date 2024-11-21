@@ -7,6 +7,9 @@
 \alias{ternary_density,numeric,numeric,numeric-method}
 \alias{ternary_density,ANY,missing,missing-method}
 \title{Density Contour Lines}
+\source{
+Two-dimensional kernel density estimation is adapted from \code{\link[MASS:kde2d]{MASS::kde2d()}}.
+}
 \usage{
 ternary_density(x, y, z, ...)
 
@@ -66,8 +69,6 @@ normal kernel. Normal kernel is evaluated on a square grid, after an
 isometric log ratio transformation of the original data.
 }
 \note{
-Two-dimensional kernel density estimation is adapted from \code{\link[MASS:kde2d]{MASS::kde2d()}}.
-
 \strong{This must be considered as experimental and subject to major changes
 in a future release.}
 }

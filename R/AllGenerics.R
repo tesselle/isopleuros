@@ -451,6 +451,28 @@ setGeneric(
   def = function(x, y, z, ...) standardGeneric("ternary_labels")
 )
 
+## Image -----------------------------------------------------------------------
+#' Display a Color Image
+#'
+#' Creates a grid of colored triangles with colors corresponding to the output
+#' of a function.
+#' @param f A [`function`] that takes three arguments (x, y and z coordinates)
+#'  and returns a `numeric` vector.
+#' @param n A length-one [`integer`] vector specifying the maximum number of
+#'  tiles on each axis.
+#' @param palette A [`function`] that takes a single `numeric` vector
+#'  (the output of `f`) as argument and returns a vector of color.
+#' @param ... Further parameters to be passed to `f`.
+#' @example inst/examples/ex-image.R
+#' @author N. Frerebeau
+#' @docType methods
+#' @family geometries
+#' @aliases ternary_image-method
+setGeneric(
+  name = "ternary_image",
+  def = function(f, ...) standardGeneric("ternary_image")
+)
+
 # Statistics ===================================================================
 ## Ellipse ---------------------------------------------------------------------
 #' Add an Ellipse to a Ternary Plot

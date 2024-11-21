@@ -64,6 +64,7 @@ ternary_points(lava, center = TRUE, scale = TRUE, col = "green", pch = 16)
 Other geometries: 
 \code{\link{ternary_arrows}()},
 \code{\link{ternary_crosshairs}()},
+\code{\link{ternary_image}()},
 \code{\link{ternary_labels}()},
 \code{\link{ternary_lines}()},
 \code{\link{ternary_polygon}()},
