@@ -74,18 +74,4 @@ if (at_home()) {
     ternary_text(coda, col = "red")
   }
   expect_snapshot_plot(geom_text, "geom_text")
-
-  # Image ======================================================================
-  f <- function(x, y, z) x - z + (3 * x * y) + (50 * x * y * z)
-  image_function <- function() {
-    ternary_plot(NULL)
-    ternary_image(f = f, n = 48)
-  }
-  expect_snapshot_plot(image_function, "image_function")
-
-  image_rgb <- function() {
-    ternary_plot(NULL, xlab = "Red", ylab = "Green", zlab = "Blue")
-    ternary_image(f = grDevices::rgb, n = 20, palette = FALSE)
-  }
-  expect_snapshot_plot(image_rgb, "image_rgb")
 }

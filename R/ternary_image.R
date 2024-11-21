@@ -13,30 +13,89 @@ setMethod(
     tri <- .triangle_center(n)
     xyz <- coordinates_cartesian(tri$x, tri$y)
     val <- f(xyz$x, xyz$y, xyz$z, ...)
+    ok <- seq_along(tri$x)
 
     if (isFALSE(palette)) {
       color <- val
     }
     if (is.null(palette)) {
-     palette <- function(x) {
-       x <- (x - min(x)) / (max(x) - min(x)) # Rescale to [0,1]
-       col <- grDevices::hcl.colors(256L, palette = "viridis")
-       grDevices::rgb(grDevices::colorRamp(col)(x), maxColorValue = 255)
-     }
+      palette <- function(x) {
+        x <- (x - min(x)) / (max(x) - min(x)) # Rescale to [0,1]
+        col <- grDevices::hcl.colors(256L, palette = "viridis")
+        grDevices::rgb(grDevices::colorRamp(col)(x), maxColorValue = 255)
+      }
     }
     if (is.function(palette)) {
-      color <- palette(val)
+      ok <- is.finite(val) # Remove NA/Inf (if any)
+      color <- palette(val[ok])
     }
 
     .triangle_tile(
-      x = tri$x,
-      y = tri$y,
-      direction = tri$direction,
+      x = tri$x[ok],
+      y = tri$y[ok],
+      direction = tri$direction[ok],
       resolution = tri$resolution,
       col = color
     )
   }
 )
+
+xyz_density <- function(x, y, z) {
+  ## ILR
+  coda <- cbind(x, y, z)
+  ratio <- ilr(coda)
+
+  ## Compute KDE
+  function(x, y, z) {
+    xyz <- cbind(x, y, z)
+    xy <- ilr(xyz)
+    dens <- kde(
+      x = ratio[, 1],
+      y = ratio[, 2],
+      gx = sort(unique(xy[, 1])),
+      gy = sort(unique(xy[, 2]))
+    )
+
+    i <- as.numeric(as.factor(rank(xy[, 1])))
+    j <- as.numeric(as.factor(rank(xy[, 2])))
+
+    dens$z[cbind(i, j)]
+  }
+}
+
+xyz_interpolate <- function(x, y, z, value, method = "linear", ...) {
+  ## Validation
+  if (!requireNamespace("interp", quietly = TRUE)) {
+    msg <- "The interp package is required. Please install it."
+    stop(msg, call. = FALSE)
+  }
+  assert_length(value, length(x))
+
+  ## ILR
+  coda <- cbind(x, y, z)
+  ratio <- ilr(coda)
+
+  ## Compute KDE
+  function(x, y, z) {
+    xyz <- cbind(x, y, z)
+    xy <- ilr(xyz)
+
+    interp <- interp::interp(
+      x = ratio[, 1],
+      y = ratio[, 2],
+      z = value,
+      xo = sort(unique(xy[, 1])),
+      yo = sort(unique(xy[, 2])),
+      method = method,
+      ...
+    )
+
+    i <- as.numeric(as.factor(rank(xy[, 1])))
+    j <- as.numeric(as.factor(rank(xy[, 2])))
+
+    interp$z[cbind(i, j)]
+  }
+}
 
 .triangle_center <- function(resolution) {
 

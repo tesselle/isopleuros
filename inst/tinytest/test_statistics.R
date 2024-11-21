@@ -64,41 +64,35 @@ if (at_home()) {
     ternary_pca(lava, axis = 1)
   }
   expect_snapshot_plot(pca_1, "pca_1")
-}
-if (at_home() && requireNamespace("interp", quietly = TRUE)) {
-  using("tinysnapshot")
-  options(tinysnapshot_device = "svglite")
-  options(tinysnapshot_height = 7) # inches
-  options(tinysnapshot_width = 7)
-  options(tinysnapshot_tol = 200) # pixels
-  options(tinysnapshot_os = "Linux")
 
   # Contour ====================================================================
-  a <- matrix(rep(seq(0, 1, length = 50), each = 50), nrow = 50, byrow = TRUE)
-  b <- matrix(rep(seq(0, 1, length = 50), each = 50), nrow = 50, byrow = FALSE)
-  mask <- a + b <= 1
-  a <- a[mask]
-  b <- b[mask]
-  coords <- cbind(b, 1 - a - b, a)
-  value <- sin(3.2 * pi * (a + b)) + sin(3 * pi * (a - b))
+  if (requireNamespace("interp", quietly = TRUE)) {
+    a <- matrix(rep(seq(0, 1, length = 50), each = 50), nrow = 50, byrow = TRUE)
+    b <- matrix(rep(seq(0, 1, length = 50), each = 50), nrow = 50, byrow = FALSE)
+    mask <- a + b <= 1
+    a <- a[mask]
+    b <- b[mask]
+    coords <- cbind(b, 1 - a - b, a)
+    value <- sin(3.2 * pi * (a + b)) + sin(3 * pi * (a - b))
 
-  # col <- colorRamp(c("blue", "red"))(scales::rescale_mid(value))
-  # col <- rgb(col[, 1], col[, 2], col[, 3], maxColorValue = 255)
-  # ternary_plot(coords, panel.first = ternary_grid(), pch = 16, col = col)
+    # col <- colorRamp(c("blue", "red"))(scales::rescale_mid(value))
+    # col <- rgb(col[, 1], col[, 2], col[, 3], maxColorValue = 255)
+    # ternary_plot(coords, panel.first = ternary_grid(), pch = 16, col = col)
 
-  ## Contour ILR
-  contour_ilr <- function() {
-    ternary_plot(NULL)
-    ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = TRUE)
+    ## Contour ILR
+    contour_ilr <- function() {
+      ternary_plot(NULL)
+      ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = TRUE)
+    }
+    expect_snapshot_plot(contour_ilr, "contour_ilr")
+
+    ## Contour Cartesian
+    contour_cartesian <- function() {
+      ternary_plot(NULL)
+      suppressWarnings( # Remove warnings (collinear points)
+        ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = FALSE)
+      )
+    }
+    expect_snapshot_plot(contour_cartesian, "contour_cartesian")
   }
-  expect_snapshot_plot(contour_ilr, "contour_ilr")
-
-  ## Contour Cartesian
-  contour_cartesian <- function() {
-    ternary_plot(NULL)
-    suppressWarnings( # Remove warnings (collinear points)
-      ternary_contour(coords, value = value, n = 100, nlevels = 10, ilr = FALSE)
-    )
-  }
-  expect_snapshot_plot(contour_cartesian, "contour_cartesian")
 }
