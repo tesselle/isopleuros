@@ -37,8 +37,8 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 ## Overview
 
 Ternary plots made simple. **isopleuros** allows to create ternary plots
-using **graphics**. It provides functions to display the data in the
-ternary space, to add or tune graphical elements and to display
+using base **graphics**. It provides functions to display the data in
+the ternary space, to add or tune graphical elements and to display
 statistical summaries. It also includes common ternary diagrams useful
 for the archaeologist (e.g. soil texture charts, ceramic phase diagram).
 
@@ -53,7 +53,7 @@ To cite isopleuros in publications use:
 
 Frerebeau N (2024). *isopleuros: Ternary Plots*. Université Bordeaux
 Montaigne, Pessac, France. <doi:10.5281/zenodo.7940389>
-<https://doi.org/10.5281/zenodo.7940389>, R package version 1.2.0,
+<https://doi.org/10.5281/zenodo.7940389>, R package version 1.3.0,
 <https://packages.tesselle.org/isopleuros/>.
 
 This package is a part of the tesselle project

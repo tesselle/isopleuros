@@ -1,24 +1,23 @@
 # Platform
 
-|field    |value                                                                        |
-|:--------|:----------------------------------------------------------------------------|
-|version  |R version 4.3.2 (2023-10-31)                                                 |
-|os       |Ubuntu 22.04.3 LTS                                                           |
-|system   |x86_64, linux-gnu                                                            |
-|ui       |RStudio                                                                      |
-|language |(EN)                                                                         |
-|collate  |fr_FR.UTF-8                                                                  |
-|ctype    |fr_FR.UTF-8                                                                  |
-|tz       |Europe/Paris                                                                 |
-|date     |2023-12-29                                                                   |
-|rstudio  |2023.09.0+463 Desert Sunflower (desktop)                                     |
-|pandoc   |3.1.1 @ /usr/lib/rstudio/resources/app/bin/quarto/bin/tools/ (via rmarkdown) |
+|field    |value                        |
+|:--------|:----------------------------|
+|version  |R version 4.4.1 (2024-06-14) |
+|os       |Ubuntu 22.04.5 LTS           |
+|system   |x86_64, linux-gnu            |
+|ui       |X11                          |
+|language |(EN)                         |
+|collate  |fr_FR.UTF-8                  |
+|ctype    |fr_FR.UTF-8                  |
+|tz       |Europe/Paris                 |
+|date     |2024-11-22                   |
+|pandoc   |NA                           |
 
 # Dependencies
 
 |package    |old   |new   |Δ  |
 |:----------|:-----|:-----|:--|
-|isopleuros |1.1.0 |1.2.0 |*  |
+|isopleuros |1.2.0 |1.3.0 |*  |
 
 # Revdeps
 

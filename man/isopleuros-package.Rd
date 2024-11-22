@@ -14,7 +14,7 @@ Ternary plots made simple. This package allows to create ternary plots using 'gr
 \tabular{ll}{
 \strong{Package:} \tab isopleuros \cr
 \strong{Type:} \tab Package \cr
-\strong{Version:} \tab 1.2.0 \cr
+\strong{Version:} \tab 1.3.0 \cr
 \strong{License:} \tab GPL-3 \cr
 \strong{Zenodo:} \tab \doi{10.5281/zenodo.7940389} \cr
 }

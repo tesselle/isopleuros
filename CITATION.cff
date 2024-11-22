@@ -1,15 +1,34 @@
-# -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# --------------------------------------------
+# CITATION file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# -----------------------------------------------------------
+# --------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "isopleuros" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'isopleuros: Ternary Plots'
-version: 1.2.0
+version: 1.3.0
 doi: 10.5281/zenodo.7940389
+identifiers:
+- description: The concept DOI.
+  type: doi
+  value: 10.5281/zenodo.7940389
+- description: The versioned DOI for version 1.0.0.
+  type: doi
+  value: 10.5281/zenodo.7940390
+- description: The versioned DOI for version 1.1.0.
+  type: doi
+  value: 10.5281/zenodo.10357139
+- description: The versioned DOI for version 1.2.0.
+  type: doi
+  value: 10.5281/zenodo.10469854
+- description: The CRAN DOI
+  type: doi
+  value: 10.32614/cran.package.isopleuros
+- description: The Software Heritage identifier for version 1.0.0.
+  type: swh
+  value: swh:1:rel:67f5deea1b8021df23c4728270acd76fd2f8be46
 abstract: Ternary plots made simple. This package allows to create ternary plots using
   'graphics'. It provides functions to display the data in the ternary space, to add
   or tune graphical elements and to display statistical summaries. It also includes
@@ -20,7 +39,6 @@ authors:
   given-names: Nicolas
   email: nicolas.frerebeau@u-bordeaux-montaigne.fr
   orcid: https://orcid.org/0000-0001-5759-4944
-  affiliation: Université Bordeaux Montaigne
 preferred-citation:
   type: manual
   title: 'isopleuros: Ternary Plots'
@@ -29,15 +47,13 @@ preferred-citation:
     given-names: Nicolas
     email: nicolas.frerebeau@u-bordeaux-montaigne.fr
     orcid: https://orcid.org/0000-0001-5759-4944
-    affiliation: Université Bordeaux Montaigne
   year: '2024'
-  location:
-    name: Pessac, France
-  notes: R package version 1.2.0
-  url: https://packages.tesselle.org/isopleuros/
-  doi: 10.5281/zenodo.7940389
   institution:
     name: Université Bordeaux Montaigne
+    address: Pessac, France
+  notes: R package version 1.3.0
+  url: https://packages.tesselle.org/isopleuros/
+  doi: 10.5281/zenodo.7940389
 repository: https://CRAN.R-project.org/package=isopleuros
 repository-code: https://github.com/tesselle/isopleuros
 url: https://packages.tesselle.org/isopleuros/
@@ -46,7 +62,6 @@ contact:
   given-names: Nicolas
   email: nicolas.frerebeau@u-bordeaux-montaigne.fr
   orcid: https://orcid.org/0000-0001-5759-4944
-  affiliation: Université Bordeaux Montaigne
 keywords:
 - archaeometry
 - archaeological science
@@ -60,11 +75,10 @@ references:
   url: https://www.R-project.org/
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
   version: '>= 3.5'
 - type: software
   title: graphics
@@ -72,55 +86,50 @@ references:
   notes: Imports
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
 - type: software
   title: grDevices
   abstract: 'R: A Language and Environment for Statistical Computing'
   notes: Imports
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
 - type: software
   title: methods
   abstract: 'R: A Language and Environment for Statistical Computing'
   notes: Imports
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
 - type: software
   title: stats
   abstract: 'R: A Language and Environment for Statistical Computing'
   notes: Imports
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
 - type: software
   title: utils
   abstract: 'R: A Language and Environment for Statistical Computing'
   notes: Imports
   authors:
   - name: R Core Team
-  location:
-    name: Vienna, Austria
-  year: '2024'
   institution:
     name: R Foundation for Statistical Computing
+    address: Vienna, Austria
+  year: '2024'
 - type: software
   title: interp
   abstract: 'interp: Interpolation Methods'
@@ -137,6 +146,7 @@ references:
     given-names: David
     email: david@s-hull.org
   year: '2024'
+  doi: 10.32614/CRAN.package.interp
 - type: software
   title: rsvg
   abstract: 'rsvg: Render SVG Images into PDF, PNG, (Encapsulated) PostScript, or
@@ -147,9 +157,10 @@ references:
   authors:
   - family-names: Ooms
     given-names: Jeroen
-    email: jeroen@berkeley.edu
+    email: jeroenooms@gmail.com
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2024'
+  doi: 10.32614/CRAN.package.rsvg
 - type: software
   title: svglite
   abstract: 'svglite: An ''SVG'' Graphics Device'
@@ -177,6 +188,7 @@ references:
     given-names: Vaudor
     email: lise.vaudor@ens-lyon.fr
   year: '2024'
+  doi: 10.32614/CRAN.package.svglite
 - type: software
   title: tinysnapshot
   abstract: 'tinysnapshot: Snapshots for Unit Tests using the ''tinytest'' Framework'
@@ -189,6 +201,7 @@ references:
     email: vincent.arel-bundock@umontreal.ca
     orcid: https://orcid.org/0000-0003-2042-7063
   year: '2024'
+  doi: 10.32614/CRAN.package.tinysnapshot
 - type: software
   title: tinytest
   abstract: 'tinytest: Lightweight and Feature Complete Unit Testing Framework'
@@ -196,24 +209,11 @@ references:
   url: https://github.com/markvanderloo/tinytest
   repository: https://CRAN.R-project.org/package=tinytest
   authors:
-  - family-names: van der Loo
+  - family-names: Loo
     given-names: Mark
+    name-particle: van der
     email: mark.vanderloo@gmail.com
     orcid: https://orcid.org/0000-0002-9807-4686
   year: '2024'
-identifiers:
-- description: The concept DOI.
-  type: doi
-  value: 10.5281/zenodo.7940389
-- description: The versioned DOI for version 1.0.0.
-  type: doi
-  value: 10.5281/zenodo.7940390
-- description: The versioned DOI for version 1.1.0.
-  type: doi
-  value: 10.5281/zenodo.10357139
-- description: The versioned DOI for version 1.2.0.
-  type: doi
-  value: 10.5281/zenodo.10469854
-- description: The Software Heritage identifier for version 1.0.0.
-  type: swh
-  value: swh:1:rel:67f5deea1b8021df23c4728270acd76fd2f8be46
+  doi: 10.32614/CRAN.package.tinytest
+
