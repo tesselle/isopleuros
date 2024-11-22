@@ -1,3 +1,5 @@
+# isopleuros 1.3.0.9000
+
 # isopleuros 1.3.0
 ## New classes and methods
 * Add `ternary_image()` to color a ternary plot according to the output of a function.
