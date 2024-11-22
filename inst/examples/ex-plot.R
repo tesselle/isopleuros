@@ -15,9 +15,12 @@ ternary_plot(coda, pch = 16, col = "red")
 ternary_plot(coda, panel.first = ternary_grid(5, 10))
 
 ## Zoom
-ternary_plot(coda, xlim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, ylim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
+ternary_plot(coda, ylim = c(0, 0.4, 0), zlim = c(0, 0, 0.4),
+             panel.first = ternary_grid())
+ternary_plot(coda, xlim = c(0, 0.4, 0), zlim = c(0, 0, 0.4),
+             panel.first = ternary_grid())
+ternary_plot(coda, xlim = c(0.4, 0, 0), ylim = c(0, 0.4, 0),
+             panel.first = ternary_grid())
 
 ## Color according to a supplementary variable
 ## Data from Aitchison 1986

@@ -30,23 +30,9 @@ setMethod(
     graphics::plot.new()
 
     ## Set plotting coordinates
-    if (is.null(xlim) && is.null(ylim) && is.null(zlim)) {
-      dx <- max(graphics::strwidth(c(xlab, ylab, zlab), cex = cex.lab)) / 2
-      rx <- expand_range(c(0, 1), add = dx)
-      lim <- list(
-        x = rx,
-        y = .top / 2 + c(-1, 1) * diff(rx) / 2
-      )
-    } else {
-      xrange <- yrange <- zrange <- NULL
-      if (!is.null(xlim)) xrange <- boundary(1, xlim)
-      if (!is.null(ylim)) yrange <- boundary(2, ylim)
-      if (!is.null(zlim)) zrange <- boundary(3, zlim)
-      lim <- coordinates_ternary(rbind(xrange, yrange, zrange))
-      lim$x <- range(lim$x)
-      lim$y <- range(lim$y)
-    }
-    graphics::plot.window(xlim = lim$x, ylim = lim$y, asp = 1)
+    ternary_window(xlim = xlim, ylim = ylim, zlim = zlim,
+                   xlab = xlab, ylab = ylab, zlab = zlab,
+                   cex = cex.lab)
 
     ## Reset center and scale
     options(isopleuros.center = NULL)
@@ -122,13 +108,3 @@ setMethod(
     invisible(pt)
   }
 )
-
-boundary <- function(side, limits) {
-  limits <- range(limits)
-  side_min <- diag(1, 3, 3) - limits[1L]
-  side_max <- diag(1, 3, 3) - limits[2L]
-  side_range <- rbind(side_min, side_max)
-  side_range[side_range < 0] <- 0
-  side_range[, side] <- rep(limits, each = 3)
-  side_range[rowSums(side_range) == 1, ]
-}

@@ -62,13 +62,13 @@ arguments to this function.}
 
 \item{scale}{A \code{\link{logical}} scalar: should the data be scaled?}
 
-\item{xlim}{A length-two \code{\link{numeric}} vector giving the \code{x} limits in the
+\item{xlim}{A length-three \code{\link{numeric}} vector giving the \code{x} limits in the
 range \eqn{[0,1]}.}
 
-\item{ylim}{A length-two \code{\link{numeric}} vector giving the \code{y} limits in the
+\item{ylim}{A length-three \code{\link{numeric}} vector giving the \code{y} limits in the
 range \eqn{[0,1]}.}
 
-\item{zlim}{A length-two \code{\link{numeric}} vector giving the \code{z} limits in the
+\item{zlim}{A length-three \code{\link{numeric}} vector giving the \code{z} limits in the
 range \eqn{[0,1]}.}
 
 \item{xlab, ylab, zlab}{A \code{\link{character}} string giving a label for the x, y and
@@ -125,9 +125,12 @@ ternary_plot(coda, pch = 16, col = "red")
 ternary_plot(coda, panel.first = ternary_grid(5, 10))
 
 ## Zoom
-ternary_plot(coda, xlim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, ylim = c(0.5, 1), panel.first = ternary_grid())
-ternary_plot(coda, zlim = c(0.5, 1), panel.first = ternary_grid())
+ternary_plot(coda, ylim = c(0, 0.4, 0), zlim = c(0, 0, 0.4),
+             panel.first = ternary_grid())
+ternary_plot(coda, xlim = c(0, 0.4, 0), zlim = c(0, 0, 0.4),
+             panel.first = ternary_grid())
+ternary_plot(coda, xlim = c(0.4, 0, 0), ylim = c(0, 0.4, 0),
+             panel.first = ternary_grid())
 
 ## Color according to a supplementary variable
 ## Data from Aitchison 1986

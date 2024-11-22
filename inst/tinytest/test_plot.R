@@ -38,16 +38,18 @@ if (at_home()) {
   expect_snapshot_plot(plot_par, "plot_par")
 
   # Zoom =======================================================================
+  expect_error(ternary_plot(NULL, xlim = c(0.5, 1), panel.first = ternary_grid()))
+
   ## Zoom x
-  zoom_x <- function() ternary_plot(NULL, xlim = c(0.5, 1), panel.first = ternary_grid())
+  zoom_x <- function() ternary_plot(NULL, ylim = c(0, 0.4, 0), zlim = c(0, 0, 0.4), panel.first = ternary_grid(5))
   expect_snapshot_plot(zoom_x, "zoom_x")
 
   ## Zoom y
-  zoom_y <- function() ternary_plot(NULL, ylim = c(0.5, 1), panel.first = ternary_grid())
+  zoom_y <- function() ternary_plot(NULL, xlim = c(0, 0.4, 0), zlim = c(0, 0, 0.4), panel.first = ternary_grid(5))
   expect_snapshot_plot(zoom_y, "zoom_y")
 
   ## Zoom z
-  zoom_z <- function() ternary_plot(NULL, zlim = c(0.5, 1), panel.first = ternary_grid())
+  zoom_z <- function() ternary_plot(NULL, xlim = c(0.4, 0, 0), ylim = c(0, 0.4, 0), panel.first = ternary_grid(5))
   expect_snapshot_plot(zoom_z, "zoom_z")
 
   # Axes =======================================================================

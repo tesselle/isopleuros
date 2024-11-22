@@ -65,6 +65,7 @@ Collate:
     'ternary_segments.R'
     'ternary_text.R'
     'ternary_title.R'
+    'ternary_window.R'
     'triangle_phase.R'
     'triangle_soil.R'
     'zzz.R'

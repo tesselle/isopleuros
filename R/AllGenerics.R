@@ -76,11 +76,11 @@ setGeneric(
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
 #' @param center A [`logical`] scalar: should the data be centered?
 #' @param scale A [`logical`] scalar: should the data be scaled?
-#' @param xlim A length-two [`numeric`] vector giving the `x` limits in the
+#' @param xlim A length-three [`numeric`] vector giving the `x` limits in the
 #'  range \eqn{[0,1]}.
-#' @param ylim A length-two [`numeric`] vector giving the `y` limits in the
+#' @param ylim A length-three [`numeric`] vector giving the `y` limits in the
 #'  range \eqn{[0,1]}.
-#' @param zlim A length-two [`numeric`] vector giving the `z` limits in the
+#' @param zlim A length-three [`numeric`] vector giving the `z` limits in the
 #'  range \eqn{[0,1]}.
 #' @param xlab,ylab,zlab A [`character`] string giving a label for the x, y and
 #'  z axes.
