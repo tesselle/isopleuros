@@ -58,7 +58,7 @@ preferred-citation:
   url: https://packages.tesselle.org/isopleuros/
   doi: 10.5281/zenodo.7940389
 repository: https://CRAN.R-project.org/package=isopleuros
-repository-code: https://github.com/tesselle/isopleuros
+repository-code: https://codeberg.org/tesselle/isopleuros
 url: https://packages.tesselle.org/isopleuros/
 contact:
 - family-names: Frerebeau

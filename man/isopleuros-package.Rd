@@ -32,9 +32,9 @@ proceeds? If \code{FALSE} (the default), incomplete cases are removed.
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://codeberg.org/tesselle/isopleuros}
   \item \url{https://packages.tesselle.org/isopleuros/}
-  \item \url{https://github.com/tesselle/isopleuros}
-  \item Report bugs at \url{https://github.com/tesselle/isopleuros/issues}
+  \item Report bugs at \url{https://codeberg.org/tesselle/isopleuros/issues}
 }
 
 }
