@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![Code
+coverage](https://packages.tesselle.org/isopleuros/coverage/badge.svg)](https://packages.tesselle.org/isopleuros/coverage/)
 [![Dependencies](https://tinyverse.netlify.app/badge/isopleuros)](https://cran.r-project.org/package=isopleuros)
 
 <a href="https://tesselle.r-universe.dev/isopleuros"
