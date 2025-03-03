@@ -129,3 +129,34 @@ triangle_soil_usda(symbol = TRUE)
 ## Contributing
 
 Please note that the **isopleuros** project is released with a [Contributor Code of Conduct](https://www.tesselle.org/conduct.html). By contributing to this project, you agree to abide by its terms.
+
+```{r metadata, include=FALSE}
+## Update codemeta.json
+codemetar::write_codemeta(verbose = FALSE)
+
+## Update CITATION.cff
+cff_keys <- list(
+  identifiers = list(
+    list(description = "The concept DOI.",
+         type = "doi",
+         value = "10.5281/zenodo.7940389"),
+    list(description = "The versioned DOI for version 1.0.0.",
+         type = "doi",
+         value = "10.5281/zenodo.7940390"),
+    list(description = "The versioned DOI for version 1.1.0.",
+         type = "doi",
+         value = "10.5281/zenodo.10357139"),
+    list(description = "The versioned DOI for version 1.2.0.",
+         type = "doi",
+         value = "10.5281/zenodo.10469854"),
+    list(description = "The versioned DOI for version 1.3.0.",
+         type = "doi",
+         value = "10.5281/zenodo.14204958"),
+    list(description = "The CRAN DOI",
+         type = "doi",
+         value = "10.32614/cran.package.isopleuros")
+  )
+)
+cff <- cffr::cff_create("DESCRIPTION", keys = cff_keys)
+if (cffr::cff_validate(cff)) cffr::cff_write(cff, outfile = "CITATION.cff")
+```

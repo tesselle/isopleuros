@@ -29,9 +29,6 @@ identifiers:
 - description: The CRAN DOI
   type: doi
   value: 10.32614/cran.package.isopleuros
-- description: The Software Heritage identifier for version 1.0.0.
-  type: swh
-  value: swh:1:rel:67f5deea1b8021df23c4728270acd76fd2f8be46
 abstract: Ternary plots made simple. This package allows to create ternary plots using
   'graphics'. It provides functions to display the data in the ternary space, to add
   or tune graphical elements and to display statistical summaries. It also includes
@@ -67,10 +64,10 @@ contact:
   orcid: https://orcid.org/0000-0001-5759-4944
 keywords:
 - archaeometry
-- archaeological science
-- ternary plot
-- data visualization
-- r package
+- archaeological-science
+- ternary-plot
+- data-visualization
+- r-package
 references:
 - type: software
   title: 'R: A Language and Environment for Statistical Computing'
@@ -81,7 +78,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
   version: '>= 3.5'
 - type: software
   title: graphics
@@ -92,7 +89,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
 - type: software
   title: grDevices
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -102,7 +99,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
 - type: software
   title: methods
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -112,7 +109,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
 - type: software
   title: stats
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -122,7 +119,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
 - type: software
   title: utils
   abstract: 'R: A Language and Environment for Statistical Computing'
@@ -132,7 +129,7 @@ references:
   institution:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
-  year: '2024'
+  year: '2025'
 - type: software
   title: interp
   abstract: 'interp: Interpolation Methods'

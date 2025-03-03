@@ -145,7 +145,10 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1168.446KB",
+  "applicationCategory": "ArchaeologicalScience",
+  "isPartOf": "https://www.tesselle.org",
+  "keywords": ["archaeometry", "archaeological-science", "ternary-plot", "data-visualization", "r-package"],
+  "fileSize": "1168.528KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
