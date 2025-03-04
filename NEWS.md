@@ -1,4 +1,6 @@
 # isopleuros 1.3.0.9000
+## New classes and methods
+* Add `tile_bin()`, `tile_density()` and `tile_interpolate()` to compute heatmap values.
 
 # isopleuros 1.3.0
 ## New classes and methods

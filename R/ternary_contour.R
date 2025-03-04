@@ -100,10 +100,7 @@ coordinates_contour <- function(x, y, z, value, n = 50, nlevels = 10,
                                 ilr = TRUE, method = "linear", extrapolate = FALSE,
                                 ...) {
   ## Validation
-  if (!requireNamespace("interp", quietly = TRUE)) {
-    msg <- "The interp package is required. Please install it."
-    stop(msg, call. = FALSE)
-  }
+  assert_package("interp")
   assert_length(value, length(x))
 
   ## ILR vs Cartesian

@@ -45,7 +45,7 @@ interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDe
 
 \item{...}{Further arguments to be passed to \code{\link[=ternary_lines]{ternary_lines()}}.}
 
-\item{value}{A \code{\link{numeric}} vector giving the values to be plotted.}
+\item{value}{A \code{\link{numeric}} vector giving the values to be interpolated.}
 
 \item{n}{A length-one \code{\link{numeric}} specifying the number of grid points.}
 

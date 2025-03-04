@@ -4,6 +4,25 @@
   if (!is.null(x)) x else y
 }
 
+map_color <- function(values, palette = NULL, scheme = "viridis",
+                      ignore_zero = FALSE) {
+  if (isFALSE(palette)) return(values)
+
+  if (is.null(palette)) {
+    palette <- function(x) {
+      x <- (x - min(x)) / (max(x) - min(x)) # Rescale to [0,1]
+      col <- grDevices::hcl.colors(256L, palette = scheme)
+      grDevices::rgb(grDevices::colorRamp(col)(x), maxColorValue = 255)
+    }
+  }
+
+  color <- rep(NA, length(values))
+  ok <- is.finite(values) # Remove NA/Inf (if any)
+  if (ignore_zero) ok[ok] <- values[ok] > 0
+  color[ok] <- palette(values[ok])
+  color
+}
+
 #' Expand Range
 #'
 #' @param x A [`numeric`] vector.
@@ -80,4 +99,12 @@ assert_scale <- function(x, current = getOption("isopleuros.scale")) {
     message(msg)
   }
   invisible(x)
+}
+
+assert_package <- function(x) {
+  if (!requireNamespace(x, quietly = TRUE)) {
+    msg <- "Package %s needed for this function to work. Please install it."
+    stop(sprintf(msg, sQuote(x)), call. = FALSE)
+  }
+  invisible(NULL)
 }

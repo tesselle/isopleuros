@@ -456,7 +456,8 @@ setGeneric(
 #' Creates a grid of colored triangles with colors corresponding to the output
 #' of a function.
 #' @param f A [`function`] that takes three arguments (x, y and z coordinates)
-#'  and returns a `numeric` vector.
+#'  and returns a `numeric` vector (see [tile_bin()], [tile_density()],
+#'  [tile_interpolate()]).
 #' @param n A length-one [`integer`] vector specifying the maximum number of
 #'  tiles on each axis.
 #' @param palette A [`function`] that takes a single `numeric` vector
@@ -474,6 +475,50 @@ setGeneric(
 setGeneric(
   name = "ternary_image",
   def = function(f, ...) standardGeneric("ternary_image")
+)
+
+## Tiles -----------------------------------------------------------------------
+#' Ternary Tiles
+#'
+#' Compute tile values.
+#' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
+#' @param value A [`numeric`] vector giving the values to be interpolated.
+#' @param method A [`character`] string: specifying the method for interpolation
+#'  (see [interp::interp()]).
+#' @param ... Further parameters to be passed to internal methods.
+#' @return
+#'  A [`function`] that takes three [`numeric`] vector as arguments and returns
+#'  a `numeric` vector.
+#' @example inst/examples/ex-tile.R
+#' @seealso [ternary_image()]
+#' @author N. Frerebeau
+#' @docType methods
+#' @family tiles
+#' @name ternary_tile
+#' @rdname ternary_tile
+NULL
+
+#' @rdname ternary_tile
+#' @aliases tile_bin-method
+setGeneric(
+  name = "tile_bin",
+  def = function(x, y, z, ...) standardGeneric("tile_bin")
+)
+
+#' @rdname ternary_tile
+#' @aliases tile_density-method
+setGeneric(
+  name = "tile_density",
+  def = function(x, y, z, ...) standardGeneric("tile_density")
+)
+
+#' @rdname ternary_tile
+#' @aliases tile_interpolate-method
+setGeneric(
+  name = "tile_interpolate",
+  def = function(x, y, z, ...) standardGeneric("tile_interpolate")
 )
 
 # Statistics ===================================================================
@@ -548,7 +593,7 @@ setGeneric(
 #' @param x,y,z A [`numeric`] vector giving the x, y and z ternary coordinates
 #'  of a set of points. If `y` and `z` are missing, an attempt is made to
 #'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
-#' @param value A [`numeric`] vector giving the values to be plotted.
+#' @param value A [`numeric`] vector giving the values to be interpolated.
 #' @param n A length-one [`numeric`] specifying the number of grid points.
 #' @param nlevels A length-one [`numeric`] vector specifying the number of
 #'  contour levels desired. Only used if `levels` is `NULL`.

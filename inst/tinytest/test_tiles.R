@@ -13,8 +13,17 @@ if (at_home()) {
   }
   expect_snapshot_plot(image_rgb, "image_rgb")
 
+  # Bin ====================================================================
+  f <- tile_bin(lava)
+  image_bin <- function() {
+    ternary_plot(NULL)
+    ternary_image(f = f, n = 24)
+    # ternary_points(lava, col = "red", pch = 16)
+  }
+  expect_snapshot_plot(image_bin, "image_bin")
+
   # Density ====================================================================
-  f <- isopleuros:::xyz_density(lava[, 1], lava[, 2], lava[, 3])
+  f <- tile_density(lava)
   image_density <- function() {
     ternary_plot(NULL)
     ternary_image(f = f, n = 24)
@@ -24,7 +33,7 @@ if (at_home()) {
 
   # Interpolation ==============================================================
   if (requireNamespace("interp", quietly = TRUE)) {
-    f <- isopleuros:::xyz_interpolate(arctic[, 1], arctic[, 2], arctic[, 3], value = arctic$depth)
+    f <- tile_interpolate(arctic, value = arctic$depth)
     image_interpolate <- function() {
       ternary_plot(NULL)
       ternary_image(f = f, n = 24)

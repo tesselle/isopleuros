@@ -13,90 +13,170 @@ setMethod(
     tri <- .triangle_center(n)
     xyz <- coordinates_cartesian(tri$x, tri$y)
     val <- f(xyz$x, xyz$y, xyz$z, ...)
-    ok <- seq_along(tri$x)
+    col <- map_color(val, palette = palette)
 
-    if (isFALSE(palette)) {
-      color <- val
-    }
-    if (is.null(palette)) {
-      palette <- function(x) {
-        x <- (x - min(x)) / (max(x) - min(x)) # Rescale to [0,1]
-        col <- grDevices::hcl.colors(256L, palette = "viridis")
-        grDevices::rgb(grDevices::colorRamp(col)(x), maxColorValue = 255)
-      }
-    }
-    if (is.function(palette)) {
-      ok <- is.finite(val) # Remove NA/Inf (if any)
-      color <- palette(val[ok])
+    coords <- .triangle_vertex(tri$x, tri$y, tri$direction, tri$resolution)
+    for (i in seq_along(coords)) {
+      polygon(coords[[i]][, 1], coords[[i]][, 2], col = col[i], border = NA)
     }
 
-    .triangle_tile(
-      x = tri$x[ok],
-      y = tri$y[ok],
-      direction = tri$direction[ok],
-      resolution = tri$resolution,
-      col = color
-    )
+    invisible(NULL)
   }
 )
 
-xyz_density <- function(x, y, z) {
-  ## ILR
-  coda <- cbind(x, y, z)
-  ratio <- ilr(coda)
+#' @export
+#' @rdname ternary_tile
+#' @aliases tile_bin,numeric,numeric,numeric-method
+setMethod(
+  f = "tile_bin",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z) {
 
-  ## Compute KDE
-  function(x, y, z) {
-    xyz <- cbind(x, y, z)
-    xy <- ilr(xyz)
-    dens <- kde(
-      x = ratio[, 1],
-      y = ratio[, 2],
-      gx = sort(unique(xy[, 1])),
-      gy = sort(unique(xy[, 2]))
-    )
+    total <- x + y + z
+    a <- x / total
+    b <- y / total
+    c <- z / total
 
-    i <- as.numeric(as.factor(rank(xy[, 1])))
-    j <- as.numeric(as.factor(rank(xy[, 2])))
+    function(x, y, z) {
+      tri <- .triangle_center(sqrt(length(x)))
+      coords <- .triangle_vertex(tri$x, tri$y, tri$direction, tri$resolution)
 
-    dens$z[cbind(i, j)]
+      count <- numeric(length(coords))
+      for (i in seq_along(coords)) {
+        xyz <- coordinates_cartesian(coords[[i]][, 1], coords[[i]][, 2])
+        count[[i]] <- sum(min(xyz$x) <= a & a < max(xyz$x) &
+                            min(xyz$y) <= b & b < max(xyz$y) &
+                            min(xyz$z) <= c & c < max(xyz$z))
+      }
+
+      count[count == 0] <- NA
+      count
+    }
   }
-}
+)
 
-xyz_interpolate <- function(x, y, z, value, method = "linear", ...) {
-  ## Validation
-  if (!requireNamespace("interp", quietly = TRUE)) {
-    msg <- "The interp package is required. Please install it."
-    stop(msg, call. = FALSE)
+#' @export
+#' @rdname ternary_tile
+#' @aliases tile_bin,ANY,missing,missing-method
+setMethod(
+  f = "tile_bin",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x) {
+    xyz <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z)
   }
-  assert_length(value, length(x))
+)
 
-  ## ILR
-  coda <- cbind(x, y, z)
-  ratio <- ilr(coda)
+#' @export
+#' @rdname ternary_tile
+#' @aliases tile_density,numeric,numeric,numeric-method
+setMethod(
+  f = "tile_density",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z) {
+    ## ILR
+    coda <- cbind(x, y, z)
+    ratio <- ilr(coda)
 
-  ## Compute KDE
-  function(x, y, z) {
-    xyz <- cbind(x, y, z)
-    xy <- ilr(xyz)
+    ## Compute KDE
+    function(x, y, z) {
+      xyz <- cbind(x, y, z)
+      xy <- ilr(xyz)
+      dens <- kde(
+        x = ratio[, 1],
+        y = ratio[, 2],
+        gx = sort(unique(xy[, 1])),
+        gy = sort(unique(xy[, 2]))
+      )
 
-    interp <- interp::interp(
-      x = ratio[, 1],
-      y = ratio[, 2],
-      z = value,
-      xo = sort(unique(xy[, 1])),
-      yo = sort(unique(xy[, 2])),
-      method = method,
-      ...
-    )
+      i <- as.numeric(as.factor(rank(xy[, 1])))
+      j <- as.numeric(as.factor(rank(xy[, 2])))
 
-    i <- as.numeric(as.factor(rank(xy[, 1])))
-    j <- as.numeric(as.factor(rank(xy[, 2])))
-
-    interp$z[cbind(i, j)]
+      dens$z[cbind(i, j)]
+    }
   }
-}
+)
 
+#' @export
+#' @rdname ternary_tile
+#' @aliases tile_density,ANY,missing,missing-method
+setMethod(
+  f = "tile_density",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x) {
+    xyz <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z)
+  }
+)
+
+#' @export
+#' @rdname ternary_tile
+#' @aliases tile_interpolate,numeric,numeric,numeric-method
+setMethod(
+  f = "tile_interpolate",
+  signature = c(x = "numeric", y = "numeric", z = "numeric"),
+  definition = function(x, y, z, value, method = "linear", ...) {
+    ## Validation
+    assert_package("interp")
+    assert_length(value, length(x))
+
+    ## ILR
+    coda <- cbind(x, y, z)
+    ratio <- ilr(coda)
+
+    ## Interpolate
+    function(x, y, z) {
+      xyz <- cbind(x, y, z)
+      xy <- ilr(xyz)
+
+      interp <- interp::interp(
+        x = ratio[, 1],
+        y = ratio[, 2],
+        z = value,
+        xo = sort(unique(xy[, 1])),
+        yo = sort(unique(xy[, 2])),
+        method = method,
+        ...
+      )
+
+      i <- as.numeric(as.factor(rank(xy[, 1])))
+      j <- as.numeric(as.factor(rank(xy[, 2])))
+
+      interp$z[cbind(i, j)]
+    }
+  }
+)
+
+#' @export
+#' @rdname ternary_tile
+#' @aliases tile_interpolate,ANY,missing,missing-method
+setMethod(
+  f = "tile_interpolate",
+  signature = c(x = "ANY", y = "missing", z = "missing"),
+  definition = function(x, value, method = "linear", ...) {
+    xyz <- grDevices::xyz.coords(x)
+    methods::callGeneric(x = xyz$x, y = xyz$y, z = xyz$z,
+                         value = value, method = method, ...)
+  }
+)
+
+#' Tile Center Coordinates
+#'
+#' Computes tile center cartesian coordinates.
+#' @param resolution A length-one [`integer`] vector specifying the maximum
+#'  number of tiles on each axis.
+#' @return
+#'  A [`list`] with the following elements:
+#'  \describe{
+#'   \item{`x`}{x cartesian coordinates.}
+#'   \item{`y`}{y cartesian coordinates.}
+#'   \item{`direction`}{`1` means up, `-1` means down.}
+#'   \item{`resolution`}{}
+#'  }
+#' @examples
+#' .triangle_center(5)
+#' @keywords internal
+#' @noRd
 .triangle_center <- function(resolution) {
 
   offset <- 1 / resolution / 2L
@@ -133,18 +213,35 @@ xyz_interpolate <- function(x, y, z, value, method = "linear", ...) {
   )
 }
 
-.triangle_tile <- function(x, y, direction, resolution, col = NA) {
+#' Tile Vertex Coordinates
+#'
+#' Computes tile vertex cartesian coordinates.
+#' @param x,y A [`numeric`] vector giving the cartesian coordinates of the
+#'  center.
+#' @param direction An [`integer`] vector specifying the triangle direction
+#'  (`1` means up, `-1` means down).
+#' @param resolution A length-one [`integer`] vector specifying the maximum
+#'  number of tiles on each axis.
+#' @return
+#'  A [`list`] of `numeric` [`matrix`].
+#' @examples
+#' m <- .triangle_center(5)
+#' .triangle_vertex(m$x, m$y, m$direction, m$resolution)
+#' @keywords internal
+#' @noRd
+.triangle_vertex <- function(x, y, direction, resolution) {
   n <- length(x)
-  if (length(col) == 1) col <- rep(col, n)
 
   width <- 1 / resolution / 2
   height <- .top / resolution / 3
 
+  tiles <- vector(mode = "list", length = n)
   for (i in seq_len(n)) {
-    xi <- x[i] + c(0, width, -width)
-    yi <- y[i] + c(2 * height, -height, -height) * direction[i]
-    polygon(xi, yi, col = col[i], border = NA)
+    tiles[[i]] <- matrix(
+      data = c(x[i] + c(0, width, -width), y[i] + c(2 * height, -height, -height) * direction[i]),
+      ncol = 2, dimnames = list(NULL, c("x", "y"))
+    )
   }
 
-  invisible()
+  tiles
 }

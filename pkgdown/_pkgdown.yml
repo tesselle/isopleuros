@@ -10,6 +10,7 @@ reference:
 - title: Geometries
   contents:
   - has_concept("geometries")
+  - has_concept("tiles")
 - title: Statistical summaries
   contents:
   - has_concept("statistics")

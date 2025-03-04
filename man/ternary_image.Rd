@@ -13,7 +13,8 @@ ternary_image(f, ...)
 }
 \arguments{
 \item{f}{A \code{\link{function}} that takes three arguments (x, y and z coordinates)
-and returns a \code{numeric} vector.}
+and returns a \code{numeric} vector (see \code{\link[=tile_bin]{tile_bin()}}, \code{\link[=tile_density]{tile_density()}},
+\code{\link[=tile_interpolate]{tile_interpolate()}}).}
 
 \item{...}{Further parameters to be passed to \code{f}.}
 
