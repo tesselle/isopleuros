@@ -36,7 +36,7 @@ setMethod(
 
     ## Validation
     if (any(x < 0 | y < 0 | z < 0)) {
-      stop("Positive values are expected.", call. = FALSE)
+      stop(tr_("Positive values are expected."), call. = FALSE)
     }
 
     coord <- matrix(data = c(x, y, z), ncol = 3) / total

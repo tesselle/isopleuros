@@ -1,5 +1,10 @@
 # HELPERS
 
+## https://michaelchirico.github.io/potools/articles/developers.html
+tr_ <- function(...) {
+  enc2utf8(gettext(paste0(...), domain = "R-isopleuros"))
+}
+
 `%||%` <- function(x, y) {
   if (!is.null(x)) x else y
 }
@@ -76,7 +81,7 @@ rotate <- function(x, theta = 0, origin = c(0.5, sqrt(3) / 6)) {
 assert_length <- function(x, expected) {
   arg <- deparse(substitute(x))
   if (length(x) != expected) {
-    str <- "%s must be of length %d; not %d."
+    str <- tr_("%s must be of length %d; not %d.")
     msg <- sprintf(str, sQuote(arg), expected, length(x))
     stop(msg, call. = FALSE)
   }
@@ -86,7 +91,7 @@ assert_length <- function(x, expected) {
 assert_center <- function(x, current = getOption("isopleuros.center")) {
   ok <- isTRUE(x) || is.numeric(x)
   if (!ok && is.numeric(current) && !all(current == 1)) {
-    msg <- "The current plot has been centered, but your data doesn't seem to be."
+    msg <- tr_("The current plot has been centered, but your data doesn't seem to be.")
     message(msg)
   }
   invisible(x)
@@ -95,7 +100,7 @@ assert_center <- function(x, current = getOption("isopleuros.center")) {
 assert_scale <- function(x, current = getOption("isopleuros.scale")) {
   ok <- isTRUE(x) || is.numeric(x)
   if (!ok && is.numeric(current) && !all(current == 1)) {
-    msg <- "The current plot has been scaled, but your data doesn't seem to be."
+    msg <- tr_("The current plot has been scaled, but your data doesn't seem to be.")
     message(msg)
   }
   invisible(x)
@@ -103,7 +108,7 @@ assert_scale <- function(x, current = getOption("isopleuros.scale")) {
 
 assert_package <- function(x) {
   if (!requireNamespace(x, quietly = TRUE)) {
-    msg <- "Package %s needed for this function to work. Please install it."
+    msg <- tr_("Package %s needed for this function to work. Please install it.")
     stop(sprintf(msg, sQuote(x)), call. = FALSE)
   }
   invisible(NULL)

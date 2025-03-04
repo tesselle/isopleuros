@@ -2,6 +2,9 @@
 ## New classes and methods
 * Add `tile_bin()`, `tile_density()` and `tile_interpolate()` to compute heatmap values.
 
+## Enhancements
+* Translate into French.
+
 # isopleuros 1.3.0
 ## New classes and methods
 * Add `ternary_image()` to color a ternary plot according to the output of a function.

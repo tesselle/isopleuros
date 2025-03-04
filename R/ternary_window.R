@@ -32,7 +32,7 @@ ternary_window <- function(xlim = NULL, ylim = NULL, zlim = NULL,
     )
   }
   if (n_null == 2) {
-    stop("You must provide at least two coordinates ranges.", call. = FALSE)
+    stop(tr_("You must provide at least two coordinates ranges."), call. = FALSE)
   }
   if (n_null < 2) {
     xlims <- if (is.null(xlim)) 1 - ylim - zlim else xlim

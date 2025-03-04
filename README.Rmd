@@ -127,6 +127,16 @@ ternary_plot(NULL, xlab = "sand", ylab = "silt", zlab = "clay")
 triangle_soil_usda(symbol = TRUE)
 ```
 
+## Translation
+
+This package provides translations of user-facing communications, like messages, warnings and errors. The preferred language is by default taken from the locale. This can be overridden by setting of the environment variable `LANGUAGE` (you only need to do this once per session):
+
+``` r
+Sys.setenv(LANGUAGE = "<language code>")
+```
+
+Languages currently available are English (`en`) and French (`fr`).
+
 ## Contributing
 
 Please note that the **isopleuros** project is released with a [Contributor Code of Conduct](https://www.tesselle.org/conduct.html). By contributing to this project, you agree to abide by its terms.
