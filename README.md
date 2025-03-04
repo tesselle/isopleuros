@@ -42,9 +42,7 @@ statistical summaries. It also includes common ternary diagrams useful
 for the archaeologist (e.g. soil texture charts, ceramic phase diagram).
 
 **isopleuros** is a dependency-free package[^1] designed to be as simple
-as possible. If you need finer tuning or more advanced features, you
-should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
-[**ggtern**](http://www.ggtern.com/) package.
+as possible.
 
 ------------------------------------------------------------------------
 
@@ -162,6 +160,13 @@ Sys.setenv(LANGUAGE = "<language code>")
 ```
 
 Languages currently available are English (`en`) and French (`fr`).
+
+## Related Works
+
+- [**Ternary**](https://cran.r-project.org/package=Ternary) allows to
+  create ternary and Holdridge plots using **graphics**.
+- [**ggtern**](https://cran.r-project.org/package=ggtern) extends the
+  functionality of **ggplot2** to plot ternary diagrams.
 
 ## Contributing
 
