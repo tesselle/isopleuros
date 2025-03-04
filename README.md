@@ -50,9 +50,9 @@ should consider the [**Ternary**](https://ms609.github.io/Ternary/) or
 
 To cite isopleuros in publications use:
 
-Frerebeau N (2024). *isopleuros: Ternary Plots*. Université Bordeaux
+Frerebeau N (2025). *isopleuros: Ternary Plots*. Université Bordeaux
 Montaigne, Pessac, France. <doi:10.5281/zenodo.7940389>
-<https://doi.org/10.5281/zenodo.7940389>, R package version 1.3.0,
+<https://doi.org/10.5281/zenodo.7940389>, R package version 1.4.0,
 <https://packages.tesselle.org/isopleuros/>.
 
 This package is a part of the tesselle project
