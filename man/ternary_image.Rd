@@ -28,6 +28,9 @@ of \code{f} is used as colors.}
 }
 \value{
 \code{ternary_image()} is called it for its side-effects.
+
+Invisibly returns a \code{\link{list}} with elements \code{levels} and \code{colors} that can be
+used for a legend.
 }
 \description{
 Creates a grid of colored triangles with colors corresponding to the output

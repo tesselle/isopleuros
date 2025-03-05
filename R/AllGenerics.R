@@ -467,6 +467,9 @@ setGeneric(
 #' @param ... Further parameters to be passed to `f`.
 #' @return
 #'  `ternary_image()` is called it for its side-effects.
+#'
+#'  Invisibly returns a [`list`] with elements `levels` and `colors` that can be
+#'  used for a legend.
 #' @example inst/examples/ex-image.R
 #' @author N. Frerebeau
 #' @docType methods

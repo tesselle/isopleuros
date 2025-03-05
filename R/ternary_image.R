@@ -20,7 +20,7 @@ setMethod(
       polygon(coords[[i]][, 1], coords[[i]][, 2], col = col[i], border = NA)
     }
 
-    invisible(NULL)
+    invisible(list(levels = val, colors = col))
   }
 )
 
