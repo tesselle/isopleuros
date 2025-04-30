@@ -96,12 +96,12 @@ place but before the axes, title and box are added.}
 \value{
 \code{ternary_plot()} is called it for its side-effects: it results in a graphic
 being displayed. Invisibly returns a \code{\link{list}} with the components:
-\tabular{ll}{
-\code{x} \tab A \code{\link{numeric}} vector of x values. \cr
-\code{y} \tab A \code{\link{numeric}} vector of y values. \cr
-\code{z} \tab A \code{\link{numeric}} vector of z values. \cr
-\code{center} \tab A \code{\link{numeric}} vector giving the center. \cr
-\code{scale} \tab A \code{\link{numeric}} vector giving the scale factor. \cr
+\describe{
+\item{\code{x}}{A \code{\link{numeric}} vector of x values.}
+\item{\code{y}}{A \code{\link{numeric}} vector of y values.}
+\item{\code{z}}{A \code{\link{numeric}} vector of z values.}
+\item{\code{center}}{A \code{\link{numeric}} vector giving the center.}
+\item{\code{scale}}{A \code{\link{numeric}} vector giving the scale factor.}
 }
 }
 \description{

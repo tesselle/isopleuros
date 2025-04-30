@@ -30,10 +30,9 @@ coordinates_ternary(x, y, z, ...)
 )
 }
 \arguments{
-\item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z cartesian coordinates
-of a set of points.
-If \code{y} and \code{z} are missing, an attempt is made to interpret \code{x} in a
-suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
+\item{x, y, z}{A \code{\link{numeric}} vector giving the x, y and z Cartesian coordinates
+of a set of points. If \code{y} and \code{z} are missing, an attempt is made to
+interpret \code{x} in a suitable way (see \code{\link[grDevices:xyz.coords]{grDevices::xyz.coords()}}).}
 
 \item{...}{Currently not used.}
 
@@ -51,11 +50,11 @@ y and z variables to be extracted.}
 }
 \value{
 A \code{\link{list}} with the components:
-\tabular{ll}{
-\code{x} \tab A \code{\link{numeric}} vector of x coordinates. \cr
-\code{y} \tab A \code{\link{numeric}} vector of y coordinates. \cr
-\code{center} \tab A \code{\link{numeric}} vector giving the center. \cr
-\code{scale} \tab A \code{\link{numeric}} vector giving the scale factor. \cr
+\describe{
+\item{\code{x}}{A \code{\link{numeric}} vector of x coordinates.}
+\item{\code{y}}{A \code{\link{numeric}} vector of y coordinates.}
+\item{\code{center}}{A \code{\link{numeric}} vector giving the center.}
+\item{\code{scale}}{A \code{\link{numeric}} vector giving the scale factor.}
 }
 }
 \description{

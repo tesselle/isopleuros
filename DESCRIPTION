@@ -42,8 +42,8 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 X-schema.org-applicationCategory: Archaeological Science
 X-schema.org-isPartOf: https://www.tesselle.org
-X-schema.org-keywords: archaeometry, archaeological-science, ternary-plot,
-    data-visualization, r-package
+X-schema.org-keywords: archaeological-science, archaeometry,
+    compositional-data, data-visualization, r-package, ternary-plot
 Collate: 
     'aaa.R'
     'AllGenerics.R'

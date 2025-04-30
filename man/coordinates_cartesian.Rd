@@ -26,14 +26,14 @@ variables to be extracted.}
 }
 \value{
 A \code{\link{list}} with the components:
-\tabular{ll}{
-\code{x} \tab A \code{\link{numeric}} vector of x coordinates. \cr
-\code{y} \tab A \code{\link{numeric}} vector of y coordinates. \cr
-\code{z} \tab A \code{\link{numeric}} vector of z coordinates. \cr
+\describe{
+\item{\code{x}}{A \code{\link{numeric}} vector of x coordinates.}
+\item{\code{y}}{A \code{\link{numeric}} vector of y coordinates.}
+\item{\code{z}}{A \code{\link{numeric}} vector of z coordinates.}
 }
 }
 \description{
-Computes cartesian coordinates.
+Computes Cartesian coordinates.
 }
 \examples{
 ## Compositional data

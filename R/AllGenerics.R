@@ -6,10 +6,9 @@ NULL
 #' Ternary Coordinates
 #'
 #' Computes ternary coordinates.
-#' @param x,y,z A [`numeric`] vector giving the x, y and z cartesian coordinates
-#'  of a set of points.
-#'  If `y` and `z` are missing, an attempt is made to interpret `x` in a
-#'  suitable way (see [grDevices::xyz.coords()]).
+#' @param x,y,z A [`numeric`] vector giving the x, y and z Cartesian coordinates
+#'  of a set of points. If `y` and `z` are missing, an attempt is made to
+#'  interpret `x` in a suitable way (see [grDevices::xyz.coords()]).
 #' @param center A [`logical`] scalar or a [`numeric`] vector giving the center.
 #' @param scale A [`logical`] scalar or a length-one [`numeric`] vector giving a
 #'  scaling factor.
@@ -21,11 +20,11 @@ NULL
 #' @param ... Currently not used.
 #' @return
 #'  A [`list`] with the components:
-#'  \tabular{ll}{
-#'   `x` \tab A [`numeric`] vector of x coordinates. \cr
-#'   `y` \tab A [`numeric`] vector of y coordinates. \cr
-#'   `center` \tab A [`numeric`] vector giving the center. \cr
-#'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
+#'  \describe{
+#'   \item{`x`}{A [`numeric`] vector of x coordinates.}
+#'   \item{`y`}{A [`numeric`] vector of y coordinates.}
+#'   \item{`center`}{A [`numeric`] vector giving the center.}
+#'   \item{`scale`}{A [`numeric`] vector giving the scale factor.}
 #'  }
 #' @example inst/examples/ex-coordinates.R
 #' @author N. Frerebeau
@@ -41,7 +40,7 @@ setGeneric(
 
 #' Cartesian Coordinates
 #'
-#' Computes cartesian coordinates.
+#' Computes Cartesian coordinates.
 #' @param x,y A [`numeric`] vector giving the x and y ternary coordinates of a
 #'  set of points. If `y` is missing, an attempt is made to interpret `x` in a
 #'  suitable way (see [grDevices::xy.coords()]).
@@ -50,10 +49,10 @@ setGeneric(
 #' @param ... Currently not used.
 #' @return
 #'  A [`list`] with the components:
-#'  \tabular{ll}{
-#'   `x` \tab A [`numeric`] vector of x coordinates. \cr
-#'   `y` \tab A [`numeric`] vector of y coordinates. \cr
-#'   `z` \tab A [`numeric`] vector of z coordinates. \cr
+#'  \describe{
+#'   \item{`x`}{A [`numeric`] vector of x coordinates.}
+#'   \item{`y`}{A [`numeric`] vector of y coordinates.}
+#'   \item{`z`}{A [`numeric`] vector of z coordinates.}
 #'  }
 #' @example inst/examples/ex-coordinates.R
 #' @author N. Frerebeau
@@ -101,12 +100,12 @@ setGeneric(
 #' @return
 #'  `ternary_plot()` is called it for its side-effects: it results in a graphic
 #'  being displayed. Invisibly returns a [`list`] with the components:
-#'  \tabular{ll}{
-#'   `x` \tab A [`numeric`] vector of x values. \cr
-#'   `y` \tab A [`numeric`] vector of y values. \cr
-#'   `z` \tab A [`numeric`] vector of z values. \cr
-#'   `center` \tab A [`numeric`] vector giving the center. \cr
-#'   `scale` \tab A [`numeric`] vector giving the scale factor. \cr
+#'  \describe{
+#'   \item{`x`}{A [`numeric`] vector of x values.}
+#'   \item{`y`}{A [`numeric`] vector of y values.}
+#'   \item{`z`}{A [`numeric`] vector of z values.}
+#'   \item{`center`}{A [`numeric`] vector giving the center.}
+#'   \item{`scale`}{A [`numeric`] vector giving the scale factor.}
 #'  }
 #' @example inst/examples/ex-plot.R
 #' @author N. Frerebeau
