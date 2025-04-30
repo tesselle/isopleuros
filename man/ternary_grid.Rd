@@ -8,8 +8,8 @@
 ternary_grid(
   primary = NULL,
   secondary = NULL,
-  center = getOption("isopleuros.center"),
-  scale = getOption("isopleuros.scale"),
+  center = NULL,
+  scale = NULL,
   col.primary = "darkgray",
   col.secondary = "lightgray",
   lty.primary = "dashed",
@@ -25,11 +25,13 @@ grid in \code{x}, \code{y} and \code{z} direction.}
 \item{secondary}{An \code{\link{integer}} specifying the number of cells of the
 secondary grid in \code{x}, \code{y} and \code{z} direction.}
 
-\item{center}{A \code{\link{numeric}} vector giving the center. If \code{NULL}
-(the default), data are assumed not centered.}
+\item{center}{A \code{\link{numeric}} vector giving the center. If \code{NULL} (the
+default), \code{center} is automatically set based on the last call to
+\code{\link[=plot]{plot()}}.}
 
-\item{scale}{A \code{\link{numeric}} vector giving the scale factor. If \code{NULL}
-(the default), data are assumed not scaled.}
+\item{scale}{A \code{\link{numeric}} vector giving the scale factor. If \code{NULL} (the
+default), \code{scale} is automatically set based on the last call to
+\code{\link[=plot]{plot()}}.}
 
 \item{col.primary, col.secondary}{A \code{\link{character}} string specifying the color
 of the grid lines.}

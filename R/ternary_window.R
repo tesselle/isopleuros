@@ -28,7 +28,7 @@ ternary_window <- function(xlim = NULL, ylim = NULL, zlim = NULL,
     rx <- expand_range(c(0, 1), add = dx)
     lim <- list(
       x = rx,
-      y = .top / 2 + c(-1, 1) * diff(rx) / 2
+      y = the$top / 2 + c(-1, 1) * diff(rx) / 2
     )
   }
   if (n_null == 2) {

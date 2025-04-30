@@ -1,4 +1,6 @@
 # isopleuros 1.4.0.9000
+## Internals
+* Use an internal package environment instead of options.
 
 # isopleuros 1.4.0
 ## New classes and methods

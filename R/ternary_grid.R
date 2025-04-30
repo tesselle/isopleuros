@@ -5,11 +5,13 @@ NULL
 #' @export
 #' @rdname ternary_grid
 ternary_grid <- function(primary = NULL, secondary = NULL,
-                         center = getOption("isopleuros.center"),
-                         scale = getOption("isopleuros.scale"),
+                         center = NULL, scale = NULL,
                          col.primary = "darkgray", col.secondary = "lightgray",
                          lty.primary = "dashed", lty.secondary = "dotted",
                          lwd.primary = 1, lwd.secondary = lwd.primary) {
+  ## Center and scale
+  if (is.null(center)) center <- get_center()
+  if (is.null(scale)) scale <- get_scale()
 
   ## Primary grid
   if (is.null(primary) || (!anyNA(primary) && length(primary) == 1 && primary >= 1)) {

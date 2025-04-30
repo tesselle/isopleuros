@@ -10,8 +10,8 @@ ternary_axis(
   at = NULL,
   labels = TRUE,
   tick = TRUE,
-  center = getOption("isopleuros.center"),
-  scale = getOption("isopleuros.scale"),
+  center = NULL,
+  scale = NULL,
   font = NA,
   lty = "solid",
   lwd = 1,
@@ -35,11 +35,13 @@ supplied and of the same length.}
 
 \item{tick}{A \code{\link{logical}} scalar: should tickmarks and an axis line be drawn?}
 
-\item{center}{A \code{\link{numeric}} vector giving the center. If \code{NULL}
-(the default), data are assumed not centered.}
+\item{center}{A \code{\link{numeric}} vector giving the center. If \code{NULL} (the
+default), \code{center} is automatically set based on the last call to
+\code{\link[=plot]{plot()}}.}
 
-\item{scale}{A \code{\link{numeric}} vector giving the scale factor. If \code{NULL}
-(the default), data are assumed not scaled.}
+\item{scale}{A \code{\link{numeric}} vector giving the scale factor. If \code{NULL} (the
+default), \code{scale} is automatically set based on the last call to
+\code{\link[=plot]{plot()}}.}
 
 \item{font}{font for text. Defaults to \code{par("font.axis")}.}
 

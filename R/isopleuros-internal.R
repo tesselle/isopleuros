@@ -88,18 +88,20 @@ assert_length <- function(x, expected) {
   invisible(x)
 }
 
-assert_center <- function(x, current = getOption("isopleuros.center")) {
+assert_center <- function(x, current = get_center()) {
+  centered <- is.numeric(current) && !all(current == 1)
   ok <- isTRUE(x) || is.numeric(x)
-  if (!ok && is.numeric(current) && !all(current == 1)) {
+  if (!ok && centered) {
     msg <- tr_("The current plot has been centered, but your data doesn't seem to be.")
     message(msg)
   }
   invisible(x)
 }
 
-assert_scale <- function(x, current = getOption("isopleuros.scale")) {
+assert_scale <- function(x, current = get_scale()) {
+  scaled <- is.numeric(current) && !all(current == 1)
   ok <- isTRUE(x) || is.numeric(x)
-  if (!ok && is.numeric(current) && !all(current == 1)) {
+  if (!ok && scaled) {
     msg <- tr_("The current plot has been scaled, but your data doesn't seem to be.")
     message(msg)
   }

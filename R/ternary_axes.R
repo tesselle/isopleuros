@@ -5,11 +5,13 @@ NULL
 #' @export
 #' @rdname ternary_axis
 ternary_axis <- function(side, at = NULL, labels = TRUE, tick = TRUE,
-                         center = getOption("isopleuros.center"),
-                         scale = getOption("isopleuros.scale"),
+                         center = NULL, scale = NULL,
                          font = NA, lty = "solid",
                          lwd = 1, lwd.ticks = lwd,
                          col = NULL, col.ticks = NULL, ...) {
+  ## Center and scale
+  if (is.null(center)) center <- get_center()
+  if (is.null(scale)) scale <- get_scale()
 
   ## Graphical parameters
   if (is.na(font)) font <- list(...)$font.axis %||% graphics::par("font.axis")

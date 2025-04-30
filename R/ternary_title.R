@@ -25,7 +25,7 @@ ternary_title <- function(main = NULL, sub = NULL, xlab = NULL, ylab = NULL,
                    col = col.lab, cex = cex.lab, font = font.lab)
   }
   if (!is.null(zlab)) {
-    graphics::text(x = 0.5, y = .top, label = zlab, pos = 3,
+    graphics::text(x = 0.5, y = the$top, label = zlab, pos = 3,
                    col = col.lab, cex = cex.lab, font = font.lab)
   }
 

@@ -45,6 +45,7 @@ X-schema.org-isPartOf: https://www.tesselle.org
 X-schema.org-keywords: archaeometry, archaeological-science, ternary-plot,
     data-visualization, r-package
 Collate: 
+    'aaa.R'
     'AllGenerics.R'
     'coordinates.R'
     'data.R'

@@ -1,6 +1,6 @@
 # GENERIC METHODS
-
-.top <- sqrt(3) / 2
+#' @include aaa.R
+NULL
 
 # Coordinates ==================================================================
 #' Ternary Coordinates
@@ -126,10 +126,12 @@ setGeneric(
 #'  grid in `x`, `y` and `z` direction.
 #' @param secondary An [`integer`] specifying the number of cells of the
 #'  secondary grid in `x`, `y` and `z` direction.
-#' @param center A [`numeric`] vector giving the center. If `NULL`
-#'  (the default), data are assumed not centered.
-#' @param scale A [`numeric`] vector giving the scale factor. If `NULL`
-#'  (the default), data are assumed not scaled.
+#' @param center A [`numeric`] vector giving the center. If `NULL` (the
+#'  default), `center` is automatically set based on the last call to
+#'  [plot()].
+#' @param scale A [`numeric`] vector giving the scale factor. If `NULL` (the
+#'  default), `scale` is automatically set based on the last call to
+#'  [plot()].
 #' @param col.primary,col.secondary A [`character`] string specifying the color
 #'  of the grid lines.
 #' @param lty.primary,lty.secondary A [`character`] string or [`numeric`]
@@ -158,10 +160,12 @@ NULL
 #'  placed at the tickpoints. If this is not `logical`, `at` should also be
 #'  supplied and of the same length.
 #' @param tick A [`logical`] scalar: should tickmarks and an axis line be drawn?
-#' @param center A [`numeric`] vector giving the center. If `NULL`
-#'  (the default), data are assumed not centered.
-#' @param scale A [`numeric`] vector giving the scale factor. If `NULL`
-#'  (the default), data are assumed not scaled.
+#' @param center A [`numeric`] vector giving the center. If `NULL` (the
+#'  default), `center` is automatically set based on the last call to
+#'  [plot()].
+#' @param scale A [`numeric`] vector giving the scale factor. If `NULL` (the
+#'  default), `scale` is automatically set based on the last call to
+#'  [plot()].
 #' @param font font for text. Defaults to `par("font.axis")`.
 #' @param lty A [`character`] string or [`numeric`] value specifying the line
 #'  type for both the axis line and the tick marks.

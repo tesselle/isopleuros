@@ -35,15 +35,15 @@ setMethod(
                    cex = cex.lab)
 
     ## Reset center and scale
-    options(isopleuros.center = NULL)
-    options(isopleuros.scale = NULL)
+    assign("center", value = NULL, envir = the)
+    assign("scale", value = NULL, envir = the)
 
     ## Compute ternary coordinates
     pt <- coordinates_ternary(x = x, y = y, z = z, center = center, scale = scale)
 
     ## Save center and scale for further use, e.g. grid or axes.
-    options(isopleuros.center = pt$center)
-    options(isopleuros.scale = pt$scale)
+    assign("center", value = pt$center, envir = the)
+    assign("scale", value = pt$scale, envir = the)
 
     ## Evaluate pre-plot expressions
     panel.first

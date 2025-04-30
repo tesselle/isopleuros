@@ -180,7 +180,7 @@ setMethod(
 .triangle_center <- function(resolution) {
 
   offset <- 1 / resolution / 2L
-  height <- .top / resolution
+  height <- the$top / resolution
 
   X <- seq(from = offset, to = 1 - offset, by = offset)
   X <- lapply(
@@ -198,7 +198,7 @@ setMethod(
   in_row <- 2L * rev(seq_len(resolution)) - 1L
   is_down <- (1 + unlist(lapply(in_row, seq_len))) %% 2L
 
-  Y <- seq(from = height / 3, to = .top - (2 * height / 3), length.out = resolution)
+  Y <- seq(from = height / 3, to = the$top - (2 * height / 3), length.out = resolution)
   Y <- rep(Y[seq_len(resolution)], in_row)
   Y <- Y + (is_down * height / 3)
 
@@ -233,7 +233,7 @@ setMethod(
   n <- length(x)
 
   width <- 1 / resolution / 2
-  height <- .top / resolution / 3
+  height <- the$top / resolution / 3
 
   tiles <- vector(mode = "list", length = n)
   for (i in seq_len(n)) {
