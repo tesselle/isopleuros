@@ -28,22 +28,22 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpODAuNjR8NDUyLjE2fDU5LjA0fDQzMC41Ng==)'>
-<polygon points='97.88,390.74 266.40,98.86 434.92,390.74 ' style='stroke-width: 0.75;' />
-<polygon points='266.40,98.86 266.40,244.80 182.14,244.80 ' style='stroke-width: 0.75;' />
-<polygon points='266.40,98.86 266.40,244.80 367.51,273.99 ' style='stroke-width: 0.75;' />
-<polygon points='182.14,244.80 266.40,244.80 224.27,317.77 ' style='stroke-width: 0.75;' />
-<polygon points='266.40,244.80 367.51,273.99 434.92,390.74 ' style='stroke-width: 0.75;' />
-<circle cx='266.40' cy='98.86' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<polygon points='97.52,391.06 266.40,98.54 435.28,391.06 ' style='stroke-width: 0.75;' />
+<polygon points='266.40,98.54 266.40,244.80 181.96,244.80 ' style='stroke-width: 0.75;' />
+<polygon points='266.40,98.54 266.40,244.80 367.73,274.05 ' style='stroke-width: 0.75;' />
+<polygon points='181.96,244.80 266.40,244.80 224.18,317.93 ' style='stroke-width: 0.75;' />
+<polygon points='266.40,244.80 367.73,274.05 435.28,391.06 ' style='stroke-width: 0.75;' />
+<circle cx='266.40' cy='98.54' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
 <circle cx='266.40' cy='244.80' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='182.14' cy='244.80' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='367.51' cy='273.99' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='224.27' cy='317.77' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<circle cx='434.92' cy='390.74' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
-<text x='273.60' y='101.77' style='font-size: 12.00px; font-family: "Arial";' textLength='18.63px' lengthAdjust='spacingAndGlyphs'>qtz</text>
-<text x='273.60' y='247.72' style='font-size: 12.00px; font-family: "Arial";' textLength='14.97px' lengthAdjust='spacingAndGlyphs'>an</text>
-<text x='174.94' y='247.72' text-anchor='end' style='font-size: 12.00px; font-family: "Arial";' textLength='17.16px' lengthAdjust='spacingAndGlyphs'>wo</text>
-<text x='374.71' y='276.90' style='font-size: 12.00px; font-family: "Arial";' textLength='22.64px' lengthAdjust='spacingAndGlyphs'>mul</text>
-<text x='217.07' y='320.69' text-anchor='end' style='font-size: 12.00px; font-family: "Arial";' textLength='22.62px' lengthAdjust='spacingAndGlyphs'>geh</text>
-<text x='442.12' y='393.66' style='font-size: 12.00px; font-family: "Arial";' textLength='18.94px' lengthAdjust='spacingAndGlyphs'>crn</text>
+<circle cx='181.96' cy='244.80' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='367.73' cy='274.05' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='224.18' cy='317.93' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<circle cx='435.28' cy='391.06' r='2.70' style='stroke-width: 0.75; stroke: none; fill: #000000;' />
+<text x='273.60' y='101.40' style='font-size: 12.00px; font-family: "Arial";' textLength='17.35px' lengthAdjust='spacingAndGlyphs'>qtz</text>
+<text x='273.60' y='247.66' style='font-size: 12.00px; font-family: "Arial";' textLength='14.15px' lengthAdjust='spacingAndGlyphs'>an</text>
+<text x='174.76' y='247.66' text-anchor='end' style='font-size: 12.00px; font-family: "Arial";' textLength='16.69px' lengthAdjust='spacingAndGlyphs'>wo</text>
+<text x='374.93' y='276.91' style='font-size: 12.00px; font-family: "Arial";' textLength='21.73px' lengthAdjust='spacingAndGlyphs'>mul</text>
+<text x='216.98' y='320.78' text-anchor='end' style='font-size: 12.00px; font-family: "Arial";' textLength='21.56px' lengthAdjust='spacingAndGlyphs'>geh</text>
+<text x='442.48' y='393.91' style='font-size: 12.00px; font-family: "Arial";' textLength='18.13px' lengthAdjust='spacingAndGlyphs'>crn</text>
 </g>
 </svg>

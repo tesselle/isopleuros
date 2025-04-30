@@ -1,3 +1,5 @@
+Sys.setenv(LANGUAGE = "en") # Force locale
+
 ternary_plot(lava, center = TRUE, scale = FALSE)
 expect_message(ternary_points(lava), "The current plot has been centered")
 
