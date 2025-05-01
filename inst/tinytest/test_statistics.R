@@ -1,10 +1,6 @@
 if (at_home()) {
   using("tinysnapshot")
-  options(tinysnapshot_device = "svglite")
-  options(tinysnapshot_height = 7) # inches
-  options(tinysnapshot_width = 7)
-  options(tinysnapshot_tol = 200) # pixels
-  options(tinysnapshot_os = "Linux")
+  source("helpers.R")
 
   coda <- data.frame(
     X = c(96, 49, 57, 92, 62, 85, 75, 76, 30, 36,

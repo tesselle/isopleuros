@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='504.00pt' height='504.00pt' viewBox='0 0 504.00 504.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='504.00pt' height='504.00pt' viewBox='0 0 504.00 504.00'>
+<g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
     .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
@@ -11,6 +12,10 @@
     }
     .svglite text {
       white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
     }
   ]]></style>
 </defs>
@@ -28,12 +33,13 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpODAuNjR8NDUyLjE2fDU5LjA0fDQzMC41Ng==)'>
-<circle cx='97.85' cy='390.77' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='434.95' cy='390.77' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='266.40' cy='98.83' r='2.70' style='stroke-width: 0.75;' />
-<circle cx='266.40' cy='293.46' r='2.70' style='stroke-width: 0.75;' />
-<text x='97.85' y='405.11' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='7.03px' lengthAdjust='spacingAndGlyphs'>X</text>
-<text x='434.95' y='405.11' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='6.79px' lengthAdjust='spacingAndGlyphs'>Y</text>
-<text x='266.40' y='91.63' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='6.86px' lengthAdjust='spacingAndGlyphs'>Z</text>
+<circle cx='98.31' cy='390.37' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='434.49' cy='390.37' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='266.40' cy='99.23' r='2.70' style='stroke-width: 0.75;' />
+<circle cx='266.40' cy='293.32' r='2.70' style='stroke-width: 0.75;' />
+<text x='98.31' y='404.45' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='8.00px' lengthAdjust='spacingAndGlyphs'>X</text>
+<text x='434.49' y='404.45' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='8.00px' lengthAdjust='spacingAndGlyphs'>Y</text>
+<text x='266.40' y='92.03' text-anchor='middle' style='font-size: 12.00px; font-family: "Liberation Sans";' textLength='7.33px' lengthAdjust='spacingAndGlyphs'>Z</text>
+</g>
 </g>
 </svg>
