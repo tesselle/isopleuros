@@ -17,8 +17,9 @@ Sys.setenv(LANGUAGE = "en") # Force locale
 # isopleuros <img width=120px src="man/figures/logo.png" align="right" />
 
 <!-- badges: start -->
-[![Code coverage](https://packages.tesselle.org/isopleuros/coverage/badge.svg)](https://packages.tesselle.org/isopleuros/coverage/)
-[![Dependencies](https://tinyverse.netlify.app/badge/isopleuros)](https://cran.r-project.org/package=isopleuros)
+[![status-badge](https://ci.codeberg.org/api/badges/14691/status.svg)](https://ci.codeberg.org/repos/14691){.pkgdown-devel}
+[![Code coverage](https://packages.tesselle.org/isopleuros/coverage/badge.svg)](https://packages.tesselle.org/isopleuros/coverage/){.pkgdown-devel}
+[![Dependencies](https://tinyverse.netlify.app/badge/isopleuros)](https://cran.r-project.org/package=isopleuros){.pkgdown-devel}
 
 [![r-universe](https://tesselle.r-universe.dev/badges/isopleuros)](https://tesselle.r-universe.dev/isopleuros){.pkgdown-devel}
 [![CRAN Version](https://www.r-pkg.org/badges/version/isopleuros)](https://cran.r-project.org/package=isopleuros){.pkgdown-release}

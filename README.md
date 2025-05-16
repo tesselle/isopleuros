@@ -5,9 +5,17 @@
 
 <!-- badges: start -->
 
-[![Code
-coverage](https://packages.tesselle.org/isopleuros/coverage/badge.svg)](https://packages.tesselle.org/isopleuros/coverage/)
-[![Dependencies](https://tinyverse.netlify.app/badge/isopleuros)](https://cran.r-project.org/package=isopleuros)
+<a href="https://ci.codeberg.org/repos/14691" class="pkgdown-devel"><img
+src="https://ci.codeberg.org/api/badges/14691/status.svg"
+alt="status-badge" /></a>
+<a href="https://packages.tesselle.org/isopleuros/coverage/"
+class="pkgdown-devel"><img
+src="https://packages.tesselle.org/isopleuros/coverage/badge.svg"
+alt="Code coverage" /></a>
+<a href="https://cran.r-project.org/package=isopleuros"
+class="pkgdown-devel"><img
+src="https://tinyverse.netlify.app/badge/isopleuros"
+alt="Dependencies" /></a>
 
 <a href="https://tesselle.r-universe.dev/isopleuros"
 class="pkgdown-devel"><img
