@@ -20,6 +20,7 @@ Description: Ternary plots made simple. This package allows to create
     charts, ceramic phase diagram).
 License: GPL (>= 3)
 URL: https://codeberg.org/tesselle/isopleuros,
+    https://tesselle.r-universe.dev/isopleuros,
     https://packages.tesselle.org/isopleuros/
 BugReports: https://codeberg.org/tesselle/isopleuros/issues
 Depends: 

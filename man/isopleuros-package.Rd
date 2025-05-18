@@ -33,6 +33,7 @@ proceeds? If \code{FALSE} (the default), incomplete cases are removed.
 Useful links:
 \itemize{
   \item \url{https://codeberg.org/tesselle/isopleuros}
+  \item \url{https://tesselle.r-universe.dev/isopleuros}
   \item \url{https://packages.tesselle.org/isopleuros/}
   \item Report bugs at \url{https://codeberg.org/tesselle/isopleuros/issues}
 }
