@@ -36,7 +36,7 @@ Suggests:
     fontquiver,
     rsvg,
     svglite,
-    tinysnapshot,
+    tinysnapshot (>= 0.2.0),
     tinytest
 Encoding: UTF-8
 LazyData: true
